@@ -16,7 +16,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Experience & learning journey",
   description:
-    "The development journey of MURENGERANTWARI Elyse: full-stack project work, self-directed learning across the JavaScript and PHP ecosystems, and an ongoing cybersecurity learning track.",
+    "The development journey of Elyse Dev: full-stack project work, self-directed learning across the JavaScript and PHP ecosystems, and an ongoing cybersecurity learning track.",
   path: "/experience",
   keywords: ["developer learning journey", "full-stack experience Rwanda"],
 });

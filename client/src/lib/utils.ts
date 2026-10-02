@@ -73,6 +73,14 @@ export function unique<T>(items: readonly T[]): T[] {
   return [...new Set(items)];
 }
 
+/**
+ * "https://github.com/elyseprodev" → "github.com/elyseprodev"
+ * Used to label GitHub links without hard-coding the handle in components.
+ */
+export function githubHandle(url: string): string {
+  return url.replace(/^https?:\/\//, "").replace(/\/$/, "");
+}
+
 /** True for in-page anchor links ("#section"). */
 export function isAnchorLink(href: string): boolean {
   return href.startsWith("#");

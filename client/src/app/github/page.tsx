@@ -12,31 +12,45 @@ import { site } from "@/content/site";
 import { apiGet } from "@/lib/api";
 import type { GithubActivityPayload } from "@/lib/github";
 import { buildMetadata } from "@/lib/metadata";
+import { githubHandle } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title: "GitHub & development activity",
   description:
-    "Live GitHub activity for MURENGERANTWARI Elyse (ElissaElyse7) — repositories, primary languages and the API that proxies them, with an honest fallback when GitHub rate limits apply.",
+    "Live GitHub activity for Elyse Dev (elyseprodev) — repositories, primary languages and the API that proxies them, with an honest fallback when GitHub is rate limited or unreachable.",
   path: "/github",
-  keywords: ["ElissaElyse7", "GitHub repositories"],
+  keywords: ["elyseprodev", "GitHub repositories", "Elyse Dev GitHub"],
   type: "profile",
 });
 
 /**
- * Repositories that are real and verifiable. They are shown whenever live
- * GitHub data is unavailable — never as a substitute for invented statistics.
+ * Repositories that are real and verifiable, shown only when live GitHub data is
+ * unavailable (rate limit or network failure). Never a substitute for invented
+ * statistics — every entry below is a repository that exists on the account.
  */
 const CURATED_REPOS = [
   {
     name: "elyseprodev/portfolio",
     description:
       "This portfolio: a Next.js client, an Express API and a MongoDB-ready database layer, built as one product.",
-    href: "https://github.com/elyseprodev/portfolio",
+    href: `${site.github}/portfolio`,
   },
   {
-    name: "ElissaElyse7 — GitHub profile",
+    name: "elyseprodev/app-video",
     description:
-      "The account where my project repositories live. Open it to see the current list, commits and languages.",
+      "A TypeScript video application. Open the repository for the current state of the code.",
+    href: `${site.github}/app-video`,
+  },
+  {
+    name: "elyseprodev/new-game",
+    description:
+      "A JavaScript game project — implementation and commit history live in the repository.",
+    href: `${site.github}/new-game`,
+  },
+  {
+    name: "elyseprodev — full profile",
+    description:
+      "Every public repository on the account, including the ones not written up on this site yet.",
     href: site.github,
   },
 ];
@@ -69,7 +83,7 @@ export default async function GitHubPage() {
               variant="primary"
               icon={<GitHubIcon width={16} height={16} />}
             >
-              github.com/ElissaElyse7
+              {githubHandle(site.github)}
             </Button>
             <Button href="/projects" variant="glass">
               Project write-ups

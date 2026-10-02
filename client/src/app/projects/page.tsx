@@ -14,7 +14,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Projects",
   description:
-    "Web applications built by MURENGERANTWARI Elyse — a full-stack portfolio, the Light Education platform, a student messaging app and a video web application.",
+    "Web applications built by Elyse Dev — a full-stack portfolio, the Light Education platform, a student messaging app and a video web application.",
   path: "/projects",
   keywords: ["React projects", "Next.js portfolio projects", "student developer projects"],
 });

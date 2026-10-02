@@ -17,9 +17,9 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "About me",
   description:
-    "MURENGERANTWARI Elyse — a full-stack software developer from Rwanda working with React, Next.js, Node.js, Express, PHP and databases, currently learning cybersecurity.",
+    "Elyse Dev — a full-stack software developer from Rwanda working with React, Next.js, Node.js, Express, PHP and databases, currently learning cybersecurity.",
   path: "/about",
-  keywords: ["about MURENGERANTWARI Elyse", "Rwandan developer"],
+  keywords: ["about Elyse Dev", "Rwandan developer", "elyseprodev"],
   type: "profile",
 });
 

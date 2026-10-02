@@ -23,13 +23,13 @@ const PUBLIC_DIR = join(dirname(fileURLToPath(import.meta.url)), "..", "..", "pu
 
 describe("profile", () => {
   it("states the verified identity", () => {
-    assert.equal(profile.name, "MURENGERANTWARI Elyse");
+    assert.equal(profile.name, "Elyse Dev");
     assert.equal(profile.role, "Full-Stack Software Developer");
     assert.equal(profile.location, "Rwanda");
   });
 
   it("only publishes links that are configured", () => {
-    assert.match(profile.github, /^https:\/\/github\.com\/[\w-]+\/?$/);
+    assert.equal(profile.github, "https://github.com/elyseprodev");
     // Undefined or an empty string both mean "not published"; anything else
     // must be a real address, because it is rendered as a mailto: link.
     const email = profile.email;

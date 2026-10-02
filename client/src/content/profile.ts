@@ -9,7 +9,7 @@ import type { Profile } from "@elyse/database/types";
  */
 export const profile: Profile = {
   id: "profile",
-  name: "MURENGERANTWARI Elyse",
+  name: "Elyse Dev",
   shortName: "Elyse",
   role: "Full-Stack Software Developer",
   location: "Rwanda",
@@ -39,7 +39,12 @@ export const profile: Profile = {
     "Responsive, accessible interfaces",
     "Teaching myself something new every week",
   ],
-  github: "https://github.com/ElissaElyse7",
+  /**
+   * Verified live: this account exists and its public repositories are the ones
+   * the GitHub page reports. Change it here and every link, the API default and
+   * the live activity panel follow.
+   */
+  github: "https://github.com/elyseprodev",
   // No public e-mail address has been supplied yet, so it is left undefined and
   // the UI says so honestly. Set it here to publish a mailto link everywhere
   // (footer, about and contact pages pick it up automatically).

@@ -490,10 +490,11 @@
     color: transparent;
   }
 
-  /* The hero name is 15 characters long, so its size is driven by the width of
-     the copy column (container query units) rather than the viewport — that way
-     it stays on one line at 320px and still fills the space at 1440px. The vw
-     clamp is the fallback for browsers without container query units. */
+  /* The hero name is sized from the width of its copy column (container query
+     units) rather than the viewport, so a single word always stays on one line —
+     short names like "Elyse" fill the space at 1440px the same way a long legal
+     name would at 320px. The vw clamp is the fallback where container query
+     units are unsupported. */
   .hero-copy {
     container-type: inline-size;
   }

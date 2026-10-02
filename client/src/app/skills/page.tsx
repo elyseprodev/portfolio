@@ -16,7 +16,7 @@ import { buildMetadata } from "@/lib/metadata";
 export const metadata: Metadata = buildMetadata({
   title: "Skills & technologies",
   description:
-    "The technologies MURENGERANTWARI Elyse builds with: HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Node.js, Express, PHP, MongoDB, MySQL, Git and security fundamentals.",
+    "The technologies Elyse Dev builds with: HTML, CSS, JavaScript, React, Next.js, Tailwind CSS, Node.js, Express, PHP, MongoDB, MySQL, Git and security fundamentals.",
   path: "/skills",
   keywords: ["React developer skills", "Node.js Express developer", "PHP MySQL developer"],
 });

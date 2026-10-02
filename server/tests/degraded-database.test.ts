@@ -72,7 +72,7 @@ describe("unreachable MongoDB", () => {
       meta: { backend?: { degraded?: boolean } };
     };
 
-    assert.equal(data.profile.name, "MURENGERANTWARI Elyse");
+    assert.equal(data.profile.name, "Elyse Dev");
     assert.ok(data.projects.length > 0);
     assert.equal(meta.backend?.degraded, true, "meta should flag the degraded backend");
   });

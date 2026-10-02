@@ -2,7 +2,7 @@
   "name": "elyse-dev-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "ELYSE DEV \u2014 premium liquid-glass developer portfolio for MURENGERANTWARI Elyse (client / server / database monorepo).",
+  "description": "ELYSE DEV — premium liquid-glass developer portfolio for Elyse Dev (client / server / database monorepo).",
   "workspaces": [
     "database",
     "server",

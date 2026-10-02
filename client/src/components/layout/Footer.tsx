@@ -5,6 +5,7 @@ import { SourceBadge } from "@/components/ui/Badges";
 import { GitHubIcon } from "@/components/ui/icons";
 import { PageContainer } from "./PageContainer";
 import { navItems, site } from "@/content/site";
+import { githubHandle } from "@/lib/utils";
 import { loadProfile, loadServiceStatus } from "@/lib/content";
 
 /**
@@ -62,7 +63,7 @@ export async function Footer() {
                 className="btn btn-glass !min-h-10 !px-4 !text-[0.84rem]"
               >
                 <GitHubIcon width={17} height={17} />
-                github.com/ElissaElyse7
+                {githubHandle(site.github)}
                 <span className="sr-only">(opens in a new tab)</span>
               </a>
               <Link

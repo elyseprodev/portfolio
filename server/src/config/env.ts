@@ -41,7 +41,7 @@ export const env = {
   },
   github: {
     token: process.env.GITHUB_TOKEN?.trim() ?? "",
-    username: process.env.GITHUB_USERNAME?.trim() || "ElissaElyse7",
+    username: process.env.GITHUB_USERNAME?.trim() || "elyseprodev",
     /** How long GitHub responses are cached in memory (ms). */
     cacheTtl: Number(process.env.GITHUB_CACHE_TTL_MS ?? 5 * 60 * 1000),
   },

@@ -46,7 +46,7 @@ export function createApp(): Express {
   app.get("/", (_req, res) => {
     res.json({
       name: "ELYSE DEV API",
-      owner: "MURENGERANTWARI Elyse",
+      owner: "Elyse Dev",
       description:
         "Portfolio content, contact messages and GitHub activity for elyse.dev.",
       routes: [

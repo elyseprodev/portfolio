@@ -37,10 +37,8 @@ export function HeroSection({ profile }: { profile: Profile }) {
 
             <RevealOnScroll delay={80}>
               <h1 className="mt-6 font-semibold">
-                <span className="hero-name block text-white">
-                  MURENGERANTWARI
-                </span>
-                <span className="text-gradient block text-display">Elyse</span>
+                <span className="hero-name block text-white">Elyse</span>
+                <span className="text-gradient block text-display">Dev</span>
               </h1>
             </RevealOnScroll>
 

@@ -74,14 +74,14 @@ export default function OpenGraphImage() {
         <div style={{ display: "flex", flexDirection: "column", gap: "22px" }}>
           <div
             style={{
-              fontSize: "68px",
+              fontSize: "82px",
               fontWeight: 700,
               lineHeight: 1.05,
-              letterSpacing: "-2.5px",
+              letterSpacing: "-3px",
               maxWidth: "900px",
             }}
           >
-            MURENGERANTWARI Elyse
+            Elyse Dev
           </div>
           <div
             style={{
@@ -125,7 +125,7 @@ export default function OpenGraphImage() {
               fontSize: "20px",
             }}
           >
-            github.com/ElissaElyse7
+            github.com/elyseprodev
           </div>
         </div>
       </div>

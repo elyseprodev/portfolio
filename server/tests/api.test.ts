@@ -69,7 +69,7 @@ describe("content routes", () => {
     }>("/api/content");
 
     assert.equal(status, 200);
-    assert.equal(body.data.profile.name, "MURENGERANTWARI Elyse");
+    assert.equal(body.data.profile.name, "Elyse Dev");
     assert.ok(body.data.projects.length >= 1);
     assert.ok(body.data.skillGroups.length >= 1);
   });

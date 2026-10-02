@@ -10,11 +10,12 @@ import { SocialLinks } from "@/components/ui/SocialLinks";
 import { CheckIcon, GitHubIcon, MailIcon } from "@/components/ui/icons";
 import { loadProfile, loadServiceStatus } from "@/lib/content";
 import { buildMetadata } from "@/lib/metadata";
+import { githubHandle } from "@/lib/utils";
 
 export const metadata: Metadata = buildMetadata({
   title: "Contact",
   description:
-    "Contact MURENGERANTWARI Elyse (ELYSE DEV) about collaborations, freelance work, development roles or questions. Messages are validated and stored by the portfolio's own API.",
+    "Contact Elyse Dev (ELYSE DEV) about collaborations, freelance work, development roles or questions. Messages are validated and stored by the portfolio's own API.",
   path: "/contact",
   keywords: ["hire full-stack developer Rwanda", "contact developer"],
 });
@@ -52,7 +53,7 @@ export default async function ContactPage() {
                     rel="noopener noreferrer"
                     className="break-all text-brand-300 hover:text-brand-200"
                   >
-                    github.com/ElissaElyse7
+                    {githubHandle(profile.github)}
                     <span className="sr-only"> (opens in a new tab)</span>
                   </a>
                 </span>

@@ -4,12 +4,12 @@
 
 export const site = {
   name: "ELYSE DEV",
-  developerName: "MURENGERANTWARI Elyse",
+  developerName: "Elyse Dev",
   role: "Full-Stack Software Developer",
   location: "Rwanda",
   description:
-    "ELYSE DEV — the portfolio of MURENGERANTWARI Elyse, a full-stack software developer from Rwanda building modern web applications with React, Next.js, Node.js, Express and PHP.",
-  github: "https://github.com/ElissaElyse7",
+    "ELYSE DEV — the portfolio of Elyse Dev, a full-stack software developer from Rwanda building modern web applications with React, Next.js, Node.js, Express and PHP.",
+  github: "https://github.com/elyseprodev",
   /**
    * No public e-mail address has been supplied. Leave empty and the contact
    * page will say so honestly instead of inventing one. Set it (or the
@@ -22,8 +22,9 @@ export const site = {
    */
   url: process.env.NEXT_PUBLIC_SITE_URL?.trim() ?? "",
   keywords: [
-    "MURENGERANTWARI Elyse",
+    "Elyse Dev",
     "ELYSE DEV",
+    "elyseprodev",
     "full-stack developer Rwanda",
     "Next.js developer",
     "React developer",
