@@ -69,7 +69,8 @@ describe("projects", () => {
       for (const link of project.links) {
         assert.match(
           link.href,
-          /^https:\/\/[\w.-]+\/\S*$/,
+          // A bare https://host is a valid absolute address too — do not force a path.
+          /^https:\/\/[\w.-]+(?:\/\S*)?$/,
           `${project.slug} → "${link.label}" is not an absolute https URL`,
         );
         assert.ok(link.label.trim().length > 0);

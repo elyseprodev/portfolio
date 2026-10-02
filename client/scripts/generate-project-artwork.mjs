@@ -187,6 +187,27 @@ const scenes = {
     )
     .join("")}`,
 
+  /** Library: catalogue hero + shelf of collection cards. */
+  library: (id) => `
+  ${window(id, "book of family library")}
+  ${panel(id, 100, 220, 1080, 150)}
+  <rect x="140" y="264" width="540" height="52" rx="26" fill="#ffffff" fill-opacity="0.07" stroke="#ffffff" stroke-opacity="0.14"/>
+  ${bar(176, 284, 250, 14, 0.24)}
+  <rect x="700" y="264" width="200" height="52" rx="26" fill="url(#accent${id})" fill-opacity="0.9"/>
+  ${[0, 1, 2]
+    .map((i) => bar(140 + i * 340, 336, 110, 12, 0.22 - i * 0.04))
+    .join("")}
+  ${[0, 1, 2, 3, 4]
+    .map(
+      (i) => `
+  ${panel(id, 100 + i * 218, 400, 196, 280, 18)}
+  <rect x="${124 + i * 218}" y="428" width="64" height="92" rx="7" fill="url(#accent${id})" fill-opacity="${0.8 - i * 0.12}"/>
+  ${bar(124 + i * 218, 542, 140, 14, 0.3)}
+  ${bar(124 + i * 218, 568, 110, 12, 0.16)}
+  ${bar(124 + i * 218, 592, 150, 12, 0.12)}`,
+    )
+    .join("")}`,
+
   /** Generic fallback artwork. */
   placeholder: (id) => `
   ${window(id, "project")}
@@ -202,6 +223,7 @@ const targets = [
   { file: "light-education.svg", scene: "dashboard", id: "c" },
   { file: "campus-connect.svg", scene: "messaging", id: "d" },
   { file: "video-web-app.svg", scene: "video", id: "e" },
+  { file: "book-of-family-library.svg", scene: "library", id: "g" },
   { file: "placeholder.svg", scene: "placeholder", id: "f" },
 ];
 

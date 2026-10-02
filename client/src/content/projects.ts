@@ -5,8 +5,8 @@ import type { Project } from "@elyse/database/types";
  *
  * ⚠️ EDITABLE — please read before publishing:
  *
- *  • Only the portfolio repository link is verifiable, so it is the only
- *    external project link included. Every other project has `links: []` and
+ *  • Only verifiable addresses are linked: the portfolio repository and the
+ *    live Book of Family Library site. Every other project has `links: []` and
  *    the UI shows "link not provided yet" instead of a dead button.
  *  • Projects marked `isDraft: true` are real project *names* whose details
  *    (problem, features, screenshots, repository) still need to be filled in.
@@ -96,6 +96,56 @@ export const projects: Project[] = [
           "Effects are pointer-events: none, share a single requestAnimationFrame loop, are disabled on touch devices, and are skipped entirely when reduced motion is requested.",
       },
     ],
+  },
+  {
+    slug: "book-of-family-library",
+    title: "Book of Family Library",
+    tagline: "A multilingual digital library, live and open to readers",
+    summary:
+      "A published library web app: readers browse six collections from fiction to rare manuscripts, search a catalogue presented as 400,000+ titles, and follow featured books straight into Open Library — in the language they read in.",
+    category: "frontend",
+    status: "completed",
+    year: "2026",
+    featured: true,
+    isDraft: false,
+    overview: [
+      "Book of Family Library is a live, single-page library experience built around discovery: a hero with collection counters, a six-collection browse grid, a featured-books strip and a community section for workshops and reading programmes.",
+      "The featured titles are not hard-coded — the strip loads its books at runtime and its “View all” action hands the reader over to Open Library, so the shelf stays current instead of going stale.",
+      "Language and accessibility are treated as features of the interface rather than a footnote: multiple writing systems, screen-reader support, adjustable text, Braille and large-print are part of the page itself.",
+    ],
+    problem:
+      "A catalogue is only useful if a reader can find a title in the language they read in — and most book sites stop at English, at a single format, or at a search box with nothing behind it.",
+    goals: [
+      "Put every collection within one scroll of the landing view",
+      "Keep the featured shelf fresh by loading titles at runtime instead of hard-coding them",
+      "Make multilingual and accessible reading visible rather than implied",
+    ],
+    features: [
+      "Hero with collection counters for books, languages and hours of access",
+      "Six-collection browse grid: fiction, academic, audiobooks, journals, manuscripts and reference",
+      "Featured-books strip loaded at runtime, with a hand-off into Open Library search",
+      "Catalogue search entry point covering the full title count",
+      "Community and education section for events, volunteering, language workshops and research help",
+      "Responsive layout that keeps the browse grid readable on a phone",
+    ],
+    // ⚠️ EDITABLE — the stack was read from the published build; correct it if
+    // you used different tooling.
+    stack: ["React", "Vite", "Tailwind CSS", "Open Library API"],
+    links: [
+      {
+        kind: "live",
+        label: "Live site",
+        href: "https://bookoffamily.lovable.app",
+      },
+    ],
+    gallery: [
+      {
+        src: "/images/projects/book-of-family-library.svg",
+        alt: "Concept artwork for Book of Family Library: a search bar above a shelf of collection cards",
+        caption: "Concept artwork — replace with a real screenshot of the live site",
+      },
+    ],
+    challenges: [],
   },
   {
     slug: "light-education",

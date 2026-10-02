@@ -73,6 +73,32 @@ test count, the commit/PR workflow). There are deliberately no dates, employers 
 
 ---
 
+## 1c. The two projects you sent — one added, one blocked
+
+**✅ `bookoffamily.lovable.app` — added as a real, live project.**
+"Book of Family Library" now appears in the project list, in the homepage's featured row and at
+`/projects/book-of-family-library`. Its copy is written from the published site itself: the six
+collections, the counters, the featured-books strip that loads at runtime and hands readers to
+Open Library, and the language/accessibility affordances. Nothing about it is invented.
+
+Two fields I had to infer — please confirm or correct them:
+
+- `stack: ["React", "Vite", "Tailwind CSS", "Open Library API"]` — read from the published
+  build (hashed `/assets/…` files) and the visible Open Library hand-off.
+- `status: "completed"` and `year: "2026"` — the site is live, which is all I could verify.
+
+It is also `featured: true`, so it took one of the three homepage slots. Set it to `false` in
+`client/src/content/projects.ts` to swap the featured row back.
+
+**⚠️ `menvax.netlify.app` — not a live site, so not added yet.**
+The address returns Netlify's own "Site not found" page (Netlify internal ID
+`01M3Z32DZZDB99EFN7BNPZQE22`), and `menvax.netify.app` as written has no DNS record at all.
+Nothing on the web matches the name either. Because nothing about the project could be
+verified, no card was invented for it. Send the working URL — or a one-line description, its
+stack and any screenshots — and it goes in exactly like Book of Family Library.
+
+---
+
 ## 2. Public e-mail address (optional)
 
 `client/src/content/profile.ts` → `email: ""`

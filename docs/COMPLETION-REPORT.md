@@ -89,5 +89,7 @@ Nothing below blocks the site from working — each item is a placeholder that i
 2. **Vue.** Your `game` repo is Vue; Vue is not currently in the skills list. Say the word and it is added.
 3. **Contact e-mail.** The contact form stores and validates messages today; the e-mail address shown on the contact page and the notification recipient are still placeholders (§2).
 4. **Light Education and the student messaging / video apps** are deliberately generic placeholders — real names, descriptions and screenshots are yours to drop into `client/src/content/projects.ts`.
+5. **Book of Family Library** (`bookoffamily.lovable.app`) was added afterwards as a live project — its stack and status are the two inferred fields to confirm (`docs/CONTENT-CHECKLIST.md` §1c).
+6. **Menvax** could not be added: `menvax.netlify.app` returns Netlify's "Site not found" page — a working URL is needed (§1c).
 
 After editing anything under `client/src/content/`, run `npm run db:sync` and `npm run db:seed` — the deployed site reads from the database, not from the bundle. There is a section on this in `docs/DEPLOYMENT.md`.

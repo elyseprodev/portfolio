@@ -32,6 +32,7 @@ const ROUTES = [
   { path: "/skills", expect: 200, name: "skills" },
   { path: "/projects", expect: 200, name: "projects" },
   { path: "/projects/elyse-dev-portfolio", expect: 200, name: "project detail" },
+  { path: "/projects/book-of-family-library", expect: 200, name: "project detail (live)" },
   { path: "/projects/light-education", expect: 200, name: "project detail (draft)" },
   { path: "/experience", expect: 200, name: "experience" },
   { path: "/github", expect: 200, name: "github" },
