@@ -226,6 +226,15 @@ export async function getGithubActivity(
       return result;
     }
 
+    if (profileResponse.status === 401 || reposResponse.status === 401) {
+      const result = unavailable(
+        "GitHub rejected the configured GITHUB_TOKEN (401 Bad credentials). Replace it with a valid fine-grained token, or unset it to fall back to the lower unauthenticated rate limit.",
+        rateLimit,
+      );
+      cache.set(username, { value: result, expiresAt: Date.now() + 60_000 });
+      return result;
+    }
+
     if (profileResponse.status === 403 || reposResponse.status === 403) {
       const result = unavailable(
         env.github.token

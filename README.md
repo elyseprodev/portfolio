@@ -1,6 +1,6 @@
 # ELYSE DEV — portfolio
 
-**MURENGERANTWARI Elyse** · Full-Stack Software Developer · Rwanda
+**Elyse Dev** · Full-Stack Software Developer · Rwanda
 
 A complete, multi-page developer portfolio built as one product: a **Next.js client**, an
 **Express API** and a **database layer** that works with MongoDB (with an honest local
@@ -199,9 +199,25 @@ Stored messages are **not** publicly readable: `GET /api/contact` exposes a coun
 When GitHub cannot be reached the route returns `available: false` with a human-readable
 reason, and the page shows a curated list of **real** repositories instead.
 
-> **Known data issue:** `https://github.com/ElissaElyse7` currently returns **404** (verified
-> during development), so live activity cannot resolve for that handle. Confirm or correct
-> the username — see [`docs/CONTENT-CHECKLIST.md`](docs/CONTENT-CHECKLIST.md).
+Verified working against [`github.com/elyseprodev`](https://github.com/elyseprodev) — the page
+renders the account's live profile, its 10 non-fork repositories and the language breakdown
+(CSS, JavaScript, TypeScript, Vue) aggregated from primary repository languages. No
+contribution graph, streak or total is ever invented: either the API answers, or the page
+explains why it could not.
+
+Failure modes are handled explicitly:
+
+| Situation | What the page shows |
+| --- | --- |
+| GitHub unreachable | "Could not reach GitHub (…)" plus the curated repository list |
+| Rate limit exhausted (403) | Explanation, the reset-relevant advice, and the curated list |
+| Bad/expired `GITHUB_TOKEN` (401) | Says the token was rejected and how to fix it |
+| Account not found (404) | Says the account could not be found |
+
+> **Container note:** if the page reports "Could not reach GitHub" while `curl api.github.com`
+> works, Node is not reading the system CA bundle. Set
+> `NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt` instead of disabling TLS
+> verification.
 
 ---
 
@@ -292,6 +308,12 @@ CONTACT_FINGERPRINT_SALT=<random string>
 The API runs through `tsx` (`npm start -w @elyse/server`); the health endpoint is
 `GET /api/health`. Never commit `.env` — only `.env.example` is tracked.
 
+> **If the GitHub page reports "Could not reach GitHub"** while `curl` to
+> `api.github.com` works, your container's Node process is not picking up the system CA
+> bundle. Point Node at it (`NODE_EXTRA_CA_CERTS=/etc/ssl/certs/ca-certificates.crt`) rather
+> than disabling TLS verification. A bad or expired `GITHUB_TOKEN` is reported separately as a
+> 401 with instructions, and never fails silently.
+
 ---
 
 ## Project structure
@@ -324,5 +346,5 @@ portfolio/
 
 ---
 
-Built by **MURENGERANTWARI Elyse** — client, server and database written from scratch.
+Built by **Elyse Dev** — client, server and database written from scratch.
 Content that is still pending is labelled as such, on purpose.

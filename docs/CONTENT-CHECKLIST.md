@@ -6,24 +6,51 @@ on your behalf, so a few sections are intentionally empty until you supply them.
 
 ---
 
-## 1. ⚠️ Confirm your GitHub username (highest priority)
+## 1. ✅ GitHub account + public name — resolved
 
-You supplied `https://github.com/ElissaElyse7`.
+You confirmed the account is **`https://github.com/elyseprodev`** and that the public name is
+**Elyse Dev**. Both are now applied everywhere:
 
-**During development that URL returned HTTP 404** — the account is not publicly reachable
-(verified twice: via `curl` against the GitHub API and in the browser-facing page). The
-organisation that hosts this repository (`elyseprodev`) does resolve, which suggests the
-handle may have changed or is spelled differently.
+| Where | Value |
+| --- | --- |
+| `client/src/content/profile.ts` → `name`, `github` | `Elyse Dev` · `https://github.com/elyseprodev` |
+| `client/src/content/site.ts` → `developerName`, `github` | same |
+| `server/src/config/env.ts` → `GITHUB_USERNAME` default | `elyseprodev` |
+| Hero headline, About, OG image, footer, contact page, developer mark, metadata | `Elyse Dev` / `elyseprodev` |
 
-Fix it in **three** places:
+Verified live during development: 11 public repositories, 10 non-fork, and the GitHub page
+renders them along with the aggregated language breakdown.
 
-| File                                   | What to change                                     |
-| -------------------------------------- | -------------------------------------------------- |
-| `client/src/content/profile.ts`        | `github:` URL                                      |
-| `client/src/content/site.ts`           | `github:` URL                                      |
-| `server/src/config/env.ts` / `.env`    | `GITHUB_USERNAME=` (defaults to `ElissaElyse7`)     |
+> The full legal name `MURENGERANTWARI Elyse` is no longer displayed anywhere. If you want it
+> shown again (for example on an About page aimed at recruiters), set `profile.name` and
+> `site.developerName` — one place each.
 
-Until then the GitHub page shows an honest "curated list" fallback instead of live activity.
+### What that changed about your projects — needs your answer
+
+Now that the repositories are visible, here is what the account actually contains, next to the
+projects on the site:
+
+| Repository | Language | Matches a project on the site? |
+| --- | --- | --- |
+| `portfolio` | — | ✅ **Elyse Dev Portfolio** (already linked) |
+| `app-video` | TypeScript | ❓ Possibly **Video Web Application** |
+| `video_search` | CSS | ❓ Possibly **Video Web Application** |
+| `elyseprodev` | — | Profile repository |
+| `game` | Vue | ➕ Not on the site — worth adding? |
+| `new-game` | JavaScript | ➕ Not on the site — worth adding? |
+| `project` | CSS | ➕ Not on the site — worth adding? |
+| `the-javascript-question` | — | ➕ Not on the site — worth adding? |
+| `side-bar` | — | ➕ Not on the site — worth adding? |
+| `first-c` | — | ➕ Not on the site — worth adding? |
+
+**Tell me which repository belongs to which project** and I will wire up the links, add real
+repository entries for the projects above, and (if you want) add the game and video-search work
+as their own projects. Until then no repository is guessed at: the site only links what is
+already verified, and the GitHub page lists the repositories directly so nothing is hidden.
+
+**One consistency note:** the account's primary languages are CSS, JavaScript, TypeScript and
+**Vue**. Vue is not listed in `client/src/content/skills.ts` — if you work in Vue, say so and I
+will add it to the Frontend group (the skills page deliberately only claims what you confirm).
 
 ---
 
