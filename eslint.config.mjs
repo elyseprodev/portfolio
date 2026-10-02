@@ -49,6 +49,9 @@ export default tseslint.config(
       ...nextPlugin.configs["core-web-vitals"].rules,
       ...reactHooks.configs.recommended.rules,
       ...jsxA11y.configs.recommended.rules,
+      // This rule needs a pages-directory hint; `next build` (running from
+      // client/, where client/eslint.config.mjs applies) covers it properly.
+      "@next/next/no-html-link-for-pages": "off",
       // Empty alt text is valid for purely decorative images.
       "jsx-a11y/alt-text": ["error", { img: ["Image"] }],
     },
