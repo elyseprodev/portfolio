@@ -1,0 +1,39 @@
+{
+  "name": "elyse-dev-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ELYSE DEV — premium liquid-glass developer portfolio for MURENGERANTWARI Elyse (client / server / database monorepo).",
+  "workspaces": [
+    "database",
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c yellow,cyan \"npm run dev -w @elyse/server\" \"npm run dev -w @elyse/client\"",
+    "dev:client": "npm run dev -w @elyse/client",
+    "dev:server": "npm run dev -w @elyse/server",
+    "build": "npm run build -w @elyse/client",
+    "start": "concurrently -n server,client -c yellow,cyan \"npm run start -w @elyse/server\" \"npm run start -w @elyse/client\"",
+    "lint": "eslint .",
+    "typecheck": "npm run typecheck --workspaces --if-present",
+    "test": "npm run test -w @elyse/server",
+    "db:sync": "npm run content:sync -w @elyse/database",
+    "db:seed": "npm run seed -w @elyse/database",
+    "db:verify": "npm run verify -w @elyse/database"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.1",
+    "@next/eslint-plugin-next": "^15.5.27",
+    "@types/node": "^22.19.1",
+    "concurrently": "^9.2.1",
+    "eslint": "^9.39.1",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "globals": "^16.5.0",
+    "typescript": "^5.9.3",
+    "typescript-eslint": "^8.48.0"
+  },
+  "engines": {
+    "node": ">=20.9.0"
+  }
+}

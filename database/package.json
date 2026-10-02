@@ -1,0 +1,29 @@
+{
+  "name": "@elyse/database",
+  "version": "1.0.0",
+  "private": true,
+  "description": "ELYSE DEV — database layer: schema definitions, models, seed data and persistence adapters (MongoDB + local JSON store fallback).",
+  "type": "module",
+  "main": "./src/index.ts",
+  "types": "./src/index.ts",
+  "exports": {
+    ".": "./src/index.ts",
+    "./store": "./src/store/index.ts",
+    "./types": "./src/types.ts"
+  },
+  "scripts": {
+    "content:sync": "tsx scripts/sync-content.ts",
+    "seed": "tsx scripts/seed.ts",
+    "verify": "tsx scripts/verify.ts",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "dotenv": "^17.2.3",
+    "mongoose": "^8.20.1"
+  },
+  "devDependencies": {
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3",
+    "@types/node": "^22.19.1"
+  }
+}
