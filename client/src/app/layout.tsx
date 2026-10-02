@@ -1,6 +1,15 @@
 import type { Metadata, Viewport } from "next";
-import { GeistSans } from "geist/font/sans";
-import { GeistMono } from "geist/font/mono";
+/**
+ * Fonts are self-hosted, so there is no runtime request to a font CDN.
+ *
+ * These imports list every subset the family ships, but each @font-face carries
+ * its own `unicode-range`: a browser downloads only the subsets the page
+ * actually renders. A visitor reading English fetches two files, not eleven —
+ * and a reader in another script still gets the right glyphs, which is worth
+ * more than saving a file in a package.
+ */
+import "@fontsource-variable/inter";
+import "@fontsource-variable/plus-jakarta-sans";
 
 import "./globals.css";
 
@@ -55,7 +64,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={`${GeistSans.variable} ${GeistMono.variable}`}>
+    <html lang="en">
       <body className="relative min-h-dvh antialiased">
         {/* Keeps content readable if JavaScript never runs. */}
         <noscript>

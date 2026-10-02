@@ -15,9 +15,11 @@ import { randomUUID, createHash } from "node:crypto";
 import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type {
+  Certificate,
   ContactMessage,
   ContactMessageInput,
   ContentBundle,
+  Course,
   ExperienceEntry,
   Profile,
   Project,
@@ -32,6 +34,7 @@ const DATABASE_ROOT = join(here, "..", "..");
 const SEED_DIR = join(DATABASE_ROOT, "data");
 const DATA_DIR = join(DATABASE_ROOT, ".data");
 const MESSAGES_FILE = join(DATA_DIR, "contact-messages.json");
+const CERTIFICATES_FILE = join(DATA_DIR, "certificates.json");
 
 async function readJson<T>(file: string, fallback: T): Promise<T> {
   try {
@@ -51,6 +54,7 @@ export class JsonContentStore implements ContentStore {
   };
 
   private messages: ContactMessage[] | null = null;
+  private certificates: Certificate[] | null = null;
 
   async init(): Promise<void> {
     if (!existsSync(DATA_DIR)) {
@@ -95,14 +99,55 @@ export class JsonContentStore implements ContentStore {
     return readJson<ExperienceEntry[]>(join(SEED_DIR, "experience.json"), []);
   }
 
+  async listCourses(): Promise<Course[]> {
+    return readJson<Course[]>(join(SEED_DIR, "courses.json"), []);
+  }
+
+  async getCourse(slug: string): Promise<Course | null> {
+    const courses = await this.listCourses();
+    return courses.find((course) => course.slug === slug) ?? null;
+  }
+
   async getContent(): Promise<ContentBundle> {
-    const [profile, projects, skillGroups, experience] = await Promise.all([
-      this.getProfile(),
-      this.listProjects(),
-      this.listSkillGroups(),
-      this.listExperience(),
-    ]);
-    return { profile, projects, skillGroups, experience };
+    const [profile, projects, skillGroups, experience, courses, courseTracks] =
+      await Promise.all([
+        this.getProfile(),
+        this.listProjects(),
+        this.listSkillGroups(),
+        this.listExperience(),
+        this.listCourses(),
+        readJson<ContentBundle["courseTracks"]>(
+          join(SEED_DIR, "course-tracks.json"),
+          [],
+        ),
+      ]);
+    return { profile, projects, skillGroups, experience, courses, courseTracks };
+  }
+
+  /**
+   * Certificates issued by the academy. The JSON store keeps them beside the
+   * contact messages in `database/.data/` — durable for local use, explicitly
+   * not a production database (set MONGODB_URI for that).
+   */
+  private async loadCertificates(): Promise<Certificate[]> {
+    if (!this.certificates) {
+      this.certificates = await readJson<Certificate[]>(CERTIFICATES_FILE, []);
+    }
+    return this.certificates;
+  }
+
+  async saveCertificate(certificate: Certificate): Promise<Certificate> {
+    const store = await this.loadCertificates();
+    const next = [...store.filter((item) => item.code !== certificate.code), certificate];
+    await writeFile(CERTIFICATES_FILE, `${JSON.stringify(next, null, 2)}\n`, "utf8");
+    this.certificates = next;
+    return certificate;
+  }
+
+  async getCertificate(code: string): Promise<Certificate | null> {
+    const store = await this.loadCertificates();
+    const normalised = code.trim().toUpperCase();
+    return store.find((item) => item.code === normalised) ?? null;
   }
 
   async createContactMessage(
@@ -153,5 +198,6 @@ export class JsonContentStore implements ContentStore {
 
   async close(): Promise<void> {
     this.messages = null;
+    this.certificates = null;
   }
 }

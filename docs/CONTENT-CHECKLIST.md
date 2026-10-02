@@ -99,6 +99,44 @@ stack and any screenshots — and it goes in exactly like Book of Family Library
 
 ---
 
+## 1d. The Academy — what I built, and the four decisions that are yours
+
+You asked for courses in every programming language, a programme to help developers improve, a
+certificate for students who finish, more images, better performance and SEO, and a much-loved
+font. All of it is built and verified. Four things need your judgement rather than mine:
+
+**1. Course statuses.** 33 courses ship, but only **6 are marked `available`**: HTML & CSS,
+JavaScript, TypeScript, PHP, SQL and Bash. Everything else is `in-development` or `planned`
+(the Chinese, Ruby, Go, Rust, Java, C#, Python and most others are `in-development`; the long tail
+is `planned`). I marked a course available only where I could publish a curriculum I would defend.
+Flip the word in `client/src/content/courses.ts` and the badges, the certificate type and the
+sitemap all follow.
+
+> **This matters for honesty:** a certificate issued for a course that is not marked available is
+> issued as a clearly-labelled **SAMPLE**. Nothing on the site claims a student completed a course
+> that does not exist yet.
+
+**2. Languages.** 33 courses: HTML & CSS, JavaScript, TypeScript, PHP, Python, Java, C#, Go, Ruby,
+Elixir, Scala, Solidity, C, C++, Rust, Zig, Assembly, SQL, R, Julia, Fortran, Swift, Kotlin, Dart,
+Bash, PowerShell, Lua, Perl, Haskell, F#, Clojure, Erlang, Prolog. Missing anything you want —
+COBOL, MATLAB, Groovy, COBOL, Objective-C, Visual Basic, Ada, OCaml, Scheme, Crystal, Nim, V? Say
+the word and each one is a single object in `courses.ts`.
+
+**3. Ratings, student numbers and reviews.** Deliberately absent everywhere. If you have real
+figures (completion numbers, testimonials with permission), send them and they go in — but I will
+not invent them, and the test suite fails the build if a course claims an unverifiable statistic.
+
+**4. The certificate's legal footing.** The certificate carries your name and a verification code,
+and the record is public at `/certificate/<CODE>`. If you want it to state an institution, a
+signature, a seal or a specific wording ("This certificate confirms…"), tell me the exact text.
+
+**Also worth knowing:** certificates live in the same store as everything else. With a MongoDB URI
+they persist properly; without one they are written to `database/.data/certificates.json` — durable
+locally, explicitly not a production database. Run `npm run db:seed` after deployment so the course
+catalogue is in MongoDB too.
+
+---
+
 ## 2. Public e-mail address (optional)
 
 `client/src/content/profile.ts` → `email: ""`
@@ -178,6 +216,8 @@ code change.
 | About page (aside) | `public/images/elyse-dev-mark.svg` | Your monogram, standing in for a portrait |
 | Project cards + details | `public/images/projects/<slug>-cover.jpg` | One cover per project |
 | Project details | `public/images/projects/<slug>.svg` | Line artwork beside each cover |
+| Academy course cards and pages | `public/images/courses/<slug>.svg` | One generated cover per language (33) |
+| Academy track banners | `public/images/courses/tracks/<track>.svg` | One per track (7) |
 | Social sharing | generated at `/opengraph-image` | Text card — not a file you replace |
 | Browser icon | `client/src/app/icon.svg` | Monogram mark |
 

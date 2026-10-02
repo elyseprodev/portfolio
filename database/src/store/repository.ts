@@ -9,9 +9,11 @@
  * working identically with or without a MongoDB instance available.
  */
 import type {
+  Certificate,
   ContactMessage,
   ContactMessageInput,
   ContentBundle,
+  Course,
   ExperienceEntry,
   Profile,
   Project,
@@ -36,7 +38,13 @@ export interface ContentStore {
   getProject(slug: string): Promise<Project | null>;
   listSkillGroups(): Promise<SkillGroup[]>;
   listExperience(): Promise<ExperienceEntry[]>;
+  listCourses(): Promise<Course[]>;
+  getCourse(slug: string): Promise<Course | null>;
   getContent(): Promise<ContentBundle>;
+
+  /** Certificates are written once and read back by their verification code. */
+  saveCertificate(certificate: Certificate): Promise<Certificate>;
+  getCertificate(code: string): Promise<Certificate | null>;
 
   createContactMessage(
     input: ContactMessageInput,

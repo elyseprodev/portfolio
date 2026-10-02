@@ -35,20 +35,22 @@ async function main(): Promise<void> {
   }
 
   console.info("[db:seed] connected to MongoDB");
-  const [projects, skills, experience, profile] = await Promise.all([
+  const [projects, skills, experience, profile, courses, tracks] = await Promise.all([
     readSeed<unknown[]>("projects.json"),
     readSeed<unknown[]>("skills.json"),
     readSeed<unknown[]>("experience.json"),
     readSeed<unknown>("profile.json"),
+    readSeed<unknown[]>("courses.json"),
+    readSeed<unknown[]>("course-tracks.json"),
   ]);
 
   // MongoDB is only available in production/CI environments; exercising the
   // collection writes happens through the API. Here we simply verify that the
   // store answered and report what would be seeded.
   console.info(
-    `[db:seed] prepared ${projects.length} projects, ${skills.length} skill groups, ${experience.length} experience entries and ${
+    `[db:seed] prepared ${projects.length} projects, ${skills.length} skill groups, ${experience.length} experience entries, ${
       profile ? 1 : 0
-    } profile document.`,
+    } profile document, ${courses.length} courses and ${tracks.length} course tracks.`,
   );
 
   await resetContentStore();

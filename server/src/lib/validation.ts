@@ -77,3 +77,43 @@ export const projectQuerySchema = z.object({
 });
 
 export type ProjectQuery = z.infer<typeof projectQuerySchema>;
+
+/* -------------------------------------------------------------------------- */
+/* Academy                                                                    */
+/* -------------------------------------------------------------------------- */
+
+export const courseQuerySchema = z.object({
+  track: z.string().trim().max(40).optional(),
+  level: z.enum(["beginner", "intermediate", "advanced"]).optional(),
+  status: z.enum(["available", "in-development", "planned"]).optional(),
+  featured: z
+    .union([z.boolean(), z.enum(["true", "false"])])
+    .transform((value) => value === true || value === "true")
+    .optional(),
+  limit: z.coerce.number().int().min(1).max(200).optional(),
+});
+
+/**
+ * A certificate carries a student name and the course they completed — nothing
+ * else. The name is validated as text, not as a credential: any human name in
+ * any script is acceptable, and punctuation is allowed.
+ */
+export const certificateRequestSchema = z.object({
+  studentName: z
+    .string()
+    .trim()
+    .min(2, "Please enter the name that should appear on the certificate.")
+    .max(80, "Please keep the name under 80 characters.")
+    .refine((value) => /[\p{L}\p{N}]/u.test(value), {
+      message: "The name needs at least one letter or number.",
+    }),
+  courseSlug: z
+    .string()
+    .trim()
+    .min(1, "Please choose a course.")
+    .max(80)
+    .regex(/^[a-z0-9-]+$/, "Course slugs are lowercase words separated by dashes."),
+});
+
+export type CourseQuery = z.infer<typeof courseQuerySchema>;
+export type CertificateRequest = z.infer<typeof certificateRequestSchema>;

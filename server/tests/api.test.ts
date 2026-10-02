@@ -13,7 +13,17 @@ import { after, before, describe, it } from "node:test";
 import type { Server } from "node:http";
 
 import type { Profile, Project, SkillGroup } from "@elyse/database/types";
-import { createApp } from "../src/app.ts";
+
+/**
+ * Test isolation: contact submissions are rate limited per fingerprint, and the
+ * count is persisted in the git-ignored local store. Giving this suite its own
+ * salt keeps it independent of how many messages other suites sent — and of how
+ * many times the suite has already run today.
+ */
+process.env.CONTACT_FINGERPRINT_SALT = `api-test-${Date.now()}-${Math.random()}`;
+process.env.CONTACT_MAX_PER_WINDOW = "50";
+
+const { createApp } = await import("../src/app.ts");
 
 interface ApiEnvelope<T> {
   data: T;

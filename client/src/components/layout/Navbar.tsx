@@ -20,8 +20,11 @@ export function Navbar() {
   const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
 
-  const isActive = (href: string) =>
-    href === "/" ? pathname === "/" : pathname.startsWith(href);
+  const matches = (prefix: string) =>
+    prefix === "/" ? pathname === "/" : pathname.startsWith(prefix);
+
+  const isActive = (item: { href: string; related?: string[] }) =>
+    matches(item.href) || (item.related ?? []).some(matches);
 
   return (
     <>
@@ -70,7 +73,7 @@ export function Navbar() {
                   <li key={item.href}>
                     <Link
                       href={item.href}
-                      aria-current={isActive(item.href) ? "page" : undefined}
+                      aria-current={isActive(item) ? "page" : undefined}
                       className="nav-link inline-block rounded-full px-3 py-2 text-sm"
                     >
                       {item.label}

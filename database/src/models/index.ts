@@ -7,7 +7,10 @@
 import mongoose from "mongoose";
 import type { Model } from "mongoose";
 import type {
+  Certificate,
   ContactMessage,
+  Course,
+  CourseTrack,
   ExperienceEntry,
   Profile,
   Project,
@@ -20,6 +23,11 @@ import {
   skillGroupSchema,
 } from "../schemas/content.schema.js";
 import { projectSchema } from "../schemas/project.schema.js";
+import {
+  certificateSchema,
+  courseSchema,
+  courseTrackSchema,
+} from "../schemas/course.schema.js";
 
 export interface DatabaseModels {
   ProjectModel: Model<Project>;
@@ -27,6 +35,9 @@ export interface DatabaseModels {
   ExperienceModel: Model<ExperienceEntry>;
   ProfileModel: Model<Profile>;
   ContactMessageModel: Model<Omit<ContactMessage, "id">>;
+  CourseModel: Model<Course>;
+  CourseTrackModel: Model<CourseTrack>;
+  CertificateModel: Model<Certificate>;
 }
 
 let cached: DatabaseModels | null = null;
@@ -53,6 +64,15 @@ export function getModels(): DatabaseModels {
         "ContactMessage",
         contactMessageSchema,
       ),
+    CourseModel:
+      (mongoose.models.Course as Model<Course>) ??
+      mongoose.model<Course>("Course", courseSchema),
+    CourseTrackModel:
+      (mongoose.models.CourseTrack as Model<CourseTrack>) ??
+      mongoose.model<CourseTrack>("CourseTrack", courseTrackSchema),
+    CertificateModel:
+      (mongoose.models.Certificate as Model<Certificate>) ??
+      mongoose.model<Certificate>("Certificate", certificateSchema)
   };
 
   return cached;

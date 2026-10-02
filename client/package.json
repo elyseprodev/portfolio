@@ -2,7 +2,7 @@
   "name": "@elyse/client",
   "version": "1.0.0",
   "private": true,
-  "description": "ELYSE DEV \u2014 Next.js portfolio client (liquid-glass UI).",
+  "description": "ELYSE DEV — Next.js portfolio client (liquid-glass UI).",
   "scripts": {
     "dev": "next dev -p 3000 --hostname 0.0.0.0",
     "build": "next build",
@@ -15,6 +15,8 @@
   },
   "dependencies": {
     "@elyse/database": "*",
+    "@fontsource-variable/inter": "^5.3.0",
+    "@fontsource-variable/plus-jakarta-sans": "^5.3.0",
     "geist": "^1.7.2",
     "motion": "^13.5.0",
     "next": "^15.5.27",
@@ -27,7 +29,7 @@
     "@types/react": "^19.1.13",
     "@types/react-dom": "^19.1.9",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3",
-    "tsx": "^4.20.6"
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
   }
 }

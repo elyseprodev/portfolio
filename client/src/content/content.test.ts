@@ -16,6 +16,14 @@ import { describe, it } from "node:test";
 import { experience, placeholderExperience, confirmedExperience } from "./experience";
 import { profile } from "./profile";
 import { projectCategoryLabels, projects } from "./projects";
+import {
+  courseLevelLabels,
+  courseStatusLabels,
+  courseTracks,
+  courses,
+  getCatalogueTotals,
+} from "./courses";
+import { growthProgram } from "./growth";
 import { skillGroups, technologyChips } from "./skills";
 
 /** client/public — used to prove every referenced asset exists. */
@@ -226,5 +234,107 @@ describe("cross-content consistency", () => {
     }
     // At most two: the profile URL plus the repository that hosts this project.
     assert.ok(urls.size <= 3, `unexpected spread of GitHub URLs: ${[...urls].join(", ")}`);
+  });
+});
+
+describe("academy courses", () => {
+  it("covers every major programming language with a unique slug", () => {
+    const slugs = courses.map((course) => course.slug);
+    assert.equal(new Set(slugs).size, slugs.length, "duplicate course slug");
+    assert.ok(courses.length >= 25, `expected a broad catalogue, found ${courses.length}`);
+  });
+
+  it("keeps language names unique too", () => {
+    const languages = courses.map((course) => course.language);
+    assert.equal(new Set(languages).size, languages.length, "duplicate language");
+  });
+
+  it("places every course in a real track", () => {
+    const trackIds = new Set(courseTracks.map((track) => track.id));
+    for (const course of courses) {
+      assert.ok(trackIds.has(course.trackId), `${course.slug} has an unknown track`);
+    }
+  });
+
+  it("labels every level and status it uses", () => {
+    for (const course of courses) {
+      assert.ok(course.level in courseLevelLabels, `${course.slug} has an unlabelled level`);
+      assert.ok(course.status in courseStatusLabels, `${course.slug} has an unlabelled status`);
+    }
+  });
+
+  it("gives every course a complete, honest curriculum", () => {
+    for (const course of courses) {
+      assert.ok(course.summary.length > 60, `${course.slug} summary is too thin`);
+      assert.ok(course.outcomes.length >= 3, `${course.slug} needs at least three outcomes`);
+      assert.ok(course.prerequisites.length > 0, `${course.slug} needs prerequisites`);
+      assert.ok(course.tooling.length >= 2, `${course.slug} needs real tools listed`);
+      assert.ok(course.capstone.length > 10, `${course.slug} needs a capstone`);
+      assert.ok(course.weeks > 0 && course.hours > 0);
+      assert.equal(course.modules.length, 6, `${course.slug} should have six modules`);
+
+      const moduleHours = course.modules.reduce((total, lesson) => total + lesson.hours, 0);
+      assert.equal(
+        moduleHours,
+        course.hours,
+        `${course.slug} module hours must add up to the course hours`,
+      );
+
+      for (const lesson of course.modules) {
+        assert.ok(lesson.title.trim().length > 3, `${course.slug} has an untitled module`);
+        assert.ok(lesson.summary.length > 30, `${course.slug}/"${lesson.title}" is too thin`);
+        assert.ok(lesson.hours > 0, `${course.slug}/"${lesson.title}" has no hours`);
+      }
+    }
+  });
+
+  it("references course artwork that exists in public/", () => {
+    for (const course of courses) {
+      assert.ok(course.image.startsWith("/images/courses/"), `${course.slug} artwork path is odd`);
+      assert.ok(
+        existsSync(join(PUBLIC_DIR, course.image.replace(/^\//, ""))),
+        `missing course artwork: ${course.image}`,
+      );
+    }
+  });
+
+  it("never claims a rating, a student count or a review", () => {
+    // Honesty guard: only facts Elyse can supply may appear on a course.
+    const banned = /(\d+\s*(stars?|ratings?|reviews?)|\d[\d,]*\s*(students|learners|graduates)|best[- ]selling)/i;
+    for (const course of courses) {
+      const text = [course.summary, course.tagline, ...course.outcomes, course.capstone].join(" ");
+      assert.doesNotMatch(text, banned, `${course.slug} claims an unverifiable statistic`);
+    }
+  });
+
+  it("counts the catalogue from the same data the pages render", () => {
+    const totals = getCatalogueTotals();
+    assert.equal(totals.courses, courses.length);
+    assert.equal(totals.languages, courses.length);
+    assert.equal(totals.tracks, courseTracks.length);
+    assert.equal(
+      totals.hours,
+      courses.reduce((total, course) => total + course.hours, 0),
+    );
+    assert.ok(totals.modules >= courses.length * 6);
+    assert.ok(totals.available > 0, "at least one course should be available to study");
+  });
+});
+
+describe("growth programme", () => {
+  it("describes four phases with practices and evidence", () => {
+    assert.equal(growthProgram.phases.length, 4);
+    for (const phase of growthProgram.phases) {
+      assert.ok(phase.practices.length >= 3, `${phase.id} needs practices`);
+      assert.ok(phase.evidence.length > 20, `${phase.id} needs evidence to produce`);
+      assert.ok(phase.goal.length > 20, `${phase.id} needs a goal`);
+    }
+  });
+
+  it("keeps a weekly rhythm for every working day", () => {
+    assert.equal(growthProgram.rhythm.length, 5);
+    for (const day of growthProgram.rhythm) {
+      assert.ok(day.focus.length > 3 && day.detail.length > 10);
+    }
   });
 });

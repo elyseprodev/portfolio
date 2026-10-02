@@ -2,6 +2,7 @@ import type { MetadataRoute } from "next";
 
 import { navItems, site } from "@/content/site";
 import { projects } from "@/content/projects";
+import { courses } from "@/content/courses";
 
 /**
  * Sitemap.
@@ -30,5 +31,35 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  return [...staticRoutes, ...projectRoutes];
+  // The academy is a first-class section: every course gets its own entry so
+  // search engines discover the catalogue from one place.
+  const academyRoutes: MetadataRoute.Sitemap = [
+    {
+      url: `${base}/academy`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${base}/academy/program`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    },
+    {
+      url: `${base}/certificate`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.6,
+    },
+  ];
+
+  const courseRoutes: MetadataRoute.Sitemap = courses.map((course) => ({
+    url: `${base}/academy/${course.slug}`,
+    lastModified: now,
+    changeFrequency: "yearly",
+    priority: 0.6,
+  }));
+
+  return [...staticRoutes, ...academyRoutes, ...projectRoutes, ...courseRoutes];
 }

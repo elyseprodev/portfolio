@@ -16,6 +16,7 @@ import { profile } from "../../client/src/content/profile.ts";
 import { projects } from "../../client/src/content/projects.ts";
 import { skillGroups } from "../../client/src/content/skills.ts";
 import { experience } from "../../client/src/content/experience.ts";
+import { courses, courseTracks } from "../../client/src/content/courses.ts";
 
 const here = dirname(fileURLToPath(import.meta.url));
 const DATA_DIR = join(here, "..", "data");
@@ -33,6 +34,8 @@ async function main(): Promise<void> {
     { file: "projects.json", payload: projects },
     { file: "skills.json", payload: skillGroups },
     { file: "experience.json", payload: experience },
+    { file: "courses.json", payload: courses },
+    { file: "course-tracks.json", payload: courseTracks },
   ];
 
   for (const target of targets) {
@@ -42,7 +45,7 @@ async function main(): Promise<void> {
   }
 
   console.info(
-    `[db:sync] done — ${projects.length} projects, ${skillGroups.length} skill groups, ${experience.length} experience entries.`,
+    `[db:sync] done — ${projects.length} projects, ${skillGroups.length} skill groups, ${experience.length} experience entries, ${courses.length} courses, ${courseTracks.length} course tracks.`,
   );
 }
 

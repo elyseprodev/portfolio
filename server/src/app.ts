@@ -13,6 +13,7 @@ import {
   notFoundHandler,
   requestLogger,
 } from "./middleware/error-handler.ts";
+import { academyRouter } from "./routes/academy.routes.ts";
 import { contactRouter } from "./routes/contact.routes.ts";
 import { contentRouter } from "./routes/content.routes.ts";
 import { githubRouter } from "./routes/github.routes.ts";
@@ -48,7 +49,7 @@ export function createApp(): Express {
       name: "ELYSE DEV API",
       owner: "Elyse Dev",
       description:
-        "Portfolio content, contact messages and GitHub activity for elyse.dev.",
+        "Portfolio content, academy courses, certificates, contact messages and GitHub activity for elyse.dev.",
       routes: [
         "GET /api/health",
         "GET /api/content",
@@ -57,6 +58,10 @@ export function createApp(): Express {
         "GET /api/projects/:slug",
         "GET /api/skills",
         "GET /api/experience",
+        "GET /api/courses",
+        "GET /api/courses/:slug",
+        "GET /api/certificates/:code",
+        "POST /api/certificates",
         "GET /api/github",
         "POST /api/contact",
       ],
@@ -65,6 +70,7 @@ export function createApp(): Express {
 
   app.use("/api", healthRouter);
   app.use("/api", contentRouter);
+  app.use("/api", academyRouter);
   app.use("/api", githubRouter);
   app.use("/api", contactRouter);
 

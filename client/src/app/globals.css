@@ -8,9 +8,21 @@
 
 @theme {
   /* --- typography ------------------------------------------------------- */
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, -apple-system,
-    "Segoe UI", sans-serif;
-  --font-mono: var(--font-geist-mono), ui-monospace, "SFMono-Regular", monospace;
+  /*
+   * Inter for everything you read and every control you touch, Plus Jakarta
+   * Sans for headings and numbers. Both are self-hosted through @fontsource,
+   * so there is no request to a font CDN at runtime and no layout shift: the
+   * files ship with the deployment and are preloaded by Next.
+   */
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, -apple-system,
+    "Segoe UI", Roboto, sans-serif;
+  --font-display: "Plus Jakarta Sans Variable", "Inter Variable", ui-sans-serif,
+    system-ui, sans-serif;
+  --font-mono: ui-monospace, "SFMono-Regular", "JetBrains Mono", Menlo, Consolas,
+    monospace;
+
+  /* Headings, numbers and numerals use the display face. */
+  --font-heading: var(--font-display);
 
   /* Fluid type scale — readable from 320px to 1440px without media queries. */
   --text-display: clamp(2.45rem, 6.2vw, 4.75rem);
@@ -145,6 +157,8 @@
     background-color: var(--color-ink-950);
     color: var(--color-text-primary);
     font-family: var(--font-sans);
+    font-feature-settings: "cv11", "ss01";
+    font-variation-settings: "opsz" 32;
     font-synthesis-weight: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -154,7 +168,14 @@
   h2,
   h3,
   h4 {
+    font-family: var(--font-display);
     text-wrap: balance;
+  }
+
+  /* Display face wherever a number is doing the talking. */
+  .font-display-numeric {
+    font-family: var(--font-display);
+    font-variant-numeric: tabular-nums;
   }
 
   p {
@@ -640,5 +661,51 @@
 @media (prefers-reduced-motion: reduce) {
   .btn-primary:hover::after {
     animation: none;
+  }
+}
+
+/* ==========================================================================
+   Certificate printing
+   A certificate is meant to be printed or saved as a PDF, so the document
+   itself gets a clean sheet: no ambient background, no glass blur, no
+   navigation chrome — just the record.
+   ========================================================================== */
+
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #111111 !important;
+  }
+
+  /* Everything that is not the certificate steps aside. */
+  header,
+  footer,
+  nav,
+  .no-print,
+  [data-print="hide"] {
+    display: none !important;
+  }
+
+  .certificate-print {
+    border: 1px solid #d4d4d8 !important;
+    background: #ffffff !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    color: #111111 !important;
+    break-inside: avoid;
+  }
+
+  .certificate-print * {
+    color: #111111 !important;
+    text-shadow: none !important;
+  }
+
+  .certificate-print .font-mono,
+  .certificate-print .font-display-numeric {
+    color: #111111 !important;
+  }
+
+  @page {
+    margin: 14mm;
   }
 }

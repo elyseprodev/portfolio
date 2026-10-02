@@ -284,6 +284,45 @@ generated Open Graph image and the build output rather than screenshots.
 
 ---
 
+## Academy — courses, curriculum and certificates
+
+The site ships a full course catalogue: **33 courses covering every major programming language**,
+grouped into 7 tracks, each with a real curriculum (six modules, prerequisites, tooling, outcomes
+and a capstone project) and a verifiable certificate.
+
+| Where | What it is |
+| --- | --- |
+| `/academy` | The catalogue: every track, every course, totals, and certificate issuance |
+| `/academy/<slug>` | One course: curriculum, outcomes, prerequisites, tooling, capstone |
+| `/academy/program` | The 12-week Developer Growth Programme for working developers |
+| `/certificate` | Issue a certificate, or verify a code |
+| `/certificate/<CODE>` | The verification record for one certificate |
+
+**Editing the catalogue.** Everything lives in `client/src/content/courses.ts` (courses) and
+`client/src/content/growth.ts` (the growth programme). One object per course; the `status` field
+decides what the site claims:
+
+- `available` — the material exists and can be studied now (earns a certificate of completion)
+- `in-development` — the curriculum is published, lessons are being produced (earns a *sample*
+  certificate, clearly labelled as one)
+- `planned` — on the roadmap
+
+After editing: `npm run db:sync` (mirrors the content into `database/data/`) and `npm run db:seed`
+(pushes it into MongoDB when a URI is configured).
+
+**Course artwork.** Generated per language by `node client/scripts/generate-course-artwork.mjs` into
+`client/public/images/courses/`. Replace a file with a real screenshot of the same name and nothing
+else changes.
+
+**Certificates.** Issued through `POST /api/certificates`, stored by the same `ContentStore` as the
+rest of the content (MongoDB, or the JSON store locally), and verified at `/certificate/<CODE>`.
+Codes use an alphabet without `0/O`, `1/I/L`, `2/Z`, `5/S` or `8/B`, are normalised before lookup,
+and issuance is rate limited per visitor. Only the printed name, course, issue date and curriculum
+size are stored — no email address, no account, no IP kept with the certificate.
+
+**Fonts.** Inter for text and UI, Plus Jakarta Sans for headings and numbers, both self-hosted
+through `@fontsource-variable` with `unicode-range` subsetting — no runtime request to a font CDN.
+
 ## Deployment
 
 Full walkthrough with verification steps and a troubleshooting table:

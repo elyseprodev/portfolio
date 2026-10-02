@@ -36,6 +36,12 @@ export const site = {
 } as const;
 
 export interface NavItem {
+  /**
+   * Extra route prefixes that belong to this section. The academy owns the
+   * certificate routes, so the nav still marks "Academy" as current on
+   * /certificate without adding a ninth top-level link.
+   */
+  related?: string[];
   href: string;
   label: string;
   /** Short description used by the mobile menu. */
@@ -47,6 +53,12 @@ export const navItems: NavItem[] = [
   { href: "/about", label: "About", hint: "Who I am and how I work" },
   { href: "/skills", label: "Skills", hint: "Technologies I build with" },
   { href: "/projects", label: "Projects", hint: "What I have been building" },
+  {
+    href: "/academy",
+    label: "Academy",
+    hint: "Courses in every major language",
+    related: ["/certificate"],
+  },
   { href: "/experience", label: "Experience", hint: "Journey and learning" },
   { href: "/github", label: "GitHub", hint: "Repositories and activity" },
   { href: "/contact", label: "Contact", hint: "Let's work together" },

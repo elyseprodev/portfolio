@@ -93,10 +93,10 @@ export function MobileNavigation({
         <nav aria-label="Mobile">
           <ul className="flex flex-col gap-1">
             {items.map((item, index) => {
+              const matches = (prefix: string) =>
+                prefix === "/" ? pathname === "/" : pathname.startsWith(prefix);
               const active =
-                item.href === "/"
-                  ? pathname === "/"
-                  : pathname.startsWith(item.href);
+                matches(item.href) || (item.related ?? []).some(matches);
 
               return (
                 <li key={item.href}>

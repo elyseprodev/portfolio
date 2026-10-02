@@ -167,6 +167,129 @@ export interface ContactMessage extends Omit<ContactMessageInput, "company"> {
 }
 
 /* -------------------------------------------------------------------------- */
+/* Academy — courses, learning tracks and certificates                        */
+/* -------------------------------------------------------------------------- */
+
+export type CourseLevel = "beginner" | "intermediate" | "advanced";
+
+/**
+ * `available`  — the course material exists and can be studied now.
+ * `in-development` — the curriculum is published, the lessons are being produced.
+ * `planned`    — listed on the roadmap.
+ * A course is never shown as available unless Elyse says so: the status is a
+ * single editable field in `client/src/content/courses.ts`.
+ */
+export type CourseStatus = "available" | "in-development" | "planned";
+
+export interface CourseModule {
+  title: string;
+  summary: string;
+  /** Rough study time for the module, in hours. */
+  hours: number;
+}
+
+export interface Course {
+  slug: string;
+  /** The language as people write it, e.g. "C++". */
+  language: string;
+  /** Two-to-four letter mark used by the generated course artwork. */
+  mark: string;
+  trackId: string;
+  level: CourseLevel;
+  status: CourseStatus;
+  tagline: string;
+  summary: string;
+  weeks: number;
+  hours: number;
+  outcomes: string[];
+  modules: CourseModule[];
+  capstone: string;
+  prerequisites: string[];
+  /** Tools a student installs in week one. */
+  tooling: string[];
+  image: string;
+  featured?: boolean;
+}
+
+/**
+ * The subset of a course a listing needs.
+ *
+ * Course pages pass this instead of the whole record: the full curriculum of
+ * thirty-plus courses serialised into one page payload is several hundred
+ * kilobytes of HTML nobody reads. The detail page fetches the full course.
+ */
+export interface CourseSummary {
+  slug: string;
+  language: string;
+  mark: string;
+  trackId: string;
+  level: CourseLevel;
+  status: CourseStatus;
+  tagline: string;
+  weeks: number;
+  hours: number;
+  moduleCount: number;
+  image: string;
+}
+
+export interface CourseTrack {
+  id: string;
+  name: string;
+  /** Pictograph shown next to the track name; `undefined` renders text only. */
+  emoji?: string;
+  description: string;
+}
+
+export interface Certificate {
+  /** Human-readable verification code, e.g. `EDA-7F3K-M2QX`. */
+  code: string;
+  /** Student name exactly as issued. */
+  studentName: string;
+  courseSlug: string;
+  courseTitle: string;
+  /** `sample` when issued for a course that is not marked available yet. */
+  kind: "completion" | "sample";
+  issuedAt: string;
+  /** How many hours of curriculum the certificate covers. */
+  hours: number;
+  moduleCount: number;
+}
+
+export interface CertificateInput {
+  studentName: string;
+  courseSlug: string;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Developer growth programme                                                 */
+/* -------------------------------------------------------------------------- */
+
+export interface GrowthPhase {
+  id: string;
+  name: string;
+  emoji?: string;
+  weeks: string;
+  goal: string;
+  practices: string[];
+  /** What a learner can show at the end of the phase. */
+  evidence: string;
+}
+
+export interface GrowthProgram {
+  id: string;
+  name: string;
+  tagline: string;
+  summary: string;
+  durationWeeks: number;
+  weeklyHours: string;
+  audiences: string[];
+  principles: { title: string; body: string }[];
+  phases: GrowthPhase[];
+  rhythm: { day: string; focus: string; detail: string }[];
+  assessment: { title: string; body: string }[];
+}
+
+/* -------------------------------------------------------------------------- */
 /* Content bundle & service metadata                                          */
 /* -------------------------------------------------------------------------- */
 
@@ -175,6 +298,8 @@ export interface ContentBundle {
   projects: Project[];
   skillGroups: SkillGroup[];
   experience: ExperienceEntry[];
+  courses: Course[];
+  courseTracks: CourseTrack[];
 }
 
 export interface ServiceMeta {

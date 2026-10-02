@@ -19,6 +19,8 @@ import { after, before, describe, it } from "node:test";
 import type { Server } from "node:http";
 
 // Port 1 is reserved and never listening: the connection fails immediately.
+process.env.CONTACT_FINGERPRINT_SALT = `degraded-test-${Date.now()}-${Math.random()}`;
+process.env.CONTACT_MAX_PER_WINDOW = "50";
 process.env.MONGODB_URI = "mongodb://127.0.0.1:1/elyse_dev_unreachable";
 process.env.MONGODB_TIMEOUT_MS = "800";
 

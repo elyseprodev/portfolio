@@ -7,9 +7,12 @@ import { dirname, join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Connection } from "mongoose";
 import type {
+  Certificate,
   ContactMessage,
   ContactMessageInput,
   ContentBundle,
+  Course,
+  CourseTrack,
   ExperienceEntry,
   Profile,
   Project,
@@ -57,14 +60,24 @@ export class MongoContentStore implements ContentStore {
   constructor(private readonly connection: Connection) {}
 
   async init(): Promise<void> {
-    const { ProjectModel, SkillGroupModel, ExperienceModel, ProfileModel } =
-      getModels();
+    const {
+      ProjectModel,
+      SkillGroupModel,
+      ExperienceModel,
+      ProfileModel,
+      CourseModel,
+      CourseTrackModel,
+      CertificateModel,
+    } = getModels();
 
     await Promise.all([
       ProjectModel.syncIndexes(),
       SkillGroupModel.syncIndexes(),
       ExperienceModel.syncIndexes(),
       ProfileModel.syncIndexes(),
+      CourseModel.syncIndexes(),
+      CourseTrackModel.syncIndexes(),
+      CertificateModel.syncIndexes(),
     ]);
 
     await this.seedIfEmpty();
@@ -72,15 +85,24 @@ export class MongoContentStore implements ContentStore {
 
   /** Seeds content collections on first run so the site is never empty. */
   private async seedIfEmpty(): Promise<void> {
-    const { ProjectModel, SkillGroupModel, ExperienceModel, ProfileModel } =
-      getModels();
+    const {
+      ProjectModel,
+      SkillGroupModel,
+      ExperienceModel,
+      ProfileModel,
+      CourseModel,
+      CourseTrackModel,
+    } = getModels();
 
-    const [projects, skills, experience, profile] = await Promise.all([
-      seedFile<Project[]>("projects.json", []),
-      seedFile<SkillGroup[]>("skills.json", []),
-      seedFile<ExperienceEntry[]>("experience.json", []),
-      seedFile<Profile | null>("profile.json", null),
-    ]);
+    const [projects, skills, experience, profile, courses, tracks] =
+      await Promise.all([
+        seedFile<Project[]>("projects.json", []),
+        seedFile<SkillGroup[]>("skills.json", []),
+        seedFile<ExperienceEntry[]>("experience.json", []),
+        seedFile<Profile | null>("profile.json", null),
+        seedFile<Course[]>("courses.json", []),
+        seedFile<CourseTrack[]>("course-tracks.json", []),
+      ]);
 
     if ((await ProjectModel.estimatedDocumentCount()) === 0 && projects.length) {
       await ProjectModel.insertMany(projects);
@@ -93,6 +115,12 @@ export class MongoContentStore implements ContentStore {
       experience.length
     ) {
       await ExperienceModel.insertMany(experience);
+    }
+    if ((await CourseModel.estimatedDocumentCount()) === 0 && courses.length) {
+      await CourseModel.insertMany(courses);
+    }
+    if ((await CourseTrackModel.estimatedDocumentCount()) === 0 && tracks.length) {
+      await CourseTrackModel.insertMany(tracks);
     }
     if ((await ProfileModel.estimatedDocumentCount()) === 0 && profile) {
       await ProfileModel.create(profile);
@@ -135,14 +163,53 @@ export class MongoContentStore implements ContentStore {
     return docs.map((doc) => toPlain<ExperienceEntry>(doc));
   }
 
+  async listCourses(): Promise<Course[]> {
+    const { CourseModel } = getModels();
+    const docs = await CourseModel.find().sort({ featured: -1, language: 1 }).exec();
+    return docs.map((doc) => toPlain<Course>(doc));
+  }
+
+  async getCourse(slug: string): Promise<Course | null> {
+    const { CourseModel } = getModels();
+    const doc = await CourseModel.findOne({ slug }).exec();
+    return doc ? toPlain<Course>(doc) : null;
+  }
+
   async getContent(): Promise<ContentBundle> {
-    const [profile, projects, skillGroups, experience] = await Promise.all([
-      this.getProfile(),
-      this.listProjects(),
-      this.listSkillGroups(),
-      this.listExperience(),
-    ]);
-    return { profile, projects, skillGroups, experience };
+    const [profile, projects, skillGroups, experience, courses, courseTracks] =
+      await Promise.all([
+        this.getProfile(),
+        this.listProjects(),
+        this.listSkillGroups(),
+        this.listExperience(),
+        this.listCourses(),
+        this.listCourseTracks(),
+      ]);
+    return { profile, projects, skillGroups, experience, courses, courseTracks };
+  }
+
+  private async listCourseTracks(): Promise<ContentBundle["courseTracks"]> {
+    const { CourseTrackModel } = getModels();
+    const docs = await CourseTrackModel.find().sort({ createdAt: 1 }).exec();
+    return docs.map((doc) => toPlain<ContentBundle["courseTracks"][number]>(doc));
+  }
+
+  async saveCertificate(certificate: Certificate): Promise<Certificate> {
+    const { CertificateModel } = getModels();
+    await CertificateModel.updateOne(
+      { code: certificate.code },
+      { $set: certificate },
+      { upsert: true },
+    ).exec();
+    return certificate;
+  }
+
+  async getCertificate(code: string): Promise<Certificate | null> {
+    const { CertificateModel } = getModels();
+    const doc = await CertificateModel.findOne({
+      code: code.trim().toUpperCase(),
+    }).exec();
+    return doc ? toPlain<Certificate>(doc) : null;
   }
 
   async createContactMessage(
