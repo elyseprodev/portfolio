@@ -54,6 +54,25 @@ will add it to the Frontend group (the skills page deliberately only claims what
 
 ---
 
+## 1b. New sections added at your request — please review
+
+**Skills page** now uses pictograph group headings: 🎨 Frontend, ⚙️ Backend, 🗄️ Database,
+🧰 Tools & Platforms (one group was renamed from "Databases", another from "Development &
+Practice"). Change them in `client/src/content/skills.ts` — the emoji is a separate `emoji`
+field so it stays out of the accessibility tree.
+
+**Experience page** gained a "Depth by discipline" section with three cards — ⚙️ Backend,
+🗄️ Database, 🧰 Tools & Platforms. Their wording is written **only from what this repository and
+your listed projects actually contain** (validated API routes, the two store adapters, the
+test count, the commit/PR workflow). There are deliberately no dates, employers or metrics.
+
+> If any bullet overstates or understates what you have done, edit
+> `client/src/content/disciplines.ts` — it is presentation content, kept beside the About page's
+> "How I work" cards rather than in the database layer. Tell me the wording you prefer and I
+> will change it for you.
+
+---
+
 ## 2. Public e-mail address (optional)
 
 `client/src/content/profile.ts` → `email: ""`
@@ -132,6 +151,23 @@ The site is deliberate about not presenting generated imagery as a photograph of
 | `CONTACT_FINGERPRINT_SALT` | Random string; salts the abuse-tracking fingerprint      |
 
 Copy `.env.example` → `.env`. **Never commit `.env`.**
+
+---
+
+## 6b. Deployment is prepared, not performed
+
+`docs/DEPLOYMENT.md` walks through MongoDB Atlas → Render → Vercel with a verification command
+after each step. Nothing is deployed yet because that requires your accounts: no hosting
+account, no Atlas cluster and no domain exist for this project, and the site never invents one
+(an unset `NEXT_PUBLIC_SITE_URL` keeps canonical URLs and the sitemap empty on purpose).
+
+What still needs you:
+
+1. Create the Atlas cluster and run `npm run db:seed` against it (section 1 of the guide).
+2. Create the Render Blueprint from `render.yaml` and paste in the secrets.
+3. Import the repo into Vercel with Root Directory `client` and set `API_URL` +
+   `NEXT_PUBLIC_SITE_URL`.
+4. Send yourself one message through the deployed `/contact` form to confirm storage.
 
 ---
 

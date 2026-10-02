@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 
 import { PageContainer, Section } from "@/components/layout/PageContainer";
 import { PageHeader } from "@/components/layout/PageHeader";
@@ -8,8 +9,10 @@ import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { Button } from "@/components/ui/Button";
 import { Pill, SourceBadge } from "@/components/ui/Badges";
 import { ExperienceTimeline } from "@/components/sections/ExperienceTimeline";
+import { SkillGroupTitle } from "@/components/ui/SkillGroupTitle";
 import { ArrowRightIcon, GraduationIcon, ShieldIcon } from "@/components/ui/icons";
 import { confirmedExperience } from "@/content/experience";
+import { disciplines } from "@/content/disciplines";
 import { loadExperience } from "@/lib/content";
 import { buildMetadata } from "@/lib/metadata";
 
@@ -83,6 +86,81 @@ export default async function ExperiencePage() {
           <div className="mt-12">
             <ExperienceTimeline entries={experience} />
           </div>
+        </PageContainer>
+      </Section>
+
+      <Section aria-labelledby="disciplines-title" className="pt-0">
+        <PageContainer>
+          <RevealOnScroll>
+            <SectionHeading
+              id="disciplines-title"
+              overline="Depth by discipline"
+              title="What I actually do in each layer"
+              description="The timeline above is chronological. This is the same experience organised by layer, described from the work that can be inspected rather than from claims about it."
+            />
+          </RevealOnScroll>
+
+          <ul className="mt-10 grid gap-5 lg:grid-cols-3">
+            {disciplines.map((discipline, index) => (
+              <RevealOnScroll
+                as="li"
+                key={discipline.id}
+                delay={index * 110}
+                className="h-full"
+              >
+                <SpotlightCard className="flex h-full flex-col" padding="lg" edge>
+                  <SkillGroupTitle
+                    as="h3"
+                    emoji={discipline.emoji}
+                    title={discipline.title}
+                    className="text-h3 font-semibold text-white"
+                  />
+
+                  <p className="mt-4 text-sm text-text-secondary pretty-text">
+                    {discipline.summary}
+                  </p>
+
+                  <ul className="mt-5 space-y-2.5">
+                    {discipline.points.map((point) => (
+                      <li
+                        key={point}
+                        className="flex items-start gap-2.5 text-sm text-text-muted"
+                      >
+                        <span
+                          aria-hidden="true"
+                          className="mt-1.5 size-1.5 shrink-0 rounded-full bg-brand-500/80"
+                        />
+                        {point}
+                      </li>
+                    ))}
+                  </ul>
+
+                  <div className="mt-auto pt-6">
+                    <div className="hairline mb-4" />
+                    <p className="text-caption text-text-muted">
+                      {discipline.evidence.note}
+                    </p>
+                    <div className="mt-3 flex flex-wrap items-center gap-2">
+                      <Link
+                        href={discipline.evidence.href}
+                        className="btn btn-glass !min-h-9 !px-3.5 !text-[0.8rem]"
+                      >
+                        {discipline.evidence.label}
+                        <ArrowRightIcon width={15} height={15} />
+                      </Link>
+                      <Link
+                        href="/skills"
+                        className="chip"
+                        aria-label={`\${discipline.title} group on the skills page`}
+                      >
+                        Related skills
+                      </Link>
+                    </div>
+                  </div>
+                </SpotlightCard>
+              </RevealOnScroll>
+            ))}
+          </ul>
         </PageContainer>
       </Section>
 

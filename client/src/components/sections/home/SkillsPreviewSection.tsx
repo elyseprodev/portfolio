@@ -4,6 +4,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { Button } from "@/components/ui/Button";
 import { TechIcon } from "@/components/ui/TechIcon";
+import { SkillGroupTitle } from "@/components/ui/SkillGroupTitle";
 import { ArrowRightIcon } from "@/components/ui/icons";
 import type { SkillGroup } from "@elyse/database/types";
 
@@ -40,7 +41,12 @@ export function SkillsPreviewSection({ groups }: { groups: SkillGroup[] }) {
             <RevealOnScroll as="li" key={group.id} delay={index * 100} className="h-full">
               <SpotlightCard className="h-full" padding="lg">
                 <div className="flex items-baseline justify-between gap-4">
-                  <h3 className="text-h4 font-semibold text-white">{group.title}</h3>
+                  <SkillGroupTitle
+                    as="h3"
+                    emoji={group.emoji}
+                    title={group.title}
+                    className="text-h4 font-semibold text-white"
+                  />
                   <span className="text-caption text-text-muted">
                     {group.skills.length} entries
                   </span>

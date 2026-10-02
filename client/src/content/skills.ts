@@ -12,6 +12,7 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "frontend",
     title: "Frontend",
+    emoji: "🎨",
     shortLabel: "Interface",
     description:
       "Responsive, accessible interfaces built with semantic markup, modern JavaScript and component-driven frameworks.",
@@ -39,6 +40,7 @@ export const skillGroups: SkillGroup[] = [
   {
     id: "backend",
     title: "Backend",
+    emoji: "⚙️",
     shortLabel: "Server",
     description:
       "Routes, validation and data shaping — so the frontend always receives something predictable.",
@@ -62,7 +64,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "databases",
-    title: "Databases",
+    title: "Database",
+    emoji: "🗄️",
     shortLabel: "Data",
     description:
       "Modelling data deliberately and writing queries that stay readable as a project grows.",
@@ -82,7 +85,8 @@ export const skillGroups: SkillGroup[] = [
   },
   {
     id: "practice",
-    title: "Development & Practice",
+    title: "Tools & Platforms",
+    emoji: "🧰",
     shortLabel: "Practice",
     description:
       "The habits around the code: version control, integrations, security awareness and responsive delivery.",

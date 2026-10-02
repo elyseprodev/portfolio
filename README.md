@@ -232,6 +232,9 @@ Tailwind CSS v4 with design tokens declared in [`client/src/app/globals.css`](cl
   Blur, translucency and shadows are tuned once and reused everywhere.
 - **Type scale:** fluid `text-display` → `text-caption` tokens, so headings scale from 320px
   to 1440px without media queries.
+- **Skill group headings** carry a pictograph (🎨 Frontend, ⚙️ Backend, 🗄️ Database,
+  🧰 Tools & Platforms) rendered in its own `aria-hidden` span, so a screen reader announces
+  the discipline and not the emoji.
 - **Motion tokens:** `--ease-glass` (cubic-bezier(0.22, 1, 0.36, 1)), `--duration-quick/base/slow`.
 - **Effects:** a single ref-counted pointer listener feeds the custom cursor, ambient glow,
   magnetic buttons and card spotlights — no per-component global listeners.
@@ -283,6 +286,19 @@ generated Open Graph image and the build output rather than screenshots.
 
 ## Deployment
 
+Full walkthrough with verification steps and a troubleshooting table:
+**[`docs/DEPLOYMENT.md`](docs/DEPLOYMENT.md)**. That guide covers MongoDB Atlas → API → website,
+in that order, on free tiers.
+
+Ready-made configuration in this repository:
+
+| File | For |
+| --- | --- |
+| [`render.yaml`](render.yaml) | Render Blueprint for the API (health check, env vars, CA bundle) |
+| [`client/vercel.json`](client/vercel.json) | Vercel project config + security headers |
+| [`Dockerfile`](Dockerfile) | The API as a container image (Railway, Fly.io, any VPS) |
+| [`.github/workflows/ci.yml`](.github/workflows/ci.yml) | Lint · types · tests · build · contrast budget on every push |
+
 **Client** (Vercel or any Node host):
 
 ```bash
@@ -306,7 +322,12 @@ CONTACT_FINGERPRINT_SALT=<random string>
 ```
 
 The API runs through `tsx` (`npm start -w @elyse/server`); the health endpoint is
-`GET /api/health`. Never commit `.env` — only `.env.example` is tracked.
+`GET /api/health` and it is what Render's health check polls. Never commit `.env` — only
+`.env.example` is tracked.
+
+> **Verified in this environment:** with `NEXT_PUBLIC_SITE_URL` set, `/sitemap.xml` and
+> `/robots.txt` emit absolute URLs for all 12 public routes; with it unset the sitemap is
+> intentionally empty rather than inventing a domain.
 
 > **If the GitHub page reports "Could not reach GitHub"** while `curl` to
 > `api.github.com` works, your container's Node process is not picking up the system CA
@@ -341,6 +362,7 @@ portfolio/
 └── docs/
     ├── API.md                  # endpoint reference with real responses
     ├── ACCESSIBILITY.md        # measured contrast + audit results
+    ├── DEPLOYMENT.md           # Atlas → Render → Vercel, with verification steps
     └── CONTENT-CHECKLIST.md    # what still needs your input
 ```
 

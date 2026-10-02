@@ -8,6 +8,7 @@ import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { Button } from "@/components/ui/Button";
 import { SourceBadge } from "@/components/ui/Badges";
 import { TechIcon } from "@/components/ui/TechIcon";
+import { SkillGroupTitle } from "@/components/ui/SkillGroupTitle";
 import { ArrowRightIcon, GitHubIcon } from "@/components/ui/icons";
 import { technologyChips } from "@/content/skills";
 import { loadSkillGroups } from "@/lib/content";
@@ -79,9 +80,12 @@ export default async function SkillsPage() {
                       <p className="text-overline text-brand-400 uppercase">
                         {group.shortLabel}
                       </p>
-                      <h3 className="mt-2 text-h3 font-semibold text-white">
-                        {group.title}
-                      </h3>
+                      <SkillGroupTitle
+                        as="h3"
+                        emoji={group.emoji}
+                        title={group.title}
+                        className="mt-2 text-h3 font-semibold text-white"
+                      />
                     </div>
                     <span className="chip chip-brand">
                       {group.skills.length} entries

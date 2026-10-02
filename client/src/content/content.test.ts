@@ -136,6 +136,15 @@ describe("skills", () => {
     }
   });
 
+  it("gives every group a pictograph for its heading", () => {
+    for (const group of skillGroups) {
+      assert.ok(
+        group.emoji && group.emoji.trim().length > 0,
+        `${group.id} has no emoji for its heading`,
+      );
+    }
+  });
+
   it("has unique technology names across groups", () => {
     const names = skillGroups.flatMap((group) => group.skills.map((skill) => skill.name));
     assert.equal(new Set(names).size, names.length, "a technology is listed twice");

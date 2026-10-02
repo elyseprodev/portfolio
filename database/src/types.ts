@@ -105,6 +105,12 @@ export interface Skill {
 export interface SkillGroup {
   id: string;
   title: string;
+  /**
+   * Optional pictograph shown before the title. Kept separate from `title` so
+   * the UI can mark it `aria-hidden` — screen readers would otherwise announce
+   * "gear" before the word "Backend".
+   */
+  emoji?: string;
   description: string;
   /** Short label used by the compact homepage preview. */
   shortLabel: string;

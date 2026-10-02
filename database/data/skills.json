@@ -2,6 +2,7 @@
   {
     "id": "frontend",
     "title": "Frontend",
+    "emoji": "🎨",
     "shortLabel": "Interface",
     "description": "Responsive, accessible interfaces built with semantic markup, modern JavaScript and component-driven frameworks.",
     "skills": [
@@ -40,6 +41,7 @@
   {
     "id": "backend",
     "title": "Backend",
+    "emoji": "⚙️",
     "shortLabel": "Server",
     "description": "Routes, validation and data shaping — so the frontend always receives something predictable.",
     "skills": [
@@ -62,7 +64,8 @@
   },
   {
     "id": "databases",
-    "title": "Databases",
+    "title": "Database",
+    "emoji": "🗄️",
     "shortLabel": "Data",
     "description": "Modelling data deliberately and writing queries that stay readable as a project grows.",
     "skills": [
@@ -85,7 +88,8 @@
   },
   {
     "id": "practice",
-    "title": "Development & Practice",
+    "title": "Tools & Platforms",
+    "emoji": "🧰",
     "shortLabel": "Practice",
     "description": "The habits around the code: version control, integrations, security awareness and responsive delivery.",
     "skills": [
