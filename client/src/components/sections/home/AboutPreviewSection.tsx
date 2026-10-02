@@ -17,10 +17,10 @@ export function AboutPreviewSection({ profile }: { profile: Profile }) {
           <RevealOnScroll className="order-2 lg:order-1">
             <div className="glass glass-edge relative overflow-hidden rounded-glass-lg p-3">
               <Image
-                src="/images/elyse-dev-mark.svg"
-                alt="Abstract ELYSE DEV monogram artwork"
-                width={640}
-                height={640}
+                src="/images/about-workspace.jpg"
+                alt="A dark desk at night with a laptop and a monitor showing blurred code, lit by warm orange light"
+                width={1024}
+                height={1024}
                 sizes="(min-width: 1024px) 34vw, 88vw"
                 className="h-auto w-full rounded-[1.4rem]"
               />

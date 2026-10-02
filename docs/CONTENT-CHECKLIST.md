@@ -163,6 +163,36 @@ The site is deliberate about not presenting generated imagery as a photograph of
 
 ---
 
+## 5b. Every image on the site, and what each one actually is
+
+"Add images everywhere" is done — but honesty still matters, so here is the full inventory. **Every
+image below is generated artwork, not a screenshot of a real product**, and each one is captioned
+or has alt text saying so. Drop a real file over the same path and the site picks it up with no
+code change.
+
+| Where | File | What it shows |
+| --- | --- | --- |
+| Home hero | `public/images/hero-visual.jpg` | Glass panels with orange light |
+| Home about preview | `public/images/about-workspace.jpg` | Dark desk at night |
+| About page (band) | `public/images/about-workspace.jpg` | Same photograph, full width |
+| About page (aside) | `public/images/elyse-dev-mark.svg` | Your monogram, standing in for a portrait |
+| Project cards + details | `public/images/projects/<slug>-cover.jpg` | One cover per project |
+| Project details | `public/images/projects/<slug>.svg` | Line artwork beside each cover |
+| Social sharing | generated at `/opengraph-image` | Text card — not a file you replace |
+| Browser icon | `client/src/app/icon.svg` | Monogram mark |
+
+**The images I could not get for you:** the two live apps you sent. `bookoffamily.lovable.app`
+serves its own hero photograph and `menvax.netlify.app` is not online, and this build environment
+cannot reach either host, so no real screenshot could be downloaded. When you want real captures
+in place of the generated covers, save them into `public/images/projects/` using the file names in
+the table above.
+
+**One more thing only you can supply:** a portrait photograph. The About page currently shows your
+monogram with alt text that says it is standing in until a portrait is supplied. Add the file and
+send me the path.
+
+---
+
 ## 6. Infrastructure values (`.env`)
 
 | Variable                   | Needed for                                              |

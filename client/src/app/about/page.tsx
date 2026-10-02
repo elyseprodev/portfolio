@@ -73,7 +73,7 @@ export default async function AboutPage() {
           <div className="glass glass-edge w-full max-w-xs overflow-hidden rounded-glass-lg p-3 lg:max-w-[18rem]">
             <Image
               src="/images/elyse-dev-mark.svg"
-              alt="Abstract ELYSE DEV monogram artwork — a placeholder for a portrait photograph"
+              alt="The ELYSE DEV monogram mark — generated artwork standing in until a portrait photograph is supplied"
               width={640}
               height={640}
               sizes="(min-width: 1024px) 18rem, 80vw"
@@ -195,6 +195,40 @@ export default async function AboutPage() {
               </RevealOnScroll>
             </div>
           </div>
+        </PageContainer>
+      </Section>
+
+      {/* Workspace --------------------------------------------------------- */}
+      <Section aria-labelledby="workspace-title" className="pt-0">
+        <PageContainer>
+          <RevealOnScroll>
+            <SectionHeading
+              id="workspace-title"
+              overline="Where the work happens"
+              as="h2"
+              title="A quiet desk, a lot of documentation tabs"
+              description="A generated photograph of the kind of workspace these projects are built in — the lights are usually this orange."
+            />
+          </RevealOnScroll>
+
+          <RevealOnScroll delay={120} className="mt-8">
+            <figure className="glass glass-edge overflow-hidden rounded-glass-lg p-2">
+              <Image
+                src="/images/about-workspace.jpg"
+                alt="A dark desk at night with a laptop, a monitor showing blurred code and a notebook, lit by warm orange light"
+                width={1024}
+                height={1024}
+                sizes="(min-width: 1280px) 1100px, 92vw"
+                className="h-auto w-full rounded-[1.4rem] object-cover"
+              />
+              <figcaption className="px-3 py-3 text-caption text-text-muted">
+                Generated artwork in this site&apos;s palette — a placeholder. Drop a real
+                photograph of your setup into{" "}
+                <code className="text-text-secondary">public/images/about-workspace.jpg</code>{" "}
+                and this paragraph can go.
+              </figcaption>
+            </figure>
+          </RevealOnScroll>
         </PageContainer>
       </Section>
 

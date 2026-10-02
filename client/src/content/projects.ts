@@ -12,9 +12,10 @@ import type { Project } from "@elyse/database/types";
  *    (problem, features, screenshots, repository) still need to be filled in.
  *    They render with a visible "details pending" label so nothing on the site
  *    reads as a finished case study when it is not.
- *  • `gallery` entries point at locally generated SVG concept artwork. Replace
+ *  • Every `gallery` starts with a generated cover image (`.jpg`) followed by
+ *    line artwork (`.svg`). Both are generated, neither is a screenshot. Replace
  *    them with real screenshots in `client/public/images/projects/` when you
- *    have them, or delete the `gallery` array entirely.
+ *    have them — keep the same file names and nothing else needs to change.
  */
 export const projects: Project[] = [
   {
@@ -71,6 +72,12 @@ export const projects: Project[] = [
       },
     ],
     gallery: [
+      {
+        src: "/images/projects/elyse-dev-portfolio-cover.jpg",
+        alt: "Generated cover artwork for the Elyse Dev Portfolio: three floating glass layers joined by glowing orange threads",
+        caption: "Generated cover artwork — replace with a real screenshot of this site",
+      },
+
       {
         src: "/images/projects/portfolio-home.svg",
         alt: "Concept artwork of the portfolio homepage: a glass hero panel with orange ambient light",
@@ -140,6 +147,12 @@ export const projects: Project[] = [
     ],
     gallery: [
       {
+        src: "/images/projects/book-of-family-library-cover.jpg",
+        alt: "Generated cover artwork for Book of Family Library: a glowing bookshelf hall with a floating glass shelf of titles",
+        caption: "Generated cover artwork — the live site above is the real thing",
+      },
+
+      {
         src: "/images/projects/book-of-family-library.svg",
         alt: "Concept artwork for Book of Family Library: a search bar above a shelf of collection cards",
         caption: "Concept artwork — replace with a real screenshot of the live site",
@@ -178,6 +191,12 @@ export const projects: Project[] = [
     stack: ["Next.js", "React", "Node.js", "Express.js", "MongoDB"],
     links: [],
     gallery: [
+      {
+        src: "/images/projects/light-education-cover.jpg",
+        alt: "Generated cover artwork for Light Education: floating glass cards with progress rings and charts",
+        caption: "Generated cover artwork — replace with a real product screenshot",
+      },
+
       {
         src: "/images/projects/light-education.svg",
         alt: "Concept artwork for Light Education: a glass dashboard with course cards",
@@ -218,6 +237,12 @@ export const projects: Project[] = [
     links: [],
     gallery: [
       {
+        src: "/images/projects/campus-connect-cover.jpg",
+        alt: "Generated cover artwork for Campus Connect: floating glass message bubbles with glowing orange rims",
+        caption: "Generated cover artwork — replace with a real product screenshot",
+      },
+
+      {
         src: "/images/projects/campus-connect.svg",
         alt: "Concept artwork for Campus Connect: a glass conversation list beside a message thread",
         caption: "Concept artwork — replace with a real product screenshot",
@@ -256,6 +281,12 @@ export const projects: Project[] = [
     stack: ["React", "JavaScript", "HTML5", "CSS3"],
     links: [],
     gallery: [
+      {
+        src: "/images/projects/video-web-app-cover.jpg",
+        alt: "Generated cover artwork for the Video Web Application: a dark player window with a glowing orange play button",
+        caption: "Generated cover artwork — replace with a real product screenshot",
+      },
+
       {
         src: "/images/projects/video-web-app.svg",
         alt: "Concept artwork for the video web application: a glass player stage above a media row",

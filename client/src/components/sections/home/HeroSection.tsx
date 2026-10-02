@@ -93,10 +93,10 @@ export function HeroSection({ profile }: { profile: Profile }) {
             <div className="relative">
               <div className="glass glass-edge relative overflow-hidden rounded-glass-lg p-3">
                 <Image
-                  src="/images/elyse-dev-mark.svg"
-                  alt="ELYSE DEV developer mark — an abstract monogram illustration, not a photograph"
-                  width={640}
-                  height={640}
+                  src="/images/hero-visual.jpg"
+                  alt="Layered glass panels with glowing orange edges — generated artwork in the ELYSE DEV palette, not a photograph"
+                  width={1024}
+                  height={1024}
                   priority
                   sizes="(min-width: 1024px) 38vw, 88vw"
                   className="h-auto w-full rounded-[1.4rem]"
