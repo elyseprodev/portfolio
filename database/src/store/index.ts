@@ -18,6 +18,8 @@ import { JsonContentStore } from "./json-store.js";
 import { MongoContentStore } from "./mongo-store.js";
 import type { ContentStore } from "./repository.js";
 
+export type { ContentStore, ContactMessageContext } from "./repository.js";
+
 let storePromise: Promise<ContentStore> | null = null;
 
 export interface StoreResolution {

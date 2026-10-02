@@ -10,7 +10,9 @@ import mongoose from "mongoose";
 const { Schema } = mongoose;
 import type { ContactMessage } from "../types.js";
 
-export const contactMessageSchema = new Schema<ContactMessage>(
+type ContactMessageDocument = Omit<ContactMessage, "id">;
+
+export const contactMessageSchema = new Schema<ContactMessageDocument>(
   {
     name: { type: String, required: true, trim: true, maxlength: 120 },
     email: {
