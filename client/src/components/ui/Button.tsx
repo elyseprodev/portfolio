@@ -52,7 +52,7 @@ function IconBadge({ icon }: { icon: ReactNode }) {
   return (
     <span
       aria-hidden="true"
-      className="ml-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-white/12 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/btn:translate-x-0.5"
+      className="ml-0.5 grid size-6 shrink-0 place-items-center rounded-full bg-current/15 transition-transform duration-300 ease-[cubic-bezier(0.22,1,0.36,1)] group-hover/btn:translate-x-0.5"
     >
       {icon}
     </span>

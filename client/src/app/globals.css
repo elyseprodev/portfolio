@@ -232,7 +232,7 @@
   .glass {
     position: relative;
     border-radius: var(--radius-glass);
-    border: 1px solid rgb(255 255 255 / 0.1);
+    border: 1px solid rgb(255 255 255 / 0.13);
     background-image: linear-gradient(
       155deg,
       rgb(255 255 255 / 0.075) 0%,
@@ -250,7 +250,7 @@
 
   /* Softer surface for large background panels. */
   .glass-subtle {
-    border-color: rgb(255 255 255 / 0.07);
+    border-color: rgb(255 255 255 / 0.1);
     background-color: rgb(10 10 13 / 0.42);
     background-image: linear-gradient(
       160deg,
@@ -264,7 +264,7 @@
 
   /* Denser surface for content that must stay highly readable. */
   .glass-solid {
-    border-color: rgb(255 255 255 / 0.12);
+    border-color: rgb(255 255 255 / 0.14);
     background-color: rgb(14 14 18 / 0.82);
     backdrop-filter: blur(22px) saturate(160%);
     -webkit-backdrop-filter: blur(22px) saturate(160%);
@@ -353,7 +353,9 @@
   .btn-primary {
     position: relative;
     overflow: hidden;
-    color: #fff;
+    /* Near-black label on vivid orange: 7.49:1 (white would only reach 2.80:1). */
+    color: #0b0b0f;
+    font-weight: 600;
     border: 1px solid color-mix(in oklab, var(--color-brand-400) 60%, transparent);
     background-image: linear-gradient(
       135deg,
@@ -390,11 +392,13 @@
       var(--color-brand-400),
       var(--color-brand-500)
     );
+    /* Dark label on brand-400 = 8.15:1. */
+    color: #0b0b0f;
   }
 
   .btn-glass {
     color: var(--color-text-primary);
-    border: 1px solid rgb(255 255 255 / 0.14);
+    border: 1px solid rgb(255 255 255 / 0.22);
     background-color: rgb(255 255 255 / 0.05);
     background-image: linear-gradient(
       150deg,
@@ -406,7 +410,7 @@
   }
 
   .btn-glass:hover {
-    border-color: color-mix(in oklab, var(--color-brand-400) 50%, transparent);
+    border-color: color-mix(in oklab, var(--color-brand-400) 60%, transparent);
     background-color: rgb(255 255 255 / 0.09);
     box-shadow: 0 14px 34px -20px rgb(249 115 22 / 0.6);
   }
@@ -428,7 +432,7 @@
     align-items: center;
     gap: 0.4rem;
     border-radius: var(--radius-pill);
-    border: 1px solid rgb(255 255 255 / 0.1);
+    border: 1px solid rgb(255 255 255 / 0.14);
     background-color: rgb(255 255 255 / 0.045);
     padding: 0.32rem 0.7rem;
     font-size: 0.76rem;

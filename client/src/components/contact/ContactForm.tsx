@@ -325,7 +325,7 @@ export function ContactForm() {
             name="topic"
             value={values.topic}
             onChange={update("topic")}
-            className="w-full rounded-2xl border border-white/12 bg-ink-950/60 px-3.5 py-3 text-sm text-white focus:border-brand-500/50 focus:outline-none"
+            className="w-full rounded-2xl border border-white/20 bg-ink-950/60 px-3.5 py-3 text-sm text-white focus:border-brand-500/50 focus:outline-none"
           >
             {contactTopics.map((topic) => (
               <option key={topic.value} value={topic.value} className="bg-ink-900">
@@ -356,7 +356,7 @@ export function ContactForm() {
           aria-invalid={errors.message ? true : undefined}
           aria-describedby={errors.message ? `${formId}-message-error` : `${formId}-message-hint`}
           className={cn(
-            "w-full resize-y rounded-2xl border border-white/12 bg-ink-950/60 px-3.5 py-3 text-sm text-white placeholder:text-text-muted focus:border-brand-500/50 focus:outline-none",
+            "w-full resize-y rounded-2xl border border-white/20 bg-ink-950/60 px-3.5 py-3 text-sm text-white placeholder:text-text-muted focus:border-brand-500/50 focus:outline-none",
             errors.message && "border-red-400/60",
           )}
           placeholder="What are you building, and what would you like help with?"
@@ -459,7 +459,7 @@ function Field({
         aria-invalid={error ? true : undefined}
         aria-describedby={error ? `${id}-error` : undefined}
         className={cn(
-          "w-full rounded-2xl border border-white/12 bg-ink-950/60 px-3.5 py-3 text-sm text-white placeholder:text-text-muted focus:border-brand-500/50 focus:outline-none",
+          "w-full rounded-2xl border border-white/20 bg-ink-950/60 px-3.5 py-3 text-sm text-white placeholder:text-text-muted focus:border-brand-500/50 focus:outline-none",
           error && "border-red-400/60",
         )}
       />

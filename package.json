@@ -2,7 +2,7 @@
   "name": "elyse-dev-portfolio",
   "version": "1.0.0",
   "private": true,
-  "description": "ELYSE DEV — premium liquid-glass developer portfolio for MURENGERANTWARI Elyse (client / server / database monorepo).",
+  "description": "ELYSE DEV \u2014 premium liquid-glass developer portfolio for MURENGERANTWARI Elyse (client / server / database monorepo).",
   "workspaces": [
     "database",
     "server",
@@ -16,10 +16,12 @@
     "start": "concurrently -n server,client -c yellow,cyan \"npm run start -w @elyse/server\" \"npm run start -w @elyse/client\"",
     "lint": "eslint .",
     "typecheck": "npm run typecheck --workspaces --if-present",
-    "test": "npm run test -w @elyse/server",
+    "test": "npm run test --workspaces --if-present",
     "db:sync": "npm run content:sync -w @elyse/database",
     "db:seed": "npm run seed -w @elyse/database",
-    "db:verify": "npm run verify -w @elyse/database"
+    "db:verify": "npm run verify -w @elyse/database",
+    "audit": "npm run audit -w @elyse/client --",
+    "check:contrast": "npm run check:contrast -w @elyse/client"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

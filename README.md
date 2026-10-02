@@ -111,7 +111,9 @@ npm run dev:client   # Next.js site only  (http://localhost:3000)
 | `npm start`                   | Start the API and the built client                                  |
 | `npm run lint`                | ESLint across the whole repo (flat config, Next + a11y + hooks)      |
 | `npm run typecheck`           | `tsc --noEmit` for every workspace                                  |
-| `npm test`                    | API test suite (14 tests, Node's built-in runner, real HTTP)         |
+| `npm test`                    | All test suites: API (14) + client form rules and content integrity (27) |
+| `npm run audit`               | Audits 13 rendered routes (headings, landmarks, labels, alt text, ids, links) |
+| `npm run check:contrast`      | WCAG contrast maths for every text/glass pairing; fails below AA     |
 | `npm run db:sync`             | Mirror `client/src/content/*` → `database/data/*.json`               |
 | `npm run db:seed`             | Seed MongoDB (requires `MONGODB_URI`)                               |
 | `npm run db:verify`           | Report the active backend and check the content it serves            |
@@ -222,6 +224,12 @@ Tailwind CSS v4 with design tokens declared in [`client/src/app/globals.css`](cl
 
 ## Accessibility & performance
 
+Contrast and structure are **measured, not asserted**: `npm run check:contrast` computes WCAG
+ratios for every text/glass pairing and `npm run audit` checks 13 rendered routes. Full results,
+including the defect they found (white-on-orange button labels at 2.80:1, now 7.01:1 with a
+near-black label on the same brand fill) and the two deliberate INFO rows, are in
+[`docs/ACCESSIBILITY.md`](docs/ACCESSIBILITY.md).
+
 - One `<h1>` per page, semantic landmarks (`header`, `nav`, `main`, `footer`), skip-to-content link.
 - Visible focus rings everywhere; keyboard-operable navigation, filters, gallery and forms.
 - The mobile menu is a labelled dialog: Escape closes, focus moves in and returns, scroll locks.
@@ -240,10 +248,12 @@ All commands below were executed in this environment:
 
 | Command                                          | Result |
 | ------------------------------------------------ | ------ |
-| `npm test`                                       | **14 tests, 5 suites, 0 failures** (real HTTP against the Express app) |
+| `npm test`                                       | **41 tests, 0 failures** — API (14, real HTTP against the Express app) + client (27: form rules and content-integrity checks) |
 | `npm run typecheck`                              | Passes for `client`, `server` and `database` (TypeScript strict) |
 | `npm run lint`                                   | Passes across the repo; also runs inside `next build` |
 | `npm run build` (client)                         | **20 routes** built: 8 pages, 4 project detail pages, 2 API handlers, icon/OG image/manifest/robots/sitemap |
+| `npm run audit`                                  | **13/13 routes pass**, 0 warnings — and validated against a negative control that it correctly failed |
+| `npm run check:contrast`                         | All text, control and focus pairings meet WCAG AA (two decorative hairlines reported as INFO) |
 | `npm run db:sync` / `db:verify`                  | Content mirrored and served from the JSON store |
 | Live preview (`next dev` + API on `:4000`)       | Every route returned **200**; unknown routes returned **404**; contact POST stored a message end-to-end |
 
@@ -288,7 +298,7 @@ The API runs through `tsx` (`npm start -w @elyse/server`); the health endpoint i
 portfolio/
 ├── client/                     # Next.js 15 App Router
 │   ├── public/images/          # generated concept artwork + developer mark
-│   ├── scripts/                # artwork generator
+│   ├── scripts/                # artwork generator, page audit, contrast checker
 │   └── src/
 │       ├── app/                # routes, layout, metadata, api handlers, globals.css
 │       ├── components/
@@ -304,7 +314,10 @@ portfolio/
 │   ├── src/{config,routes,services,middleware,lib}/
 │   └── tests/api.test.ts       # 14 tests over real HTTP
 ├── database/                   # types, schemas, models, stores, seed data, scripts
-└── docs/CONTENT-CHECKLIST.md   # what still needs your input
+└── docs/
+    ├── API.md                  # endpoint reference with real responses
+    ├── ACCESSIBILITY.md        # measured contrast + audit results
+    └── CONTENT-CHECKLIST.md    # what still needs your input
 ```
 
 ---

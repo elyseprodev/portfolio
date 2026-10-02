@@ -17,13 +17,34 @@ export const contactMessageSchema = z.object({
     .trim()
     .min(2, "Please enter at least 2 characters.")
     .max(120, "Please keep your name under 120 characters."),
+  /**
+   * One message per field, in the same order and wording as the client rules
+   * (client/src/lib/validation.ts), so a visitor never sees two complaints about
+   * the same input.
+   */
   email: z
     .string()
     .trim()
     .toLowerCase()
-    .min(5, "Please enter your email address.")
-    .max(200, "Please keep your email under 200 characters.")
-    .email("That does not look like a valid email address."),
+    .superRefine((value, ctx) => {
+      if (value.length === 0) {
+        ctx.addIssue({ code: "custom", message: "Please enter your email address." });
+        return;
+      }
+      if (value.length > 200) {
+        ctx.addIssue({
+          code: "custom",
+          message: "Please keep your email under 200 characters.",
+        });
+        return;
+      }
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(value)) {
+        ctx.addIssue({
+          code: "custom",
+          message: "That does not look like a valid email address.",
+        });
+      }
+    }),
   subject: z
     .string()
     .trim()

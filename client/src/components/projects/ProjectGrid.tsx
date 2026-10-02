@@ -65,7 +65,7 @@ export function ProjectGrid({ projects }: { projects: Project[] }) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search by name, description or technology…"
-              className="w-full rounded-full border border-white/12 bg-ink-950/60 py-2.5 pr-4 pl-10 text-sm text-white placeholder:text-text-muted focus:border-brand-500/50 focus:outline-none"
+              className="w-full rounded-full border border-white/20 bg-ink-950/60 py-2.5 pr-4 pl-10 text-sm text-white placeholder:text-text-muted focus:border-brand-500/50 focus:outline-none"
             />
           </div>
 

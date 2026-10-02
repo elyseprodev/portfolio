@@ -40,8 +40,9 @@ export const profile: Profile = {
     "Teaching myself something new every week",
   ],
   github: "https://github.com/ElissaElyse7",
-  // No public e-mail address has been supplied yet. Set one here to publish it
-  // (the contact page will then show a mailto link instead of a note).
+  // No public e-mail address has been supplied yet, so it is left undefined and
+  // the UI says so honestly. Set it here to publish a mailto link everywhere
+  // (footer, about and contact pages pick it up automatically).
   availability:
     "Open to collaborations, freelance work and junior-to-mid full-stack roles — remote or based in Rwanda.",
   highlights: [
