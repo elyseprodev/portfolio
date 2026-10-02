@@ -74,6 +74,10 @@ export function CustomCursor() {
       const value = owner?.dataset.cursor as CursorVariant | undefined;
       if (value) return value;
       if (target.closest("a[href]")) return "link";
+      const textControl = target.closest<HTMLElement>(
+        "input:not([type='submit']):not([type='button']):not([type='checkbox']):not([type='radio']):not([type='range']), textarea",
+      );
+      if (textControl) return "text";
       if (target.closest("button, [role='button'], input, select, textarea")) {
         return "button";
       }

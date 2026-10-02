@@ -161,6 +161,12 @@
     text-wrap: pretty;
   }
 
+  /* Long proper nouns (like a 15-character surname) must never force a
+     horizontal scrollbar on a 320px screen. */
+  body {
+    overflow-wrap: break-word;
+  }
+
   ::selection {
     background-color: color-mix(in oklab, var(--color-brand-500) 38%, transparent);
     color: #fff;
@@ -480,6 +486,21 @@
     color: transparent;
   }
 
+  /* The hero name is 15 characters long, so its size is driven by the width of
+     the copy column (container query units) rather than the viewport — that way
+     it stays on one line at 320px and still fills the space at 1440px. The vw
+     clamp is the fallback for browsers without container query units. */
+  .hero-copy {
+    container-type: inline-size;
+  }
+
+  .hero-name {
+    font-size: clamp(1.5rem, 6.4vw, 4.2rem);
+    font-size: clamp(1.5rem, 9.4cqw, 4.2rem);
+    line-height: 1.06;
+    letter-spacing: -0.02em;
+  }
+
   /* Navigation link with an animated underline. */
   .nav-link {
     position: relative;
@@ -523,12 +544,18 @@
       opacity 620ms var(--ease-glass),
       transform 620ms var(--ease-glass);
     transition-delay: var(--reveal-delay, 0ms);
+  }
+
+  /* Promote only while the element is still hidden — after the reveal the
+     compositor layer is released instead of accumulating on a long page. */
+  .reveal[data-visible="false"] {
     will-change: opacity, transform;
   }
 
   .reveal[data-visible="true"] {
     opacity: 1;
     transform: none;
+    will-change: auto;
   }
 
   @media (prefers-reduced-motion: reduce) {

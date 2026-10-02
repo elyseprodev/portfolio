@@ -24,7 +24,7 @@ export function HeroSection({ profile }: { profile: Profile }) {
           {/* ---------------------------------------------------------------- */}
           {/* Copy                                                             */}
           {/* ---------------------------------------------------------------- */}
-          <div>
+          <div className="hero-copy">
             <RevealOnScroll>
               <p className="inline-flex items-center gap-2.5 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-caption text-text-secondary backdrop-blur-md">
                 <span className="relative flex size-2">
@@ -36,9 +36,11 @@ export function HeroSection({ profile }: { profile: Profile }) {
             </RevealOnScroll>
 
             <RevealOnScroll delay={80}>
-              <h1 className="mt-6 text-display font-semibold">
-                <span className="block text-white">MURENGERANTWARI</span>
-                <span className="text-gradient block">Elyse</span>
+              <h1 className="mt-6 font-semibold">
+                <span className="hero-name block text-white">
+                  MURENGERANTWARI
+                </span>
+                <span className="text-gradient block text-display">Elyse</span>
               </h1>
             </RevealOnScroll>
 

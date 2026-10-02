@@ -31,7 +31,10 @@ export function ProjectCard({ project, className, priority = false }: ProjectCar
   const sourceLink = project.links.find((link) => link.kind === "source");
 
   return (
-    <article className={cn("group relative flex h-full flex-col", className)}>
+    <article
+      data-cursor="card"
+      className={cn("group relative flex h-full flex-col", className)}
+    >
       <SpotlightCard
         interactive
         edge
