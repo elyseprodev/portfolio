@@ -121,6 +121,7 @@ $ npm run audit
 | No light theme | Requested identity is dark liquid glass; a light variant would need a second full palette to stay AA, and the brief says to keep dark as the approved design. `color-scheme: dark` is declared so form controls and scrollbars match. |
 | Decorative hairlines below 3:1 | Documented above — measured and reported, but enforced only where WCAG actually requires it. |
 | `next/font` (Geist) instead of a font CDN | Self-hosted fonts avoid a third-party request, layout shift and a privacy question. |
+| Rate limiting by salted fingerprint, not IP | The throttle works without storing personal data; verified by `server/tests/rate-limit.test.ts`. |
 | No animation library for reveals | IntersectionObserver + CSS keeps the effect cheap and works with JS-disabled reveal fallbacks; Motion is used only for spring-based pointer interpolation. |
 
 ## 5. Known gaps

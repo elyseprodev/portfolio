@@ -111,7 +111,7 @@ npm run dev:client   # Next.js site only  (http://localhost:3000)
 | `npm start`                   | Start the API and the built client                                  |
 | `npm run lint`                | ESLint across the whole repo (flat config, Next + a11y + hooks)      |
 | `npm run typecheck`           | `tsc --noEmit` for every workspace                                  |
-| `npm test`                    | All test suites: API (14) + client form rules and content integrity (27) |
+| `npm test`                    | All test suites: API (20) + client form rules and content integrity (27) |
 | `npm run audit`               | Audits 13 rendered routes (headings, landmarks, labels, alt text, ids, links) |
 | `npm run check:contrast`      | WCAG contrast maths for every text/glass pairing; fails below AA     |
 | `npm run db:sync`             | Mirror `client/src/content/*` → `database/data/*.json`               |
@@ -248,7 +248,7 @@ All commands below were executed in this environment:
 
 | Command                                          | Result |
 | ------------------------------------------------ | ------ |
-| `npm test`                                       | **41 tests, 0 failures** — API (14, real HTTP against the Express app) + client (27: form rules and content-integrity checks) |
+| `npm test`                                       | **47 tests, 0 failures** — API (20, real HTTP against the Express app) + client (27: form rules and content-integrity checks) |
 | `npm run typecheck`                              | Passes for `client`, `server` and `database` (TypeScript strict) |
 | `npm run lint`                                   | Passes across the repo; also runs inside `next build` |
 | `npm run build` (client)                         | **20 routes** built: 8 pages, 4 project detail pages, 2 API handlers, icon/OG image/manifest/robots/sitemap |
@@ -256,6 +256,8 @@ All commands below were executed in this environment:
 | `npm run check:contrast`                         | All text, control and focus pairings meet WCAG AA (two decorative hairlines reported as INFO) |
 | `npm run db:sync` / `db:verify`                  | Content mirrored and served from the JSON store |
 | Live preview (`next dev` + API on `:4000`)       | Every route returned **200**; unknown routes returned **404**; contact POST stored a message end-to-end |
+| Degraded-database suite                          | With `MONGODB_URI` pointing at a dead host, `/api/health` reports `degraded` and content still serves from the fallback — asserted, not assumed |
+| Rate-limit suite                                 | The contact form's limit returns `429 rate_limited` after the configured number of submissions, with no stored data echoed back |
 
 What could **not** be run here: a real browser (the sandbox has no Chromium and blocks the
 browser CDNs), so visual verification was done through the prerendered HTML/CSS, the

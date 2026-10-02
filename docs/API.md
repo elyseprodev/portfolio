@@ -192,6 +192,20 @@ Only origins listed in `CORS_ORIGIN` are allowed; in development, `localhost` an
 `127.0.0.1` are accepted automatically. The Next.js client calls the API server-side, so the
 browser never needs CORS at all.
 
+## How these responses are verified
+
+| Guarantee | Test |
+| --- | --- |
+| Content envelopes, filters, 404 and 422 shapes | `server/tests/api.test.ts` |
+| Rate limiting returns `429 rate_limited` after the configured window | `server/tests/rate-limit.test.ts` |
+| An unreachable `MONGODB_URI` reports `degraded` and keeps serving content | `server/tests/degraded-database.test.ts` |
+| The client's rules match this API's messages | `client/src/lib/validation.test.ts` |
+
+```bash
+npm test          # 47 tests across both workspaces
+npm run db:verify # which datastore is answering, and what it holds
+```
+
 ## Security notes
 
 * No secret is ever returned by the API — `GITHUB_TOKEN` is used server-side only, and
