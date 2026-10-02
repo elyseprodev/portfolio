@@ -1,0 +1,133 @@
+import type { SkillGroup } from "@elyse/database/types";
+
+/**
+ * ELYSE DEV — skills & technologies.
+ *
+ * ⚠️ EDITABLE: technologies are grouped by discipline instead of being given
+ * invented percentage ratings, because self-assigned numbers are meaningless
+ * without evidence. Add a `note` to each skill to describe what you actually
+ * did with it — that is what reviewers read.
+ */
+export const skillGroups: SkillGroup[] = [
+  {
+    id: "frontend",
+    title: "Frontend",
+    shortLabel: "Interface",
+    description:
+      "Responsive, accessible interfaces built with semantic markup, modern JavaScript and component-driven frameworks.",
+    skills: [
+      { name: "HTML5", icon: "html5", note: "Semantic, accessible markup" },
+      {
+        name: "CSS3",
+        icon: "css3",
+        note: "Layout, responsive design, animation",
+      },
+      { name: "JavaScript", icon: "javascript", note: "Core language, ES2020+" },
+      { name: "React", icon: "react", note: "Components, hooks, state" },
+      {
+        name: "Next.js",
+        icon: "nextjs",
+        note: "Routing, data fetching, rendering",
+      },
+      {
+        name: "Tailwind CSS",
+        icon: "tailwind",
+        note: "Utility-first styling systems",
+      },
+    ],
+  },
+  {
+    id: "backend",
+    title: "Backend",
+    shortLabel: "Server",
+    description:
+      "Routes, validation and data shaping — so the frontend always receives something predictable.",
+    skills: [
+      {
+        name: "Node.js",
+        icon: "node",
+        note: "Runtime, tooling, server-side JavaScript",
+      },
+      {
+        name: "Express.js",
+        icon: "express",
+        note: "REST APIs, middleware, error handling",
+      },
+      {
+        name: "PHP",
+        icon: "php",
+        note: "Server-rendered applications and database work",
+      },
+    ],
+  },
+  {
+    id: "databases",
+    title: "Databases",
+    shortLabel: "Data",
+    description:
+      "Modelling data deliberately and writing queries that stay readable as a project grows.",
+    skills: [
+      {
+        name: "MongoDB",
+        icon: "mongodb",
+        note: "Document modelling with Mongoose",
+      },
+      { name: "MySQL", icon: "mysql", note: "Relational schema and SQL" },
+      {
+        name: "Database design",
+        icon: "database",
+        note: "Relationships, normalisation, indexes",
+      },
+    ],
+  },
+  {
+    id: "practice",
+    title: "Development & Practice",
+    shortLabel: "Practice",
+    description:
+      "The habits around the code: version control, integrations, security awareness and responsive delivery.",
+    skills: [
+      {
+        name: "Git & GitHub",
+        icon: "git",
+        note: "Branching, review, collaboration",
+      },
+      {
+        name: "API integration",
+        icon: "api",
+        note: "REST consumption, loading and error states",
+      },
+      {
+        name: "Authentication & authorisation",
+        icon: "shield",
+        note: "Sessions, tokens, protected routes",
+      },
+      {
+        name: "Responsive web development",
+        icon: "responsive",
+        note: "Mobile-first layout and testing",
+      },
+      {
+        name: "Cybersecurity (learning)",
+        icon: "lock",
+        note: "Secure defaults, OWASP fundamentals",
+      },
+    ],
+  },
+];
+
+/** Individual tools used across the site's technology chips. */
+export const technologyChips: string[] = [
+  "HTML5",
+  "CSS3",
+  "JavaScript",
+  "React",
+  "Next.js",
+  "Tailwind CSS",
+  "Node.js",
+  "Express.js",
+  "PHP",
+  "MongoDB",
+  "MySQL",
+  "Git",
+];
