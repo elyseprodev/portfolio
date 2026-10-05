@@ -1,0 +1,1973 @@
+[
+  {
+    "slug": "html-and-css",
+    "language": "HTML & CSS",
+    "mark": "H5",
+    "trackId": "web",
+    "level": "beginner",
+    "status": "available",
+    "tagline": "The document language and the stylesheet language behind every website",
+    "summary": "Start where the web starts: semantic HTML, the box model, layout with Flexbox and Grid, and an interface that stays usable on a 320px screen and on a 4K monitor.",
+    "weeks": 5,
+    "hours": 30,
+    "outcomes": [
+      "Build a semantic, responsive page from a design without a framework",
+      "Diagnose layout bugs in DevTools instead of guessing at them",
+      "Pass a basic accessibility review on your own work"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with HTML & CSS",
+        "summary": "VS Code with Live Server, Chrome DevTools, W3C validator — installing the toolchain, running a first program, and learning how HTML & CSS reports errors.",
+        "hours": 2
+      },
+      {
+        "title": "Semantics before styling",
+        "summary": "Headings, landmarks, lists, forms and tables chosen for meaning — the structure a screen reader, a search engine and a future maintainer all depend on.",
+        "hours": 6
+      },
+      {
+        "title": "Layout that survives real content",
+        "summary": "Flexbox and Grid for one-dimensional and two-dimensional layout, spacing with gap, and the mistakes that cause overflow on small screens.",
+        "hours": 6
+      },
+      {
+        "title": "Responsive design and accessibility",
+        "summary": "Media queries and fluid sizing, focus states, colour contrast, reduced-motion and the audit habit that catches problems before your users do.",
+        "hours": 6
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Chrome DevTools, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 4
+      },
+      {
+        "title": "Capstone — responsive multi-section landing page with a working, accessible contact form",
+        "summary": "Plan, build and ship a responsive multi-section landing page with a working, accessible contact form, then review it against the checklist from every earlier module — starting from a clean HTML & CSS project, as you would at work.",
+        "hours": 6
+      }
+    ],
+    "capstone": "a responsive multi-section landing page with a working, accessible contact form",
+    "prerequisites": [
+      "A computer and a browser",
+      "No previous code required"
+    ],
+    "tooling": [
+      "VS Code with Live Server",
+      "Chrome DevTools",
+      "W3C validator"
+    ],
+    "image": "/images/courses/html-and-css.svg",
+    "featured": true
+  },
+  {
+    "slug": "javascript",
+    "language": "JavaScript",
+    "mark": "JS",
+    "trackId": "web",
+    "level": "beginner",
+    "status": "available",
+    "tagline": "The language of the browser, now also the language of the server",
+    "summary": "Learn JavaScript the way it is actually written today: modern syntax, the event loop, the DOM, fetch, modules and the parts of the language that catch people out.",
+    "weeks": 8,
+    "hours": 60,
+    "outcomes": [
+      "Write modern JavaScript without leaning on a framework",
+      "Fetch, cache and render remote data with proper error handling",
+      "Debug a failing script with breakpoints rather than console.log everywhere"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with JavaScript",
+        "summary": "Node.js and npm, VS Code debugger, Vitest — installing the toolchain, running a first program, and learning how JavaScript reports errors.",
+        "hours": 5
+      },
+      {
+        "title": "Values, scope and functions",
+        "summary": "let and const, closures, arrow functions, destructuring and the difference between copying a value and copying a reference.",
+        "hours": 12
+      },
+      {
+        "title": "The event loop and async work",
+        "summary": "Why a browser never blocks, callbacks to promises to async/await, and how to handle failures from fetch instead of swallowing them.",
+        "hours": 12
+      },
+      {
+        "title": "The DOM and browser APIs",
+        "summary": "Selecting and updating elements, events and delegation, forms and validation, local storage, and rendering lists without fighting the DOM.",
+        "hours": 12
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with VS Code debugger, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 7
+      },
+      {
+        "title": "Capstone — browser app that talks to a public API, with loading, empty and error states",
+        "summary": "Plan, build and ship a browser app that talks to a public API, with loading, empty and error states, then review it against the checklist from every earlier module — starting from a clean JavaScript project, as you would at work.",
+        "hours": 12
+      }
+    ],
+    "capstone": "a browser app that talks to a public API, with loading, empty and error states",
+    "prerequisites": [
+      "Comfortable with HTML and CSS"
+    ],
+    "tooling": [
+      "Node.js and npm",
+      "VS Code debugger",
+      "Vitest"
+    ],
+    "image": "/images/courses/javascript.svg",
+    "featured": true
+  },
+  {
+    "slug": "typescript",
+    "language": "TypeScript",
+    "mark": "TS",
+    "trackId": "web",
+    "level": "intermediate",
+    "status": "available",
+    "tagline": "JavaScript with the safety net you actually want in a team",
+    "summary": "Types that earn their place: modelling data with unions, narrowing safely, generics that reduce duplication, and strict-mode configuration that catches real bugs.",
+    "weeks": 7,
+    "hours": 50,
+    "outcomes": [
+      "Turn a JavaScript project into a strict TypeScript one without a rewrite",
+      "Model API contracts so the compiler catches breaking changes",
+      "Read and write generics instead of avoiding the library that uses them"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with TypeScript",
+        "summary": "TypeScript compiler, tsx for running files, ESLint with typescript-eslint — installing the toolchain, running a first program, and learning how TypeScript reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "Modelling with the type system",
+        "summary": "Interfaces and type aliases, unions of literal values, optional and readonly properties, and designing types that make invalid states unrepresentable.",
+        "hours": 10
+      },
+      {
+        "title": "Narrowing and generics",
+        "summary": "Control-flow narrowing, type guards and discriminated unions, then generics and utility types (Pick, Omit, Record, Partial) to remove repetition honestly.",
+        "hours": 10
+      },
+      {
+        "title": "Types at the boundaries",
+        "summary": "Typing API responses, validating unknown input at runtime with a schema library, and keeping `strict` on without reaching for `any`.",
+        "hours": 10
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with tsx for running files, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 6
+      },
+      {
+        "title": "Capstone — typed API client with runtime validation, tests and zero `any` in the public types",
+        "summary": "Plan, build and ship a typed API client with runtime validation, tests and zero `any` in the public types, then review it against the checklist from every earlier module — starting from a clean TypeScript project, as you would at work.",
+        "hours": 10
+      }
+    ],
+    "capstone": "a typed API client with runtime validation, tests and zero `any` in the public types",
+    "prerequisites": [
+      "Solid JavaScript",
+      "Some experience with a code editor and terminal"
+    ],
+    "tooling": [
+      "TypeScript compiler",
+      "tsx for running files",
+      "ESLint with typescript-eslint"
+    ],
+    "image": "/images/courses/typescript.svg",
+    "featured": true
+  },
+  {
+    "slug": "php",
+    "language": "PHP",
+    "mark": "PHP",
+    "trackId": "backend",
+    "level": "beginner",
+    "status": "available",
+    "tagline": "The server language that still powers most of the web",
+    "summary": "Modern PHP, not the version people complain about: Composer, typed functions, PDO with prepared statements, sessions, and building a real request/response cycle.",
+    "weeks": 8,
+    "hours": 56,
+    "outcomes": [
+      "Build a multi-page PHP application with clean separation of concerns",
+      "Store and read data safely with PDO and prepared statements",
+      "Avoid the five mistakes that make PHP applications insecure"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with PHP",
+        "summary": "PHP 8 with the built-in server, Composer, Xdebug + PHPUnit — installing the toolchain, running a first program, and learning how PHP reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "Language fundamentals, properly typed",
+        "summary": "Types and strict_types, arrays as the workhorse data structure, functions, classes, namespaces and how PSR autoloading actually finds your files.",
+        "hours": 11
+      },
+      {
+        "title": "Requests, forms and sessions",
+        "summary": "Superglobals, method handling, validating and escaping input, CSRF tokens, sessions and cookies, and why output escaping is not optional.",
+        "hours": 11
+      },
+      {
+        "title": "Databases with PDO",
+        "summary": "Connecting with PDO, prepared statements against SQL injection, transactions, and a small repository layer that keeps SQL in one place.",
+        "hours": 11
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Composer, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 7
+      },
+      {
+        "title": "Capstone — CRUD web application with authentication, validation and a small template layer",
+        "summary": "Plan, build and ship a CRUD web application with authentication, validation and a small template layer, then review it against the checklist from every earlier module — starting from a clean PHP project, as you would at work.",
+        "hours": 12
+      }
+    ],
+    "capstone": "a CRUD web application with authentication, validation and a small template layer",
+    "prerequisites": [
+      "Basic HTML",
+      "A little programming experience helps"
+    ],
+    "tooling": [
+      "PHP 8 with the built-in server",
+      "Composer",
+      "Xdebug + PHPUnit"
+    ],
+    "image": "/images/courses/php.svg",
+    "featured": true
+  },
+  {
+    "slug": "python",
+    "language": "Python",
+    "mark": "PY",
+    "trackId": "backend",
+    "level": "beginner",
+    "status": "in-development",
+    "tagline": "The most readable language for scripting, data and backend work",
+    "summary": "From first script to a tested application: the language's data model, error handling, virtual environments, files, HTTP and the standard library you already have.",
+    "weeks": 8,
+    "hours": 60,
+    "outcomes": [
+      "Automate a real task: files, APIs and data in one script",
+      "Structure a project into modules with tests and a virtual environment",
+      "Handle failure with exceptions and log it usefully"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Python",
+        "summary": "Python 3 with venv, uv or pip for dependencies, pytest and ruff — installing the toolchain, running a first program, and learning how Python reports errors.",
+        "hours": 5
+      },
+      {
+        "title": "The Python data model",
+        "summary": "Lists, tuples, dictionaries and sets, comprehensions, slicing, mutability, and why the iterator protocol explains most of Python's syntax.",
+        "hours": 12
+      },
+      {
+        "title": "Functions, modules and errors",
+        "summary": "Default and keyword arguments, decorators, modules and packages, exceptions and context managers — including writing your own.",
+        "hours": 12
+      },
+      {
+        "title": "Files, HTTP and the standard library",
+        "summary": "Reading and writing files safely, pathlib, JSON and CSV, calling APIs with requests, and knowing when the standard library is enough.",
+        "hours": 12
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with uv or pip for dependencies, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 7
+      },
+      {
+        "title": "Capstone — command-line tool that pulls data from an API, stores it and prints a report",
+        "summary": "Plan, build and ship a command-line tool that pulls data from an API, stores it and prints a report, then review it against the checklist from every earlier module — starting from a clean Python project, as you would at work.",
+        "hours": 12
+      }
+    ],
+    "capstone": "a command-line tool that pulls data from an API, stores it and prints a report",
+    "prerequisites": [
+      "Comfortable using a terminal"
+    ],
+    "tooling": [
+      "Python 3 with venv",
+      "uv or pip for dependencies",
+      "pytest and ruff"
+    ],
+    "image": "/images/courses/python.svg"
+  },
+  {
+    "slug": "java",
+    "language": "Java",
+    "mark": "JV",
+    "trackId": "backend",
+    "level": "intermediate",
+    "status": "in-development",
+    "tagline": "The language of large systems, Android and enterprise backends",
+    "summary": "Object orientation the way Java intends it, the collections framework, generics, exceptions, Maven, and the JVM basics that explain how your code runs.",
+    "weeks": 10,
+    "hours": 80,
+    "outcomes": [
+      "Design and test a layered Java application with Maven",
+      "Choose the right collection for a workload and explain why",
+      "Read a stack trace and a heap dump without panicking"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Java",
+        "summary": "JDK 21, Maven or Gradle, JUnit 5 — installing the toolchain, running a first program, and learning how Java reports errors.",
+        "hours": 6
+      },
+      {
+        "title": "Classes, interfaces and design",
+        "summary": "Objects, encapsulation, inheritance versus composition, interfaces and abstract classes, and when a design pattern is genuinely earning its place.",
+        "hours": 16
+      },
+      {
+        "title": "Collections and generics",
+        "summary": "List, Set, Map and their implementations, iteration and streams, generics and bounded type parameters, and the cost of each choice.",
+        "hours": 16
+      },
+      {
+        "title": "Exceptions, threads and the JVM",
+        "summary": "Checked and unchecked exceptions, try-with-resources, threading basics, the class loader, garbage collection and JVM tuning vocabulary.",
+        "hours": 16
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Maven or Gradle, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 10
+      },
+      {
+        "title": "Capstone — REST service with layered architecture, validation and JUnit tests",
+        "summary": "Plan, build and ship a REST service with layered architecture, validation and JUnit tests, then review it against the checklist from every earlier module — starting from a clean Java project, as you would at work.",
+        "hours": 16
+      }
+    ],
+    "capstone": "a REST service with layered architecture, validation and JUnit tests",
+    "prerequisites": [
+      "Programming experience in any language"
+    ],
+    "tooling": [
+      "JDK 21",
+      "Maven or Gradle",
+      "JUnit 5"
+    ],
+    "image": "/images/courses/java.svg"
+  },
+  {
+    "slug": "csharp",
+    "language": "C#",
+    "mark": "C#",
+    "trackId": "backend",
+    "level": "intermediate",
+    "status": "in-development",
+    "tagline": "A modern, strongly typed language for web, desktop and games",
+    "summary": "C# through the .NET CLI: types and LINQ, async/await, dependency injection, ASP.NET Core minimal APIs and automated tests, all runnable on Windows, macOS or Linux.",
+    "weeks": 10,
+    "hours": 76,
+    "outcomes": [
+      "Ship a documented ASP.NET Core API from the command line",
+      "Use LINQ and async correctly under load",
+      "Structure a solution into testable projects"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with C#",
+        "summary": ".NET SDK, dotnet CLI, xUnit — installing the toolchain, running a first program, and learning how C# reports errors.",
+        "hours": 6
+      },
+      {
+        "title": "Types, properties and LINQ",
+        "summary": "Value and reference types, records and properties, nullable reference types, and querying collections with LINQ instead of hand-written loops.",
+        "hours": 15
+      },
+      {
+        "title": "Async, exceptions and resources",
+        "summary": "Task and async/await, cancellation, exception filters, and deterministic disposal with `using` — the difference between correct and lucky.",
+        "hours": 15
+      },
+      {
+        "title": "Web APIs with ASP.NET Core",
+        "summary": "Minimal APIs, routing, model binding and validation, dependency injection, middleware and configuration across environments.",
+        "hours": 15
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with dotnet CLI, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 9
+      },
+      {
+        "title": "Capstone — documented .NET web API with injected services and integration tests",
+        "summary": "Plan, build and ship a documented .NET web API with injected services and integration tests, then review it against the checklist from every earlier module — starting from a clean C# project, as you would at work.",
+        "hours": 16
+      }
+    ],
+    "capstone": "a documented .NET web API with injected services and integration tests",
+    "prerequisites": [
+      "Object-oriented programming basics"
+    ],
+    "tooling": [
+      ".NET SDK",
+      "dotnet CLI",
+      "xUnit"
+    ],
+    "image": "/images/courses/csharp.svg"
+  },
+  {
+    "slug": "go",
+    "language": "Go",
+    "mark": "GO",
+    "trackId": "backend",
+    "level": "intermediate",
+    "status": "in-development",
+    "tagline": "Small language, fast binaries, excellent concurrency",
+    "summary": "Go's deliberate simplicity: goroutines and channels, interfaces by behaviour, the standard library HTTP stack, and building a service that deploys as one static binary.",
+    "weeks": 7,
+    "hours": 52,
+    "outcomes": [
+      "Write concurrent Go that passes the race detector",
+      "Build and deploy an HTTP service as a single binary",
+      "Benchmark and profile before optimising"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Go",
+        "summary": "Go toolchain, go test and go vet, Delve debugger — installing the toolchain, running a first program, and learning how Go reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "Types, interfaces and composition",
+        "summary": "Structs and methods, slices and maps, implicit interface satisfaction, embedding, and why Go prefers small interfaces.",
+        "hours": 10
+      },
+      {
+        "title": "Concurrency with goroutines",
+        "summary": "Goroutines, channels, select, sync primitives, context cancellation, and the race detector that finds the bugs tests miss.",
+        "hours": 10
+      },
+      {
+        "title": "Services with the standard library",
+        "summary": "net/http handlers and middleware, encoding/json, error wrapping, graceful shutdown and cross-compiling a static binary.",
+        "hours": 10
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with go test and go vet, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 6
+      },
+      {
+        "title": "Capstone — concurrent HTTP service with tests, benchmarks and a container build",
+        "summary": "Plan, build and ship a concurrent HTTP service with tests, benchmarks and a container build, then review it against the checklist from every earlier module — starting from a clean Go project, as you would at work.",
+        "hours": 12
+      }
+    ],
+    "capstone": "a concurrent HTTP service with tests, benchmarks and a container build",
+    "prerequisites": [
+      "Comfortable with a compiled language or JavaScript"
+    ],
+    "tooling": [
+      "Go toolchain",
+      "go test and go vet",
+      "Delve debugger"
+    ],
+    "image": "/images/courses/go.svg"
+  },
+  {
+    "slug": "ruby",
+    "language": "Ruby",
+    "mark": "RB",
+    "trackId": "backend",
+    "level": "beginner",
+    "status": "in-development",
+    "tagline": "A language designed for developer happiness and readable code",
+    "summary": "Ruby's expressive syntax, blocks and objects, then a small web application with Sinatra, a database layer and tests — the fastest route to shipping something readable.",
+    "weeks": 6,
+    "hours": 44,
+    "outcomes": [
+      "Write idiomatic Ruby that reads like a sentence",
+      "Build and test a small web application",
+      "Package and reuse your own code as a gem"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Ruby",
+        "summary": "Ruby with rbenv, Bundler and gems, RSpec and RuboCop — installing the toolchain, running a first program, and learning how Ruby reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "Objects, blocks and enumerables",
+        "summary": "Everything is an object, blocks and Procs, modules as mixins, and the Enumerable methods that replace most loops you would write elsewhere.",
+        "hours": 9
+      },
+      {
+        "title": "Files, gems and structure",
+        "summary": "Reading data, organising a project into lib and spec folders, dependency management with Bundler, and semantic versioning of your own gem.",
+        "hours": 9
+      },
+      {
+        "title": "Web applications with Sinatra",
+        "summary": "Routes and parameters, templates, sessions, an ORM for persistence, and configuration that differs between development and production.",
+        "hours": 9
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Bundler and gems, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 5
+      },
+      {
+        "title": "Capstone — tested web application with persistence, sessions and a clean repository layer",
+        "summary": "Plan, build and ship a tested web application with persistence, sessions and a clean repository layer, then review it against the checklist from every earlier module — starting from a clean Ruby project, as you would at work.",
+        "hours": 8
+      }
+    ],
+    "capstone": "a tested web application with persistence, sessions and a clean repository layer",
+    "prerequisites": [
+      "Basic programming experience"
+    ],
+    "tooling": [
+      "Ruby with rbenv",
+      "Bundler and gems",
+      "RSpec and RuboCop"
+    ],
+    "image": "/images/courses/ruby.svg"
+  },
+  {
+    "slug": "elixir",
+    "language": "Elixir",
+    "mark": "EX",
+    "trackId": "backend",
+    "level": "advanced",
+    "status": "in-development",
+    "tagline": "Functional, concurrent and famously fault-tolerant",
+    "summary": "Pattern matching, immutable data and the Erlang virtual machine — then processes, supervision trees and real-time features through Phoenix channels.",
+    "weeks": 9,
+    "hours": 70,
+    "outcomes": [
+      "Model a domain with immutable data and pattern matching",
+      "Supervise long-running work so failures do not take the system down",
+      "Ship a real-time feature over websockets"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Elixir",
+        "summary": "Elixir and Erlang/OTP, Mix and Hex, ExUnit — installing the toolchain, running a first program, and learning how Elixir reports errors.",
+        "hours": 6
+      },
+      {
+        "title": "Pattern matching and pipelines",
+        "summary": "Match operator, destructuring, guards, the pipe operator and with-expressions, and how to write error paths as data instead of exceptions.",
+        "hours": 14
+      },
+      {
+        "title": "Processes and supervision",
+        "summary": "Spawned processes, message passing, GenServer state, supervision trees and the 'let it crash' philosophy that makes systems recoverable.",
+        "hours": 14
+      },
+      {
+        "title": "Real-time web with Phoenix",
+        "summary": "Routers and contexts, Ecto changesets and queries, and LiveView or channels for interfaces that update without a page reload.",
+        "hours": 14
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Mix and Hex, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 8
+      },
+      {
+        "title": "Capstone — supervised real-time service with Ecto persistence and ExUnit coverage",
+        "summary": "Plan, build and ship a supervised real-time service with Ecto persistence and ExUnit coverage, then review it against the checklist from every earlier module — starting from a clean Elixir project, as you would at work.",
+        "hours": 14
+      }
+    ],
+    "capstone": "a supervised real-time service with Ecto persistence and ExUnit coverage",
+    "prerequisites": [
+      "Experience in another backend language",
+      "Comfort with the command line"
+    ],
+    "tooling": [
+      "Elixir and Erlang/OTP",
+      "Mix and Hex",
+      "ExUnit"
+    ],
+    "image": "/images/courses/elixir.svg"
+  },
+  {
+    "slug": "scala",
+    "language": "Scala",
+    "mark": "SC",
+    "trackId": "backend",
+    "level": "advanced",
+    "status": "in-development",
+    "tagline": "Object-oriented and functional on the JVM, for data at scale",
+    "summary": "Scala's dual nature: case classes and pattern matching, collections and higher-order functions, then futures and a typed service on the JVM.",
+    "weeks": 9,
+    "hours": 72,
+    "outcomes": [
+      "Express a domain as types the compiler can verify",
+      "Process collections declaratively without losing track of cost",
+      "Write asynchronous JVM code that handles failure deliberately"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Scala",
+        "summary": "sbt or scala-cli, Scala 3 compiler, ScalaTest and scalafmt — installing the toolchain, running a first program, and learning how Scala reports errors.",
+        "hours": 6
+      },
+      {
+        "title": "Case classes and pattern matching",
+        "summary": "Algebraic data types as sealed traits, exhaustive matching the compiler checks, Option and Either instead of null and exceptions.",
+        "hours": 14
+      },
+      {
+        "title": "Collections and higher-order functions",
+        "summary": "map, flatMap, fold and for-comprehensions, laziness with views and streams, and the performance consequences of each transformation.",
+        "hours": 14
+      },
+      {
+        "title": "Concurrency and typed effects",
+        "summary": "Futures and ExecutionContext, error handling in async code, and an introduction to effect systems for describing side effects explicitly.",
+        "hours": 14
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Scala 3 compiler, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 9
+      },
+      {
+        "title": "Capstone — concurrent Scala service with typed errors, tests and a build definition",
+        "summary": "Plan, build and ship a concurrent Scala service with typed errors, tests and a build definition, then review it against the checklist from every earlier module — starting from a clean Scala project, as you would at work.",
+        "hours": 15
+      }
+    ],
+    "capstone": "a concurrent Scala service with typed errors, tests and a build definition",
+    "prerequisites": [
+      "Java or another JVM language",
+      "Some functional programming exposure"
+    ],
+    "tooling": [
+      "sbt or scala-cli",
+      "Scala 3 compiler",
+      "ScalaTest and scalafmt"
+    ],
+    "image": "/images/courses/scala.svg"
+  },
+  {
+    "slug": "solidity",
+    "language": "Solidity",
+    "mark": "SOL",
+    "trackId": "backend",
+    "level": "advanced",
+    "status": "planned",
+    "tagline": "Smart contracts for the Ethereum virtual machine",
+    "summary": "Contract programming where every line costs money: storage layout and gas, access control, reentrancy, testing with Foundry and the discipline of an upgrade plan.",
+    "weeks": 8,
+    "hours": 58,
+    "outcomes": [
+      "Write and test a contract suite locally before spending gas",
+      "Recognise the common exploit classes in reviewed code",
+      "Deploy, verify and interact with a contract from the CLI"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Solidity",
+        "summary": "Foundry (forge, anvil, cast), Solidity compiler, OpenZeppelin contracts — installing the toolchain, running a first program, and learning how Solidity reports errors.",
+        "hours": 5
+      },
+      {
+        "title": "Contracts, storage and gas",
+        "summary": "State variables and visibility, functions and modifiers, calldata versus memory versus storage, and reading a gas report to find waste.",
+        "hours": 12
+      },
+      {
+        "title": "Security patterns that matter",
+        "summary": "Reentrancy and checks-effects-interactions, access control, integer handling, oracle and price manipulation, and why audits exist.",
+        "hours": 12
+      },
+      {
+        "title": "Testing and deploying",
+        "summary": "Unit and fuzz tests with Foundry, fork tests against mainnet state, deployment scripts, verification and upgradeable proxy patterns.",
+        "hours": 12
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Solidity compiler, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 7
+      },
+      {
+        "title": "Capstone — audited-style contract with fuzz tests, deployment scripts and a written threat model",
+        "summary": "Plan, build and ship an audited-style contract with fuzz tests, deployment scripts and a written threat model, then review it against the checklist from every earlier module — starting from a clean Solidity project, as you would at work.",
+        "hours": 10
+      }
+    ],
+    "capstone": "an audited-style contract with fuzz tests, deployment scripts and a written threat model",
+    "prerequisites": [
+      "JavaScript or another C-family language",
+      "Basic understanding of blockchain concepts"
+    ],
+    "tooling": [
+      "Foundry (forge, anvil, cast)",
+      "Solidity compiler",
+      "OpenZeppelin contracts"
+    ],
+    "image": "/images/courses/solidity.svg"
+  },
+  {
+    "slug": "c",
+    "language": "C",
+    "mark": "C",
+    "trackId": "systems",
+    "level": "advanced",
+    "status": "in-development",
+    "tagline": "The language underneath almost everything else",
+    "summary": "Pointers, memory and the machine: manual allocation, structs and data structures, the build toolchain, and using a debugger and sanitiser to find real bugs.",
+    "weeks": 10,
+    "hours": 84,
+    "outcomes": [
+      "Write C that valgrind reports as clean",
+      "Build a multi-file project with a Makefile",
+      "Debug memory corruption from a stack trace instead of by guessing"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with C",
+        "summary": "GCC or Clang, make, gdb and valgrind, AddressSanitizer — installing the toolchain, running a first program, and learning how C reports errors.",
+        "hours": 7
+      },
+      {
+        "title": "Pointers and memory",
+        "summary": "Addresses and indirection, pointer arithmetic, the stack versus the heap, malloc and free, and every way a program can leak or corrupt memory.",
+        "hours": 17
+      },
+      {
+        "title": "Structs, files and data structures",
+        "summary": "Defining and passing structs, linked lists, dynamic arrays and hash tables you write yourself, plus binary and text file I/O.",
+        "hours": 17
+      },
+      {
+        "title": "The toolchain and debugging",
+        "summary": "Compilation stages and linking, header files and make, reading a core dump in gdb, and using sanitizers to turn undefined behaviour into a report.",
+        "hours": 17
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with gdb and valgrind, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 10
+      },
+      {
+        "title": "Capstone — small command-line tool with its own data structure, Makefile and sanitizer-clean test run",
+        "summary": "Plan, build and ship a small command-line tool with its own data structure, Makefile and sanitizer-clean test run, then review it against the checklist from every earlier module — starting from a clean C project, as you would at work.",
+        "hours": 16
+      }
+    ],
+    "capstone": "a small command-line tool with its own data structure, Makefile and sanitizer-clean test run",
+    "prerequisites": [
+      "Comfort with a terminal",
+      "Basic programming in any language"
+    ],
+    "tooling": [
+      "GCC or Clang, make",
+      "gdb and valgrind",
+      "AddressSanitizer"
+    ],
+    "image": "/images/courses/c.svg"
+  },
+  {
+    "slug": "cpp",
+    "language": "C++",
+    "mark": "C++",
+    "trackId": "systems",
+    "level": "advanced",
+    "status": "in-development",
+    "tagline": "Performance with zero-cost abstractions",
+    "summary": "Modern C++ (17 and later): RAII and smart pointers, the standard library containers and algorithms, templates, move semantics and CMake.",
+    "weeks": 11,
+    "hours": 90,
+    "outcomes": [
+      "Write leak-free modern C++ with tests",
+      "Choose containers and algorithms on measured cost",
+      "Configure a multi-target CMake project from scratch"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with C++",
+        "summary": "CMake and Ninja, GCC or Clang with sanitizers, GoogleTest and clang-format — installing the toolchain, running a first program, and learning how C++ reports errors.",
+        "hours": 7
+      },
+      {
+        "title": "RAII, references and smart pointers",
+        "summary": "Constructors and destructors as resource management, references versus pointers, unique_ptr and shared_ptr, and why manual delete is a last resort.",
+        "hours": 18
+      },
+      {
+        "title": "The standard library",
+        "summary": "vector, string, map and their performance characteristics, iterators and algorithms, ranges, and avoiding the classic dangling-iterator bugs.",
+        "hours": 18
+      },
+      {
+        "title": "Move semantics, templates and builds",
+        "summary": "Copy versus move, rvalue references, template functions and classes with concepts, and structuring a multi-target build with CMake.",
+        "hours": 18
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with GCC or Clang with sanitizers, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 11
+      },
+      {
+        "title": "Capstone — performance-sensitive library with benchmarks, tests and a CMake build",
+        "summary": "Plan, build and ship a performance-sensitive library with benchmarks, tests and a CMake build, then review it against the checklist from every earlier module — starting from a clean C++ project, as you would at work.",
+        "hours": 18
+      }
+    ],
+    "capstone": "a performance-sensitive library with benchmarks, tests and a CMake build",
+    "prerequisites": [
+      "C or strong programming fundamentals"
+    ],
+    "tooling": [
+      "CMake and Ninja",
+      "GCC or Clang with sanitizers",
+      "GoogleTest and clang-format"
+    ],
+    "image": "/images/courses/cpp.svg"
+  },
+  {
+    "slug": "rust",
+    "language": "Rust",
+    "mark": "RS",
+    "trackId": "systems",
+    "level": "advanced",
+    "status": "in-development",
+    "tagline": "Memory safety without a garbage collector",
+    "summary": "The borrow checker as a design tool: ownership, traits and generics, error handling, fearless concurrency, and publishing a crate with tests and documentation.",
+    "weeks": 10,
+    "hours": 80,
+    "outcomes": [
+      "Design data structures the borrow checker accepts",
+      "Write concurrent code that compiles without data races",
+      "Publish a documented, tested crate"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Rust",
+        "summary": "rustup and cargo, clippy and rustfmt, cargo test and criterion — installing the toolchain, running a first program, and learning how Rust reports errors.",
+        "hours": 6
+      },
+      {
+        "title": "Ownership, borrowing and lifetimes",
+        "summary": "Moves and copies, mutable versus shared borrows, lifetime annotations, and reading borrow-checker errors as design feedback rather than obstacles.",
+        "hours": 16
+      },
+      {
+        "title": "Traits, generics and errors",
+        "summary": "Trait definitions and implementations, generic bounds, enums for state, and Result-based error handling with the `?` operator and custom error types.",
+        "hours": 16
+      },
+      {
+        "title": "Concurrency and the crate ecosystem",
+        "summary": "Threads, channels and Arc/Mutex, async with tokio, choosing dependencies carefully, and publishing a documented crate to crates.io.",
+        "hours": 16
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with clippy and rustfmt, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 10
+      },
+      {
+        "title": "Capstone — command-line tool published as a crate with integration tests and generated docs",
+        "summary": "Plan, build and ship a command-line tool published as a crate with integration tests and generated docs, then review it against the checklist from every earlier module — starting from a clean Rust project, as you would at work.",
+        "hours": 16
+      }
+    ],
+    "capstone": "a command-line tool published as a crate with integration tests and generated docs",
+    "prerequisites": [
+      "Experience in a systems or backend language"
+    ],
+    "tooling": [
+      "rustup and cargo",
+      "clippy and rustfmt",
+      "cargo test and criterion"
+    ],
+    "image": "/images/courses/rust.svg"
+  },
+  {
+    "slug": "zig",
+    "language": "Zig",
+    "mark": "ZG",
+    "trackId": "systems",
+    "level": "advanced",
+    "status": "planned",
+    "tagline": "A small systems language with explicit memory and great tooling",
+    "summary": "Explicit allocators, comptime instead of macros, first-class C interoperability and a build system that can compile C and C++ in the same project.",
+    "weeks": 7,
+    "hours": 52,
+    "outcomes": [
+      "Write systems code with no hidden allocations",
+      "Cross-compile a binary for another platform",
+      "Interoperate with an existing C library"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Zig",
+        "summary": "Zig compiler and build system, zig fmt and zig test, Valgrind or a sanitizer — installing the toolchain, running a first program, and learning how Zig reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "Allocators and explicit memory",
+        "summary": "The allocator interface, arena and general-purpose allocators, defer and errdefer for cleanup, and slices rather than null-terminated strings.",
+        "hours": 10
+      },
+      {
+        "title": "Comptime and error unions",
+        "summary": "Compile-time code execution, generic containers through comptime, error unions and try, and optional values without null pointers.",
+        "hours": 10
+      },
+      {
+        "title": "C interop and the build system",
+        "summary": "Calling and exporting C functions, cross-compilation to another architecture, and a build.zig that produces executables, tests and libraries.",
+        "hours": 10
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with zig fmt and zig test, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 6
+      },
+      {
+        "title": "Capstone — cross-compiled CLI tool that links a C library and passes allocator-leak tests",
+        "summary": "Plan, build and ship a cross-compiled CLI tool that links a C library and passes allocator-leak tests, then review it against the checklist from every earlier module — starting from a clean Zig project, as you would at work.",
+        "hours": 12
+      }
+    ],
+    "capstone": "a cross-compiled CLI tool that links a C library and passes allocator-leak tests",
+    "prerequisites": [
+      "C or C++ experience",
+      "Understanding of manual memory management"
+    ],
+    "tooling": [
+      "Zig compiler and build system",
+      "zig fmt and zig test",
+      "Valgrind or a sanitizer"
+    ],
+    "image": "/images/courses/zig.svg"
+  },
+  {
+    "slug": "assembly",
+    "language": "Assembly",
+    "mark": "ASM",
+    "trackId": "systems",
+    "level": "advanced",
+    "status": "planned",
+    "tagline": "What the machine actually executes",
+    "summary": "x86-64 fundamentals: registers and the stack, system calls, calling conventions and reading compiler output — the layer that makes debugging everything else easier.",
+    "weeks": 6,
+    "hours": 40,
+    "outcomes": [
+      "Write and assemble a working program without a high-level compiler",
+      "Explain a stack trace at the instruction level",
+      "Read optimised compiler output with confidence"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Assembly",
+        "summary": "NASM or GNU as, objdump and gdb, Godbolt compiler explorer — installing the toolchain, running a first program, and learning how Assembly reports errors.",
+        "hours": 3
+      },
+      {
+        "title": "Registers, memory and the stack",
+        "summary": "General-purpose registers, addressing modes, stack frames and the calling convention that lets C and assembly call each other.",
+        "hours": 8
+      },
+      {
+        "title": "Instructions, branches and syscalls",
+        "summary": "Moving and comparing data, conditional jumps and loops, arithmetic flags, and making a Linux system call directly.",
+        "hours": 8
+      },
+      {
+        "title": "Reading compiler output",
+        "summary": "Compiling C to assembly, recognising optimisation patterns, and using objdump and gdb to understand a program you did not write.",
+        "hours": 8
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with objdump and gdb, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 5
+      },
+      {
+        "title": "Capstone — small assembly utility plus a written analysis of a C file's compiler output",
+        "summary": "Plan, build and ship a small assembly utility plus a written analysis of a C file's compiler output, then review it against the checklist from every earlier module — starting from a clean Assembly project, as you would at work.",
+        "hours": 8
+      }
+    ],
+    "capstone": "a small assembly utility plus a written analysis of a C file's compiler output",
+    "prerequisites": [
+      "Strong C knowledge"
+    ],
+    "tooling": [
+      "NASM or GNU as",
+      "objdump and gdb",
+      "Godbolt compiler explorer"
+    ],
+    "image": "/images/courses/assembly.svg"
+  },
+  {
+    "slug": "sql",
+    "language": "SQL",
+    "mark": "SQL",
+    "trackId": "data",
+    "level": "beginner",
+    "status": "available",
+    "tagline": "The one language every developer eventually needs",
+    "summary": "From SELECT to schema design: joins and aggregation, subqueries and CTEs, indexes and query plans, transactions, and modelling data so it stays correct.",
+    "weeks": 6,
+    "hours": 44,
+    "outcomes": [
+      "Answer real business questions with a single correct query",
+      "Design a schema that prevents invalid data",
+      "Make a slow query fast and prove it with a query plan"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with SQL",
+        "summary": "PostgreSQL (or MySQL), psql CLI and a GUI client, EXPLAIN ANALYZE — installing the toolchain, running a first program, and learning how SQL reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "Querying: joins and aggregation",
+        "summary": "INNER, LEFT and self joins, GROUP BY with HAVING, window functions, and the difference between filtering before and after aggregation.",
+        "hours": 9
+      },
+      {
+        "title": "Schema design and integrity",
+        "summary": "Primary and foreign keys, constraints, normalisation versus deliberate denormalisation, and migrations that can be rolled back safely.",
+        "hours": 9
+      },
+      {
+        "title": "Indexes, plans and transactions",
+        "summary": "B-tree and composite indexes, reading EXPLAIN plans, avoiding N+1 patterns, and isolating concurrent writes with the right transaction level.",
+        "hours": 9
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with psql CLI and a GUI client, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 5
+      },
+      {
+        "title": "Capstone — designed schema, a seeded dataset, an indexed reporting query and a written plan analysis",
+        "summary": "Plan, build and ship a designed schema, a seeded dataset, an indexed reporting query and a written plan analysis, then review it against the checklist from every earlier module — starting from a clean SQL project, as you would at work.",
+        "hours": 8
+      }
+    ],
+    "capstone": "a designed schema, a seeded dataset, an indexed reporting query and a written plan analysis",
+    "prerequisites": [
+      "Comfort with a terminal",
+      "No database experience required"
+    ],
+    "tooling": [
+      "PostgreSQL (or MySQL)",
+      "psql CLI and a GUI client",
+      "EXPLAIN ANALYZE"
+    ],
+    "image": "/images/courses/sql.svg",
+    "featured": true
+  },
+  {
+    "slug": "r",
+    "language": "R",
+    "mark": "R",
+    "trackId": "data",
+    "level": "intermediate",
+    "status": "in-development",
+    "tagline": "Statistics and visualisation for people who work with data",
+    "summary": "Vectors and data frames, the tidyverse approach to cleaning and reshaping, statistical summaries and plots that communicate a finding honestly.",
+    "weeks": 7,
+    "hours": 50,
+    "outcomes": [
+      "Clean and reshape a messy dataset reproducibly",
+      "Produce charts that do not mislead",
+      "Deliver an analysis as a document someone else can reproduce"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with R",
+        "summary": "R and RStudio, tidyverse packages, Quarto or R Markdown — installing the toolchain, running a first program, and learning how R reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "Vectors, data frames and types",
+        "summary": "Atomic vectors, factors and dates, list columns, and the indexing rules that explain most confusing R behaviour.",
+        "hours": 10
+      },
+      {
+        "title": "Tidy data and transformation",
+        "summary": "filter, select, mutate, group_by and summarise, reshaping with pivots, joining datasets, and handling missing values deliberately.",
+        "hours": 10
+      },
+      {
+        "title": "Visualisation and reporting",
+        "summary": "ggplot2 grammar of graphics, choosing the right chart for the question, colour and labelling for accessibility, and rendering a reproducible report.",
+        "hours": 10
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with tidyverse packages, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 6
+      },
+      {
+        "title": "Capstone — reproducible analysis of a public dataset published as a rendered report",
+        "summary": "Plan, build and ship a reproducible analysis of a public dataset published as a rendered report, then review it against the checklist from every earlier module — starting from a clean R project, as you would at work.",
+        "hours": 10
+      }
+    ],
+    "capstone": "a reproducible analysis of a public dataset published as a rendered report",
+    "prerequisites": [
+      "Basic programming concepts",
+      "Some statistics familiarity helps"
+    ],
+    "tooling": [
+      "R and RStudio",
+      "tidyverse packages",
+      "Quarto or R Markdown"
+    ],
+    "image": "/images/courses/r.svg"
+  },
+  {
+    "slug": "julia",
+    "language": "Julia",
+    "mark": "JL",
+    "trackId": "data",
+    "level": "advanced",
+    "status": "planned",
+    "tagline": "Numerical computing that reads like mathematics and runs like C",
+    "summary": "Multiple dispatch, type stability and performance, arrays and broadcasting, then a data or simulation project with plots and tests.",
+    "weeks": 7,
+    "hours": 54,
+    "outcomes": [
+      "Write type-stable Julia that performs close to compiled code",
+      "Profile and remove allocations from a hot loop",
+      "Package a numerical project with tests and figures"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Julia",
+        "summary": "Julia and the Pkg REPL, Jupyter or Pluto notebooks, Test and BenchmarkTools — installing the toolchain, running a first program, and learning how Julia reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "Multiple dispatch and typing",
+        "summary": "Generic functions and methods, abstract and concrete types, type stability, and why a type annotation can make code slower rather than faster.",
+        "hours": 11
+      },
+      {
+        "title": "Arrays, broadcasting and performance",
+        "summary": "Vectorised operations and the dot syntax, views versus copies, in-place mutation, and profiling to find the allocation hotspot.",
+        "hours": 11
+      },
+      {
+        "title": "Packages, tests and plots",
+        "summary": "Project environments and dependencies, writing package tests, and producing publication-quality figures with a plotting library.",
+        "hours": 11
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Jupyter or Pluto notebooks, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 6
+      },
+      {
+        "title": "Capstone — measured simulation or data pipeline packaged with tests, benchmarks and plots",
+        "summary": "Plan, build and ship a measured simulation or data pipeline packaged with tests, benchmarks and plots, then review it against the checklist from every earlier module — starting from a clean Julia project, as you would at work.",
+        "hours": 11
+      }
+    ],
+    "capstone": "a measured simulation or data pipeline packaged with tests, benchmarks and plots",
+    "prerequisites": [
+      "Programming experience",
+      "Comfort with basic linear algebra"
+    ],
+    "tooling": [
+      "Julia and the Pkg REPL",
+      "Jupyter or Pluto notebooks",
+      "Test and BenchmarkTools"
+    ],
+    "image": "/images/courses/julia.svg"
+  },
+  {
+    "slug": "fortran",
+    "language": "Fortran",
+    "mark": "FTN",
+    "trackId": "data",
+    "level": "advanced",
+    "status": "planned",
+    "tagline": "Still the language of weather models and heavy numerics",
+    "summary": "Modern Fortran (2008+): modules and typed procedures, arrays and intrinsic operations, then interoperating with C and parallelising a numerical kernel.",
+    "weeks": 6,
+    "hours": 42,
+    "outcomes": [
+      "Modernise part of a legacy numerical codebase",
+      "Write array code that a profiler confirms is efficient",
+      "Call C from Fortran (and back) without guessing at memory layout"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Fortran",
+        "summary": "gfortran or ifort, fpm (Fortran Package Manager), OpenMP and a profiler — installing the toolchain, running a first program, and learning how Fortran reports errors.",
+        "hours": 3
+      },
+      {
+        "title": "Modules and modern syntax",
+        "summary": "Program units and modules, typed arguments with intent, allocatable arrays, derived types, and avoiding the fixed-form habits of old code.",
+        "hours": 8
+      },
+      {
+        "title": "Array operations and numerics",
+        "summary": "Whole-array expressions, intrinsics, array slicing, numerical precision and floating-point traps, and writing cache-friendly loops.",
+        "hours": 8
+      },
+      {
+        "title": "Interoperability and parallelism",
+        "summary": "The ISO_C_BINDING interface for calling C, build files for legacy code, and adding OpenMP directives to a kernel that already works.",
+        "hours": 8
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with fpm (Fortran Package Manager), reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 5
+      },
+      {
+        "title": "Capstone — parallelised numerical kernel with a C interoperability layer and benchmark results",
+        "summary": "Plan, build and ship a parallelised numerical kernel with a C interoperability layer and benchmark results, then review it against the checklist from every earlier module — starting from a clean Fortran project, as you would at work.",
+        "hours": 10
+      }
+    ],
+    "capstone": "a parallelised numerical kernel with a C interoperability layer and benchmark results",
+    "prerequisites": [
+      "A scientific or engineering background helps",
+      "Basic programming"
+    ],
+    "tooling": [
+      "gfortran or ifort",
+      "fpm (Fortran Package Manager)",
+      "OpenMP and a profiler"
+    ],
+    "image": "/images/courses/fortran.svg"
+  },
+  {
+    "slug": "swift",
+    "language": "Swift",
+    "mark": "SW",
+    "trackId": "mobile",
+    "level": "intermediate",
+    "status": "in-development",
+    "tagline": "Apple platforms, from first app to the App Store",
+    "summary": "Swift's optionals and value types, SwiftUI declarative interfaces, async work and persistence, then building, testing and shipping an app.",
+    "weeks": 9,
+    "hours": 68,
+    "outcomes": [
+      "Build a multi-screen SwiftUI app that talks to an API",
+      "Model data with Codable and persist it correctly",
+      "Test and prepare an app for submission"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Swift",
+        "summary": "Xcode and the Swift toolchain, Swift Package Manager, XCTest and Instruments — installing the toolchain, running a first program, and learning how Swift reports errors.",
+        "hours": 5
+      },
+      {
+        "title": "Optionals, value types and protocols",
+        "summary": "Optional binding and chaining, structs versus classes, enums with associated values, protocol-oriented design and generics.",
+        "hours": 14
+      },
+      {
+        "title": "SwiftUI interfaces and state",
+        "summary": "Views and modifiers, @State and observable models, navigation and lists, animations, and building an interface that adapts to every screen size.",
+        "hours": 14
+      },
+      {
+        "title": "Async work, data and shipping",
+        "summary": "async/await and tasks, URLSession and Codable for APIs, persistence options, unit and UI tests, and the App Store submission checklist.",
+        "hours": 14
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Swift Package Manager, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 8
+      },
+      {
+        "title": "Capstone — tested SwiftUI app backed by a real API, with persistence and offline states",
+        "summary": "Plan, build and ship a tested SwiftUI app backed by a real API, with persistence and offline states, then review it against the checklist from every earlier module — starting from a clean Swift project, as you would at work.",
+        "hours": 13
+      }
+    ],
+    "capstone": "a tested SwiftUI app backed by a real API, with persistence and offline states",
+    "prerequisites": [
+      "Programming experience",
+      "A Mac for building and testing"
+    ],
+    "tooling": [
+      "Xcode and the Swift toolchain",
+      "Swift Package Manager",
+      "XCTest and Instruments"
+    ],
+    "image": "/images/courses/swift.svg"
+  },
+  {
+    "slug": "kotlin",
+    "language": "Kotlin",
+    "mark": "KT",
+    "trackId": "mobile",
+    "level": "intermediate",
+    "status": "in-development",
+    "tagline": "Android's modern language, and a capable JVM backend language too",
+    "summary": "Null safety, data classes and coroutines, Jetpack Compose interfaces, Room persistence and a tested Android application from empty project to release build.",
+    "weeks": 9,
+    "hours": 70,
+    "outcomes": [
+      "Build a Compose application with a real data layer",
+      "Handle asynchronous work without leaking or blocking",
+      "Run unit and instrumented tests against your own code"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Kotlin",
+        "summary": "Android Studio, Gradle with the Kotlin DSL, JUnit and AndroidX Test — installing the toolchain, running a first program, and learning how Kotlin reports errors.",
+        "hours": 6
+      },
+      {
+        "title": "Null safety and data classes",
+        "summary": "Nullable and non-null types, safe calls and Elvis, data classes, sealed hierarchies when-expressions and the standard collection functions.",
+        "hours": 14
+      },
+      {
+        "title": "Coroutines and asynchronous work",
+        "summary": "suspend functions, scopes and structured concurrency, dispatchers, flows for streams of data, and the cancellation rules that keep apps responsive.",
+        "hours": 14
+      },
+      {
+        "title": "Jetpack Compose and persistence",
+        "summary": "Composable functions and state hoisting, navigation, theming, Room for local data, and networking with a typed HTTP client.",
+        "hours": 14
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Gradle with the Kotlin DSL, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 8
+      },
+      {
+        "title": "Capstone — tested Compose app with offline persistence and a typed API client",
+        "summary": "Plan, build and ship a tested Compose app with offline persistence and a typed API client, then review it against the checklist from every earlier module — starting from a clean Kotlin project, as you would at work.",
+        "hours": 14
+      }
+    ],
+    "capstone": "a tested Compose app with offline persistence and a typed API client",
+    "prerequisites": [
+      "Some object-oriented programming experience"
+    ],
+    "tooling": [
+      "Android Studio",
+      "Gradle with the Kotlin DSL",
+      "JUnit and AndroidX Test"
+    ],
+    "image": "/images/courses/kotlin.svg"
+  },
+  {
+    "slug": "dart",
+    "language": "Dart",
+    "mark": "DT",
+    "trackId": "mobile",
+    "level": "intermediate",
+    "status": "planned",
+    "tagline": "The language behind Flutter, for apps on every platform",
+    "summary": "Dart's sound null safety and async model, then Flutter widgets, state management, testing and building for Android, iOS and the web from one codebase.",
+    "weeks": 8,
+    "hours": 62,
+    "outcomes": [
+      "Ship one codebase to Android, iOS and web",
+      "Manage application state without a tangle of callbacks",
+      "Write widget tests that catch layout regressions"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Dart",
+        "summary": "Flutter SDK and Dart, DevTools profiler, flutter test and integration_test — installing the toolchain, running a first program, and learning how Dart reports errors.",
+        "hours": 5
+      },
+      {
+        "title": "Dart without null surprises",
+        "summary": "Sound null safety, final and const, records and pattern matching, futures and streams, and the language features Flutter leans on most.",
+        "hours": 12
+      },
+      {
+        "title": "Flutter widgets and layout",
+        "summary": "Composition over inheritance, the widget tree, constraints and layout, responsive breakpoints, theming and accessible semantics.",
+        "hours": 12
+      },
+      {
+        "title": "State, storage and builds",
+        "summary": "State management approaches and when each is appropriate, local storage, platform channels, widget tests, and release builds per platform.",
+        "hours": 12
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with DevTools profiler, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 7
+      },
+      {
+        "title": "Capstone — responsive Flutter application with state management, persistence and widget tests",
+        "summary": "Plan, build and ship a responsive Flutter application with state management, persistence and widget tests, then review it against the checklist from every earlier module — starting from a clean Dart project, as you would at work.",
+        "hours": 14
+      }
+    ],
+    "capstone": "a responsive Flutter application with state management, persistence and widget tests",
+    "prerequisites": [
+      "Programming experience in another language"
+    ],
+    "tooling": [
+      "Flutter SDK and Dart",
+      "DevTools profiler",
+      "flutter test and integration_test"
+    ],
+    "image": "/images/courses/dart.svg"
+  },
+  {
+    "slug": "bash",
+    "language": "Bash",
+    "mark": "SH",
+    "trackId": "scripting",
+    "level": "beginner",
+    "status": "available",
+    "tagline": "The shell language every developer should be able to read",
+    "summary": "Pipes and redirection, variables and quoting, conditionals and loops, then writing scripts that fail safely and can be trusted in a deploy pipeline.",
+    "weeks": 4,
+    "hours": 24,
+    "outcomes": [
+      "Automate a repetitive task in a script a colleague can read",
+      "Write scripts that stop on failure instead of corrupting data",
+      "Test your scripts instead of hoping"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Bash",
+        "summary": "Bash and the coreutils, shellcheck, bats for script tests — installing the toolchain, running a first program, and learning how Bash reports errors.",
+        "hours": 2
+      },
+      {
+        "title": "Pipes, redirection and the filesystem",
+        "summary": "Standard streams, pipes, redirection and here-documents, permissions, globbing, and composing small commands into one useful line.",
+        "hours": 5
+      },
+      {
+        "title": "Quoting, variables and control flow",
+        "summary": "The rules that decide whether your variable survives intact, command substitution, tests and conditionals, loops, functions and exit codes.",
+        "hours": 5
+      },
+      {
+        "title": "Scripts you can trust",
+        "summary": "set -euo pipefail, traps for cleanup, argument parsing, temporary files, logging, and linting every script with shellcheck.",
+        "hours": 5
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with shellcheck, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 3
+      },
+      {
+        "title": "Capstone — idempotent automation script with argument parsing, tests and shellcheck-clean linting",
+        "summary": "Plan, build and ship an idempotent automation script with argument parsing, tests and shellcheck-clean linting, then review it against the checklist from every earlier module — starting from a clean Bash project, as you would at work.",
+        "hours": 4
+      }
+    ],
+    "capstone": "an idempotent automation script with argument parsing, tests and shellcheck-clean linting",
+    "prerequisites": [
+      "Willingness to use a terminal"
+    ],
+    "tooling": [
+      "Bash and the coreutils",
+      "shellcheck",
+      "bats for script tests"
+    ],
+    "image": "/images/courses/bash.svg"
+  },
+  {
+    "slug": "powershell",
+    "language": "PowerShell",
+    "mark": "PS",
+    "trackId": "scripting",
+    "level": "beginner",
+    "status": "planned",
+    "tagline": "Serious scripting across Windows, Linux and CI",
+    "summary": "Objects instead of text: the pipeline, cmdlets and parameters, error handling, modules, and automating administration tasks across platforms.",
+    "weeks": 5,
+    "hours": 30,
+    "outcomes": [
+      "Automate an administration task end to end",
+      "Write a module with validation and help text",
+      "Test scripts with Pester in a pipeline"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with PowerShell",
+        "summary": "PowerShell 7, PSScriptAnalyzer, Pester — installing the toolchain, running a first program, and learning how PowerShell reports errors.",
+        "hours": 2
+      },
+      {
+        "title": "Objects on the pipeline",
+        "summary": "Why PowerShell passes objects rather than text, cmdlet naming and parameters, filtering with Where-Object and shaping with Select-Object.",
+        "hours": 6
+      },
+      {
+        "title": "Functions, errors and modules",
+        "summary": "Advanced functions with parameter validation, terminating and non-terminating errors, try/catch/finally, and packaging reusable modules.",
+        "hours": 6
+      },
+      {
+        "title": "Automation across platforms",
+        "summary": "Working with files, processes, environment variables and REST APIs, scheduled jobs, and writing scripts that run in Linux CI too.",
+        "hours": 6
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with PSScriptAnalyzer, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 4
+      },
+      {
+        "title": "Capstone — tested PowerShell module that automates a multi-step administrative task",
+        "summary": "Plan, build and ship a tested PowerShell module that automates a multi-step administrative task, then review it against the checklist from every earlier module — starting from a clean PowerShell project, as you would at work.",
+        "hours": 6
+      }
+    ],
+    "capstone": "a tested PowerShell module that automates a multi-step administrative task",
+    "prerequisites": [
+      "Basic command-line familiarity"
+    ],
+    "tooling": [
+      "PowerShell 7",
+      "PSScriptAnalyzer",
+      "Pester"
+    ],
+    "image": "/images/courses/powershell.svg"
+  },
+  {
+    "slug": "lua",
+    "language": "Lua",
+    "mark": "LUA",
+    "trackId": "scripting",
+    "level": "beginner",
+    "status": "in-development",
+    "tagline": "Tiny, fast and embeddable — games, tools and configuration",
+    "summary": "A small language you can hold in your head: tables as the universal structure, metatables, modules, and embedding Lua inside a host application.",
+    "weeks": 4,
+    "hours": 26,
+    "outcomes": [
+      "Use tables idiomatically for every data shape",
+      "Extend behaviour safely with metatables",
+      "Embed a Lua interpreter in a host program"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Lua",
+        "summary": "Lua 5.4 and LuaJIT, luarocks, busted — installing the toolchain, running a first program, and learning how Lua reports errors.",
+        "hours": 2
+      },
+      {
+        "title": "Tables, the one data structure",
+        "summary": "Arrays, dictionaries, records and namespaces — all tables; iteration, length semantics, and the aliasing behaviour that trips people up.",
+        "hours": 5
+      },
+      {
+        "title": "Functions, metatables and modules",
+        "summary": "First-class functions and closures, metatables and metamethods for operator overloading, and organising code into require-able modules.",
+        "hours": 5
+      },
+      {
+        "title": "Hosting and embedding",
+        "summary": "The C API basics for embedding a script engine, sandboxing, and the pattern used by game engines and configuration-driven tools.",
+        "hours": 5
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with luarocks, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 3
+      },
+      {
+        "title": "Capstone — small scripting layer embedded in a host application with a sandboxed API",
+        "summary": "Plan, build and ship a small scripting layer embedded in a host application with a sandboxed API, then review it against the checklist from every earlier module — starting from a clean Lua project, as you would at work.",
+        "hours": 6
+      }
+    ],
+    "capstone": "a small scripting layer embedded in a host application with a sandboxed API",
+    "prerequisites": [
+      "Any previous programming experience"
+    ],
+    "tooling": [
+      "Lua 5.4 and LuaJIT",
+      "luarocks",
+      "busted"
+    ],
+    "image": "/images/courses/lua.svg"
+  },
+  {
+    "slug": "perl",
+    "language": "Perl",
+    "mark": "PL",
+    "trackId": "scripting",
+    "level": "intermediate",
+    "status": "planned",
+    "tagline": "The original practical extraction language — still excellent at text",
+    "summary": "Perl's approach to text processing: scalars, arrays and hashes, regular expressions done properly, files and CPAN, plus the discipline of modern Perl.",
+    "weeks": 5,
+    "hours": 34,
+    "outcomes": [
+      "Parse and transform messy text reliably",
+      "Use CPAN modules instead of reinventing them",
+      "Write tested, warning-free Perl"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Perl",
+        "summary": "Perl 5 with perlbrew or plenv, cpanm, Test::More and Perl::Critic — installing the toolchain, running a first program, and learning how Perl reports errors.",
+        "hours": 3
+      },
+      {
+        "title": "Scalars, arrays and hashes",
+        "summary": "Sigils and context (scalar versus list), references and nested data structures, sorting and slicing, and the debugging aids that make sense of it.",
+        "hours": 7
+      },
+      {
+        "title": "Regular expressions and text",
+        "summary": "Pattern matching, capture groups, substitutions and transliteration, non-greedy matching, and parsing logs without a forest of conditionals.",
+        "hours": 7
+      },
+      {
+        "title": "Modules, testing and modern Perl",
+        "summary": "CPAN and cpanm, writing modules with packages and exports, strict and warnings, Test::More, and the style rules of Perl::Critic.",
+        "hours": 7
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with cpanm, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 4
+      },
+      {
+        "title": "Capstone — log-processing tool with tests, CPAN dependencies and a documented CLI",
+        "summary": "Plan, build and ship a log-processing tool with tests, CPAN dependencies and a documented CLI, then review it against the checklist from every earlier module — starting from a clean Perl project, as you would at work.",
+        "hours": 6
+      }
+    ],
+    "capstone": "a log-processing tool with tests, CPAN dependencies and a documented CLI",
+    "prerequisites": [
+      "Some scripting experience",
+      "Comfort with regular expressions helps"
+    ],
+    "tooling": [
+      "Perl 5 with perlbrew or plenv",
+      "cpanm",
+      "Test::More and Perl::Critic"
+    ],
+    "image": "/images/courses/perl.svg"
+  },
+  {
+    "slug": "haskell",
+    "language": "Haskell",
+    "mark": "HS",
+    "trackId": "functional",
+    "level": "advanced",
+    "status": "in-development",
+    "tagline": "Purely functional, lazily evaluated and famously mind-expanding",
+    "summary": "Types as the design: algebraic data types, pattern matching, functors and monads, laziness, and building a small application with a real build tool.",
+    "weeks": 9,
+    "hours": 70,
+    "outcomes": [
+      "Design a program around types before writing functions",
+      "Use monads without hand-waving what they do",
+      "Build, test and benchmark a Haskell project"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Haskell",
+        "summary": "GHCup, GHC and cabal, ghcid and HLint, Hspec and QuickCheck — installing the toolchain, running a first program, and learning how Haskell reports errors.",
+        "hours": 6
+      },
+      {
+        "title": "Types, functions and pattern matching",
+        "summary": "Type inference and signatures, algebraic data types, recursion instead of loops, currying and higher-order functions.",
+        "hours": 14
+      },
+      {
+        "title": "Functors, applicatives and monads",
+        "summary": "What those abstractions actually abstract: mapping over contexts, sequencing effects, and why Maybe and Either replace a sea of null checks.",
+        "hours": 14
+      },
+      {
+        "title": "Laziness, effects and tooling",
+        "summary": "How lazy evaluation works and where it bites, strictness annotations, IO and state, and structuring a project with cabal and a test suite.",
+        "hours": 14
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with ghcid and HLint, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 8
+      },
+      {
+        "title": "Capstone — typed application with property-based tests and a documented, justified type design",
+        "summary": "Plan, build and ship a typed application with property-based tests and a documented, justified type design, then review it against the checklist from every earlier module — starting from a clean Haskell project, as you would at work.",
+        "hours": 14
+      }
+    ],
+    "capstone": "a typed application with property-based tests and a documented, justified type design",
+    "prerequisites": [
+      "Programming experience in another language",
+      "Patience with compiler errors"
+    ],
+    "tooling": [
+      "GHCup, GHC and cabal",
+      "ghcid and HLint",
+      "Hspec and QuickCheck"
+    ],
+    "image": "/images/courses/haskell.svg"
+  },
+  {
+    "slug": "fsharp",
+    "language": "F#",
+    "mark": "F#",
+    "trackId": "functional",
+    "level": "advanced",
+    "status": "planned",
+    "tagline": "Functional programming on .NET, with excellent data tooling",
+    "summary": "F#'s functional core on a pragmatic platform: immutable data and pattern matching, pipelines, discriminated unions, async and data scripting.",
+    "weeks": 7,
+    "hours": 50,
+    "outcomes": [
+      "Solve a domain problem with types and pipelines",
+      "Handle errors as values instead of exceptions",
+      "Use F# for data exploration as well as applications"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with F#",
+        "summary": ".NET SDK with Ionide or Rider, dotnet fsi scripting, Expecto or xUnit — installing the toolchain, running a first program, and learning how F# reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "Immutability and pattern matching",
+        "summary": "let bindings, records and discriminated unions, exhaustive matching, and modelling a domain so invalid states cannot be constructed.",
+        "hours": 10
+      },
+      {
+        "title": "Pipelines, options and results",
+        "summary": "Composition with the pipe operator, Option and Result, railway-oriented error handling, and writing pipelines that read like the specification.",
+        "hours": 10
+      },
+      {
+        "title": "Async, scripting and data work",
+        "summary": "Async and task workflows, type providers for typed access to data sources, and using dotnet fsi for exploratory data work.",
+        "hours": 10
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with dotnet fsi scripting, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 6
+      },
+      {
+        "title": "Capstone — typed .NET application with railway error handling and a test suite",
+        "summary": "Plan, build and ship a typed .NET application with railway error handling and a test suite, then review it against the checklist from every earlier module — starting from a clean F# project, as you would at work.",
+        "hours": 10
+      }
+    ],
+    "capstone": "a typed .NET application with railway error handling and a test suite",
+    "prerequisites": [
+      "Some C# or .NET familiarity helps",
+      "Functional basics recommended"
+    ],
+    "tooling": [
+      ".NET SDK with Ionide or Rider",
+      "dotnet fsi scripting",
+      "Expecto or xUnit"
+    ],
+    "image": "/images/courses/fsharp.svg"
+  },
+  {
+    "slug": "clojure",
+    "language": "Clojure",
+    "mark": "CLJ",
+    "trackId": "functional",
+    "level": "advanced",
+    "status": "planned",
+    "tagline": "A Lisp on the JVM built around immutable data",
+    "summary": "Data-first programming: the REPL workflow, sequences and transforms, maps as records, atoms for state, and a small service with deps.edn.",
+    "weeks": 7,
+    "hours": 52,
+    "outcomes": [
+      "Work effectively with immutable collections",
+      "Manage state changes without locks",
+      "Ship a small Clojure service with tests"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Clojure",
+        "summary": "Clojure CLI and deps.edn, REPL and Portal inspector, clojure.test — installing the toolchain, running a first program, and learning how Clojure reports errors.",
+        "hours": 4
+      },
+      {
+        "title": "REPL-driven development",
+        "summary": "Evaluating forms in context, exploring data at the REPL, namespaces and requires, and the workflow that makes Lisp editing worth the parenthesis.",
+        "hours": 10
+      },
+      {
+        "title": "Immutable data and sequences",
+        "summary": "Vectors, maps and sets, the sequence abstraction, transducers, destructuring, and structural sharing that makes immutability affordable.",
+        "hours": 10
+      },
+      {
+        "title": "State, concurrency and services",
+        "summary": "Atoms, refs and software transactional memory, core.async basics, and building an HTTP service with routing, JSON and tests.",
+        "hours": 10
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with REPL and Portal inspector, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 6
+      },
+      {
+        "title": "Capstone — immutable-data service built at the REPL with tests and a deps.edn project",
+        "summary": "Plan, build and ship an immutable-data service built at the REPL with tests and a deps.edn project, then review it against the checklist from every earlier module — starting from a clean Clojure project, as you would at work.",
+        "hours": 12
+      }
+    ],
+    "capstone": "an immutable-data service built at the REPL with tests and a deps.edn project",
+    "prerequisites": [
+      "Java or JVM exposure",
+      "Comfort with a REPL-driven workflow"
+    ],
+    "tooling": [
+      "Clojure CLI and deps.edn",
+      "REPL and Portal inspector",
+      "clojure.test"
+    ],
+    "image": "/images/courses/clojure.svg"
+  },
+  {
+    "slug": "erlang",
+    "language": "Erlang",
+    "mark": "ERL",
+    "trackId": "functional",
+    "level": "advanced",
+    "status": "planned",
+    "tagline": "Built for systems that must not stop",
+    "summary": "Processes, messages and supervision from the language that gave us the telecom-grade uptime story — plus OTP behaviours you should reuse rather than reinvent.",
+    "weeks": 8,
+    "hours": 58,
+    "outcomes": [
+      "Design supervision trees that recover from failure",
+      "Reuse OTP behaviours instead of hand-rolling processes",
+      "Inspect and trace a running distributed node"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Erlang",
+        "summary": "Erlang/OTP and rebar3, Observer for process inspection, EUnit and Common Test — installing the toolchain, running a first program, and learning how Erlang reports errors.",
+        "hours": 5
+      },
+      {
+        "title": "Processes and message passing",
+        "summary": "Spawning processes, sending and receiving messages, selective receive, links and monitors, and reasoning about failure between processes.",
+        "hours": 12
+      },
+      {
+        "title": "OTP behaviours and supervision",
+        "summary": "GenServer, Supervisor and Application behaviours, supervision strategies, hot code upgrades, and the design conventions OTP enforces.",
+        "hours": 12
+      },
+      {
+        "title": "Distribution and observability",
+        "summary": "Node connections and clustering, distributed data, process inspection with Observer, and tracing a live system without stopping it.",
+        "hours": 12
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with Observer for process inspection, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 7
+      },
+      {
+        "title": "Capstone — supervised, distributed service with OTP behaviours and failure-injection tests",
+        "summary": "Plan, build and ship a supervised, distributed service with OTP behaviours and failure-injection tests, then review it against the checklist from every earlier module — starting from a clean Erlang project, as you would at work.",
+        "hours": 10
+      }
+    ],
+    "capstone": "a supervised, distributed service with OTP behaviours and failure-injection tests",
+    "prerequisites": [
+      "Functional programming exposure",
+      "Backend or systems experience"
+    ],
+    "tooling": [
+      "Erlang/OTP and rebar3",
+      "Observer for process inspection",
+      "EUnit and Common Test"
+    ],
+    "image": "/images/courses/erlang.svg"
+  },
+  {
+    "slug": "prolog",
+    "language": "Prolog",
+    "mark": "PRL",
+    "trackId": "functional",
+    "level": "advanced",
+    "status": "planned",
+    "tagline": "Declare what is true and let the engine search for the answer",
+    "summary": "Logic programming: facts, rules and unification, recursion and backtracking, then constraint solving on a genuine puzzle or scheduling problem.",
+    "weeks": 5,
+    "hours": 34,
+    "outcomes": [
+      "Model a problem as facts and rules",
+      "Control backtracking deliberately",
+      "Solve a scheduling task with constraint programming"
+    ],
+    "modules": [
+      {
+        "title": "Getting set up with Prolog",
+        "summary": "SWI-Prolog, the interactive top level, plunit — installing the toolchain, running a first program, and learning how Prolog reports errors.",
+        "hours": 3
+      },
+      {
+        "title": "Facts, rules and unification",
+        "summary": "Knowledge bases, variables and unification, querying, and how the resolution algorithm derives an answer from the clauses you wrote.",
+        "hours": 7
+      },
+      {
+        "title": "Recursion, lists and backtracking",
+        "summary": "List patterns, recursive predicates, cuts and negation, and controlling the search space instead of letting it explode.",
+        "hours": 7
+      },
+      {
+        "title": "Constraints and real problems",
+        "summary": "Constraint logic programming over finite domains for scheduling and puzzles, plus writing and running predicate tests with plunit.",
+        "hours": 7
+      },
+      {
+        "title": "Testing, quality and debugging",
+        "summary": "Writing tests from day one with the interactive top level, reading failures, and setting up the linters and formatters that keep a codebase consistent.",
+        "hours": 4
+      },
+      {
+        "title": "Capstone — declarative solver for a real constraint problem, with predicate tests",
+        "summary": "Plan, build and ship a declarative solver for a real constraint problem, with predicate tests, then review it against the checklist from every earlier module — starting from a clean Prolog project, as you would at work.",
+        "hours": 6
+      }
+    ],
+    "capstone": "a declarative solver for a real constraint problem, with predicate tests",
+    "prerequisites": [
+      "Comfortable with recursion",
+      "Willingness to think differently"
+    ],
+    "tooling": [
+      "SWI-Prolog",
+      "the interactive top level",
+      "plunit"
+    ],
+    "image": "/images/courses/prolog.svg"
+  }
+]

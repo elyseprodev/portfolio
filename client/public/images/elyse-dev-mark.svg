@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" width="640" height="640" role="img">
+  <title>ELYSE DEV developer mark</title>
+  <defs>
+    <linearGradient id="panel" x1="0" y1="0" x2="640" y2="640" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#15151a"/>
+      <stop offset="0.6" stop-color="#0d0d11"/>
+      <stop offset="1" stop-color="#08080b"/>
+    </linearGradient>
+    <linearGradient id="mono" x1="150" y1="160" x2="500" y2="500" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fed7aa"/>
+      <stop offset="0.5" stop-color="#fb923c"/>
+      <stop offset="1" stop-color="#c2410c"/>
+    </linearGradient>
+    <radialGradient id="ambient" cx="0.28" cy="0.18" r="0.85">
+      <stop offset="0" stop-color="#f97316" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="ambient2" cx="0.85" cy="0.9" r="0.7">
+      <stop offset="0" stop-color="#fb923c" stop-opacity="0.22"/>
+      <stop offset="1" stop-color="#fb923c" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="topline" x1="0" y1="0" x2="640" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f97316" stop-opacity="0"/>
+      <stop offset="0.5" stop-color="#fdba74" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="640" height="640" rx="64" fill="url(#panel)"/>
+  <rect width="640" height="640" rx="64" fill="url(#ambient)"/>
+  <rect width="640" height="640" rx="64" fill="url(#ambient2)"/>
+
+  <g opacity="0.55" stroke="#ffffff" stroke-opacity="0.06">
+    <path d="M0 128H640M0 256H640M0 384H640M0 512H640"/>
+    <path d="M128 0V640M256 0V640M384 0V640M512 0V640"/>
+  </g>
+
+  <rect x="1.5" y="1.5" width="637" height="637" rx="62.5" fill="none" stroke="#ffffff" stroke-opacity="0.12" stroke-width="3"/>
+  <rect x="0" y="0" width="640" height="3" fill="url(#topline)"/>
+
+  <g transform="translate(320 320)">
+    <circle r="196" fill="none" stroke="#ffffff" stroke-opacity="0.10" stroke-width="2"/>
+    <circle r="150" fill="none" stroke="#f97316" stroke-opacity="0.28" stroke-width="2" stroke-dasharray="6 12"/>
+    <circle cx="0" cy="-196" r="7" fill="#f97316"/>
+    <circle cx="150" cy="0" r="5" fill="#fdba74" fill-opacity="0.8"/>
+    <circle cx="-106" cy="-106" r="4" fill="#ffffff" fill-opacity="0.5"/>
+  </g>
+
+  <g transform="translate(320 326)">
+    <text x="0" y="0" text-anchor="middle" dominant-baseline="central"
+      font-family="ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif"
+      font-size="230" font-weight="700" letter-spacing="-8" fill="url(#mono)">ED</text>
+  </g>
+
+  <text x="320" y="530" text-anchor="middle" fill="#ffffff" fill-opacity="0.42"
+    font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="28" letter-spacing="10">ELYSE DEV</text>
+  <text x="320" y="570" text-anchor="middle" fill="#f97316" fill-opacity="0.85"
+    font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="20" letter-spacing="5">FULL-STACK DEVELOPER · RWANDA</text>
+</svg>

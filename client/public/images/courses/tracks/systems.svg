@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" width="1600" height="420" role="img" aria-label="Generated artwork for the Systems &amp; Performance track">
+
+  <defs>
+    <linearGradient id="bgtsyst" x1="0" y1="0" x2="1200" y2="750" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#121218"/>
+      <stop offset="0.55" stop-color="#0b0b0f"/>
+      <stop offset="1" stop-color="#08080b"/>
+    </linearGradient>
+    <radialGradient id="glowtsyst" cx="600" cy="15" r="744" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#f97316" stop-opacity="0.34"/>
+      <stop offset="0.55" stop-color="#f97316" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="accenttsyst" x1="0" y1="0" x2="1200" y2="0" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fdba74"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+    <clipPath id="cliptsyst">
+      <rect x="72" y="60" width="1056" height="600" rx="34"/>
+    </clipPath>
+    <linearGradient id="paneltsyst" x1="0" y1="0" x2="0" y2="750" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.10"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="420" fill="url(#bgtsyst)"/>
+  <rect width="1600" height="420" fill="url(#glowtsyst)"/>
+  <rect x="48" y="40" width="1504" height="340" rx="30" fill="url(#paneltsyst)" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="110" y="230" fill="#ffffff" fill-opacity="0.92" font-family="ui-sans-serif, system-ui, Segoe UI, sans-serif" font-size="64" font-weight="600">Systems &amp; Performance</text>
+  <rect x="112" y="262" width="240" height="8" rx="4" fill="url(#accenttsyst)"/>
+  <text x="1300" y="230" fill="#ffffff" fill-opacity="0.24" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="120" font-weight="700" text-anchor="end">03</text>
+</svg>

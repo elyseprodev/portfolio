@@ -1,0 +1,330 @@
+import type { Project } from "@elyse/database/types";
+
+/**
+ * ELYSE DEV — project portfolio.
+ *
+ * ⚠️ EDITABLE — please read before publishing:
+ *
+ *  • Only verifiable addresses are linked: the portfolio repository and the
+ *    live Book of Family Library site. Every other project has `links: []` and
+ *    the UI shows "link not provided yet" instead of a dead button.
+ *  • Projects marked `isDraft: true` are real project *names* whose details
+ *    (problem, features, screenshots, repository) still need to be filled in.
+ *    They render with a visible "details pending" label so nothing on the site
+ *    reads as a finished case study when it is not.
+ *  • Every `gallery` starts with a generated cover image (`.jpg`) followed by
+ *    line artwork (`.svg`). Both are generated, neither is a screenshot. Replace
+ *    them with real screenshots in `client/public/images/projects/` when you
+ *    have them — keep the same file names and nothing else needs to change.
+ */
+export const projects: Project[] = [
+  {
+    slug: "elyse-dev-portfolio",
+    title: "Elyse Dev Portfolio",
+    tagline: "This website — a liquid-glass portfolio with a real API behind it",
+    summary:
+      "A full-stack portfolio built with Next.js, Tailwind CSS, an Express API and a MongoDB-ready database layer. Content is served by the API when it is available and falls back to local content when it is not.",
+    category: "full-stack",
+    status: "in-progress",
+    year: "2026",
+    featured: true,
+    isDraft: false,
+    overview: [
+      "I wanted a portfolio that behaves like a product rather than a static page, so I separated it into a client, a server and a database layer — the same way I would structure a real application.",
+      "The client is a Next.js App Router application with a small design system: glass surfaces, a shared animated background, a pointer-effects layer, scroll reveals and page transitions. The server is an Express API that validates every contact submission with Zod and stores it through a repository interface.",
+      "The database layer is deliberately honest about its state: with MONGODB_URI configured it writes to MongoDB through Mongoose; without it, it falls back to a local JSON store and reports itself as degraded through /api/health instead of pretending everything is fine.",
+    ],
+    problem:
+      "Most developer portfolios are a single page that cannot demonstrate backend ability. This one had to prove the whole stack — typed content, a validated API, a data layer — while looking like one considered product.",
+    goals: [
+      "Design a consistent liquid-glass visual language across every route",
+      "Keep content typed and single-sourced so pages never drift apart",
+      "Prove real backend work: validation, rate limiting, persistence, health reporting",
+      "Stay usable on small screens, with keyboards and with reduced motion enabled",
+    ],
+    features: [
+      "Multi-page App Router site with a custom 404 route",
+      "Reusable glass design system: cards, buttons, badges, section headings",
+      "Custom cursor, ambient pointer glow and pointer-responsive card reflections",
+      "Scroll reveals, staggered card entrances and page transitions that respect prefers-reduced-motion",
+      "Express API for content and contact messages, with Zod validation and rate limiting",
+      "Contact form with client and server validation and honest status messages",
+      "GitHub activity page with a curated fallback when the API is rate limited",
+      "Programmatic sitemap, robots and Open Graph image",
+    ],
+    stack: [
+      "Next.js",
+      "React",
+      "TypeScript",
+      "Tailwind CSS",
+      "Motion",
+      "Node.js",
+      "Express.js",
+      "Zod",
+      "MongoDB",
+      "Mongoose",
+    ],
+    links: [
+      {
+        kind: "source",
+        label: "Source repository",
+        href: "https://github.com/elyseprodev/portfolio",
+      },
+    ],
+    gallery: [
+      {
+        src: "/images/projects/elyse-dev-portfolio-cover.jpg",
+        alt: "Generated cover artwork for the Elyse Dev Portfolio: three floating glass layers joined by glowing orange threads",
+        caption: "Generated cover artwork — replace with a real screenshot of this site",
+      },
+
+      {
+        src: "/images/projects/portfolio-home.svg",
+        alt: "Concept artwork of the portfolio homepage: a glass hero panel with orange ambient light",
+        caption: "Homepage concept — glass hero, ambient orange light",
+      },
+      {
+        src: "/images/projects/portfolio-architecture.svg",
+        alt: "Concept diagram of the portfolio architecture: client, server and database layers",
+        caption: "Client · server · database separation",
+      },
+    ],
+    challenges: [
+      {
+        challenge:
+          "Glass surfaces look great but destroy text contrast when layered carelessly.",
+        solution:
+          "I limited nesting to one level, kept body text on the darkest surfaces, and paired every translucent panel with a solid text colour token rather than another transparency.",
+      },
+      {
+        challenge:
+          "Pointer effects can easily block clicks or waste frames.",
+        solution:
+          "Effects are pointer-events: none, share a single requestAnimationFrame loop, are disabled on touch devices, and are skipped entirely when reduced motion is requested.",
+      },
+    ],
+  },
+  {
+    slug: "book-of-family-library",
+    title: "Book of Family Library",
+    tagline: "A multilingual digital library, live and open to readers",
+    summary:
+      "A published library web app: readers browse six collections from fiction to rare manuscripts, search a catalogue presented as 400,000+ titles, and follow featured books straight into Open Library — in the language they read in.",
+    category: "frontend",
+    status: "completed",
+    year: "2026",
+    featured: true,
+    isDraft: false,
+    overview: [
+      "Book of Family Library is a live, single-page library experience built around discovery: a hero with collection counters, a six-collection browse grid, a featured-books strip and a community section for workshops and reading programmes.",
+      "The featured titles are not hard-coded — the strip loads its books at runtime and its “View all” action hands the reader over to Open Library, so the shelf stays current instead of going stale.",
+      "Language and accessibility are treated as features of the interface rather than a footnote: multiple writing systems, screen-reader support, adjustable text, Braille and large-print are part of the page itself.",
+    ],
+    problem:
+      "A catalogue is only useful if a reader can find a title in the language they read in — and most book sites stop at English, at a single format, or at a search box with nothing behind it.",
+    goals: [
+      "Put every collection within one scroll of the landing view",
+      "Keep the featured shelf fresh by loading titles at runtime instead of hard-coding them",
+      "Make multilingual and accessible reading visible rather than implied",
+    ],
+    features: [
+      "Hero with collection counters for books, languages and hours of access",
+      "Six-collection browse grid: fiction, academic, audiobooks, journals, manuscripts and reference",
+      "Featured-books strip loaded at runtime, with a hand-off into Open Library search",
+      "Catalogue search entry point covering the full title count",
+      "Community and education section for events, volunteering, language workshops and research help",
+      "Responsive layout that keeps the browse grid readable on a phone",
+    ],
+    // ⚠️ EDITABLE — the stack was read from the published build; correct it if
+    // you used different tooling.
+    stack: ["React", "Vite", "Tailwind CSS", "Open Library API"],
+    links: [
+      {
+        kind: "live",
+        label: "Live site",
+        href: "https://bookoffamily.lovable.app",
+      },
+    ],
+    gallery: [
+      {
+        src: "/images/projects/book-of-family-library-cover.jpg",
+        alt: "Generated cover artwork for Book of Family Library: a glowing bookshelf hall with a floating glass shelf of titles",
+        caption: "Generated cover artwork — the live site above is the real thing",
+      },
+
+      {
+        src: "/images/projects/book-of-family-library.svg",
+        alt: "Concept artwork for Book of Family Library: a search bar above a shelf of collection cards",
+        caption: "Concept artwork — replace with a real screenshot of the live site",
+      },
+    ],
+    challenges: [],
+  },
+  {
+    slug: "light-education",
+    title: "Light Education",
+    tagline: "An education platform built around what students actually need",
+    summary:
+      "A student-focused education platform: materials, progress and communication in one place instead of scattered links and group chats.",
+    category: "full-stack",
+    status: "in-progress",
+    year: "2025",
+    featured: true,
+    isDraft: true,
+    overview: [
+      "Light Education is an education platform I am building around a simple observation: students already have the content, but it is spread across chats, drives and notebooks.",
+      "The project brings learning material, progress and communication into one interface with a student-friendly reading experience and a backend that keeps the data organised.",
+    ],
+    problem:
+      "Study material is scattered across messaging apps and shared drives, so students lose track of what is current, what is graded and what still needs their attention.",
+    goals: [
+      "Give students one place to find current material",
+      "Make progress visible without turning learning into a scoreboard",
+      "Keep the interface fast and readable on low-end phones and slow connections",
+    ],
+    features: [
+      "Structured course and material listing",
+      "Student accounts with authenticated sessions",
+      "Progress tracking per topic",
+      "Responsive reading layout for small screens",
+    ],
+    stack: ["Next.js", "React", "Node.js", "Express.js", "MongoDB"],
+    links: [],
+    gallery: [
+      {
+        src: "/images/projects/light-education-cover.jpg",
+        alt: "Generated cover artwork for Light Education: floating glass cards with progress rings and charts",
+        caption: "Generated cover artwork — replace with a real product screenshot",
+      },
+
+      {
+        src: "/images/projects/light-education.svg",
+        alt: "Concept artwork for Light Education: a glass dashboard with course cards",
+        caption: "Concept artwork — replace with a real product screenshot",
+      },
+    ],
+    challenges: [],
+  },
+  {
+    slug: "campus-connect",
+    title: "Campus Connect",
+    tagline: "A student social and messaging application",
+    summary:
+      "A messaging and social space for students: profiles, conversations and notifications designed for the way campus communication actually happens.",
+    category: "full-stack",
+    status: "in-progress",
+    year: "2025",
+    featured: true,
+    isDraft: true,
+    overview: [
+      "Campus Connect explores the social side of student tools: instead of one more feed, it focuses on conversations between people who already share a campus.",
+      "It covers the parts that are easy to underestimate — authentication, message state, notification behaviour and how to render a conversation list that stays fast as it grows.",
+    ],
+    problem:
+      "Important campus conversations happen in mixed group chats where context disappears and nobody can find an earlier decision.",
+    goals: [
+      "Keep conversations organised around people and topics",
+      "Make unread state obvious without being noisy",
+      "Handle authentication and message delivery reliably",
+    ],
+    features: [
+      "Accounts and profiles",
+      "One-to-one and group conversations",
+      "Message threads with read state",
+      "Notification surface for new activity",
+    ],
+    stack: ["React", "Node.js", "Express.js", "MongoDB"],
+    links: [],
+    gallery: [
+      {
+        src: "/images/projects/campus-connect-cover.jpg",
+        alt: "Generated cover artwork for Campus Connect: floating glass message bubbles with glowing orange rims",
+        caption: "Generated cover artwork — replace with a real product screenshot",
+      },
+
+      {
+        src: "/images/projects/campus-connect.svg",
+        alt: "Concept artwork for Campus Connect: a glass conversation list beside a message thread",
+        caption: "Concept artwork — replace with a real product screenshot",
+      },
+    ],
+    challenges: [],
+  },
+  {
+    slug: "video-web-app",
+    title: "Video Web Application",
+    tagline: "A browser-based video experience built on modern frontend tooling",
+    summary:
+      "A video-focused web application: browsing, playback and a responsive player interface built with React and modern browser APIs.",
+    category: "frontend",
+    status: "in-progress",
+    year: "2025",
+    featured: true,
+    isDraft: true,
+    overview: [
+      "A web application centred on video: a browsable catalogue and a playback experience that behaves correctly at every screen size.",
+      "Most of the interesting work was in the details — player state, keyboard controls, layout that does not jump while media loads, and a responsive stage that fills the space it is given.",
+    ],
+    problem:
+      "Video interfaces break easily: controls are unusable on phones, layouts shift when media loads, and keyboard users are locked out of playback.",
+    goals: [
+      "Keep the player usable on a phone and on a projector",
+      "Support keyboard interaction and sensible focus order",
+      "Load media progressively without layout shift",
+    ],
+    features: [
+      "Responsive video stage with fixed aspect ratio",
+      "Custom playback controls",
+      "Keyboard shortcuts for common actions",
+      "Browse view for the media catalogue",
+    ],
+    stack: ["React", "JavaScript", "HTML5", "CSS3"],
+    links: [],
+    gallery: [
+      {
+        src: "/images/projects/video-web-app-cover.jpg",
+        alt: "Generated cover artwork for the Video Web Application: a dark player window with a glowing orange play button",
+        caption: "Generated cover artwork — replace with a real product screenshot",
+      },
+
+      {
+        src: "/images/projects/video-web-app.svg",
+        alt: "Concept artwork for the video web application: a glass player stage above a media row",
+        caption: "Concept artwork — replace with a real product screenshot",
+      },
+    ],
+    challenges: [],
+  },
+];
+
+/* -------------------------------------------------------------------------- */
+/* Helpers                                                                    */
+/* -------------------------------------------------------------------------- */
+
+export const projectCategoryLabels: Record<Project["category"], string> = {
+  "full-stack": "Full-stack",
+  frontend: "Frontend",
+  backend: "Backend",
+  learning: "Learning",
+};
+
+export const projectStatusLabels: Record<Project["status"], string> = {
+  completed: "Completed",
+  "in-progress": "In progress",
+  concept: "Concept",
+};
+
+export function getFeaturedProjects(limit = 3): Project[] {
+  return projects.filter((project) => project.featured).slice(0, limit);
+}
+
+export function getProjectBySlug(slug: string): Project | undefined {
+  return projects.find((project) => project.slug === slug);
+}
+
+/** Categories that actually contain at least one project. */
+export function getActiveCategories(): Project["category"][] {
+  const seen = new Set<Project["category"]>();
+  for (const project of projects) seen.add(project.category);
+  return [...seen];
+}

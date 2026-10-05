@@ -1,0 +1,44 @@
+[
+  {
+    "id": "web",
+    "name": "Web & Frontend",
+    "emoji": "🌐",
+    "description": "The languages a browser understands, from the document itself to the applications built on top of it."
+  },
+  {
+    "id": "backend",
+    "name": "Backend & APIs",
+    "emoji": "⚙️",
+    "description": "Server-side languages for APIs, data-driven products and the systems other software talks to."
+  },
+  {
+    "id": "systems",
+    "name": "Systems & Performance",
+    "emoji": "🚀",
+    "description": "Languages where memory, speed and hardware are part of the design rather than a hidden detail."
+  },
+  {
+    "id": "data",
+    "name": "Data & Query",
+    "emoji": "🗄️",
+    "description": "Languages and query tools for asking questions of data, from reporting to scientific computing."
+  },
+  {
+    "id": "mobile",
+    "name": "Mobile & Apps",
+    "emoji": "📱",
+    "description": "Languages used to ship applications to phones and tablets on the platforms people actually carry."
+  },
+  {
+    "id": "scripting",
+    "name": "Scripting & Automation",
+    "emoji": "🧰",
+    "description": "The languages that make a computer do repetitive work properly, on your machine or on a server."
+  },
+  {
+    "id": "functional",
+    "name": "Functional & Logic",
+    "emoji": "🧠",
+    "description": "Languages that change how you think about state, data and correctness — useful even if you never ship them."
+  }
+]

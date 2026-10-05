@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 800" width="1280" height="800" role="img">
+
+  <defs>
+    <linearGradient id="bgf" x1="0" y1="0" x2="1280" y2="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#111116"/>
+      <stop offset="0.55" stop-color="#0b0b0f"/>
+      <stop offset="1" stop-color="#08080b"/>
+    </linearGradient>
+    <linearGradient id="accentf" x1="0" y1="0" x2="1280" y2="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#fdba74"/>
+      <stop offset="1" stop-color="#ea580c"/>
+    </linearGradient>
+    <radialGradient id="glowf" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f97316" stop-opacity="0.30"/>
+      <stop offset="1" stop-color="#f97316" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="panelf" x1="0" y1="0" x2="0" y2="800" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#ffffff" stop-opacity="0.09"/>
+      <stop offset="1" stop-color="#ffffff" stop-opacity="0.02"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="800" fill="url(#bgf)"/>
+  <circle cx="230.39999999999998" cy="80" r="537.6" fill="url(#glowf)"/>
+  <g opacity="0.5" stroke="#ffffff" stroke-opacity="0.05">
+    <path d="M80 0V800"/><path d="M160 0V800"/><path d="M240 0V800"/><path d="M320 0V800"/><path d="M400 0V800"/><path d="M480 0V800"/><path d="M560 0V800"/><path d="M640 0V800"/><path d="M720 0V800"/><path d="M800 0V800"/><path d="M880 0V800"/><path d="M960 0V800"/><path d="M1040 0V800"/><path d="M1120 0V800"/><path d="M1200 0V800"/>
+    <path d="M0 80H1280"/><path d="M0 160H1280"/><path d="M0 240H1280"/><path d="M0 320H1280"/><path d="M0 400H1280"/><path d="M0 480H1280"/><path d="M0 560H1280"/><path d="M0 640H1280"/><path d="M0 720H1280"/>
+  </g>
+
+  
+  <rect x="60" y="70" width="1160" height="650" rx="28" fill="url(#panelf)" stroke="#ffffff" stroke-opacity="0.12"/>
+  <circle cx="100" cy="112" r="5" fill="#ffffff" fill-opacity="0.32"/><circle cx="122" cy="112" r="5" fill="#ffffff" fill-opacity="0.24"/><circle cx="144" cy="112" r="5" fill="#ffffff" fill-opacity="0.16"/>
+  <rect x="560" y="104" width="300" height="16" rx="8" fill="#ffffff" fill-opacity="0.12"/>
+  <text x="100" y="176" fill="#ffffff" fill-opacity="0.62" font-family="ui-monospace, SFMono-Regular, Menlo, monospace" font-size="22" letter-spacing="4">PROJECT</text>
+  <rect x="880" y="150" width="300" height="42" rx="21" fill="url(#accentf)" fill-opacity="0.85"/>
+  <rect x="910" y="165" width="240" height="12" rx="6" fill="#0b0b0f" fill-opacity="0.55"/>
+  <rect x="100" y="240" width="1080" height="440" rx="22" fill="url(#panelf)" stroke="#ffffff" stroke-opacity="0.12"/>
+  <text x="640" y="440" fill="#ffffff" fill-opacity="0.5" font-family="ui-sans-serif, system-ui" font-size="34" text-anchor="middle">Add a real screenshot here</text>
+  <text x="640" y="490" fill="#ffffff" fill-opacity="0.28" font-family="ui-sans-serif, system-ui" font-size="22" text-anchor="middle">public/images/projects/</text>
+  <rect x="500" y="530" width="280" height="12" rx="6" fill="url(#accentf)" fill-opacity="0.8"/>
+</svg>
+

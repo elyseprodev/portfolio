@@ -1,0 +1,29 @@
+# ELYSE DEV — local infrastructure
+#
+#   docker compose up -d        # start MongoDB
+#   npm run db:seed             # seed content into MongoDB
+#
+# The application never *requires* MongoDB: with an empty MONGODB_URI the
+# server/database layer transparently uses the local JSON store in
+# `database/.data/`. MongoDB is the production-grade target.
+
+services:
+  mongo:
+    image: mongo:7
+    container_name: elyse-dev-mongo
+    restart: unless-stopped
+    ports:
+      - "27017:27017"
+    environment:
+      MONGO_INITDB_DATABASE: elyse_dev
+    volumes:
+      - mongo-data:/data/db
+      - ./database/init:/docker-entrypoint-initdb.d:ro
+    healthcheck:
+      test: ["echo", "ok"]
+      interval: 15s
+      timeout: 5s
+      retries: 5
+
+volumes:
+  mongo-data:

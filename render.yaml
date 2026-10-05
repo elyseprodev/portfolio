@@ -1,0 +1,60 @@
+# ELYSE DEV — Render blueprint for the API service.
+#
+# Usage: Render dashboard → New → Blueprint → pick this repository.
+# Render reads this file and creates the web service below.
+#
+# The database is MongoDB Atlas (free tier is enough) — Render no longer offers
+# managed MongoDB. Set MONGODB_URI in the dashboard after creating the Atlas
+# cluster; the API intentionally starts and serves content without it (from the
+# local store) so the service is never down, but messages would not persist.
+
+services:
+  - type: web
+    name: elyse-dev-api
+    runtime: node
+    plan: free
+    region: frankfurt
+    # Build from the repository root: the server imports the local
+    # `@elyse/database` workspace package, which only resolves from the root.
+    rootDir: .
+    buildCommand: npm ci --include=dev
+    # `tsx` runs the TypeScript entry point directly — no compile step, so the
+    # service starts in the same shape it is developed in.
+    startCommand: npm run start -w @elyse/server
+    healthCheckPath: /api/health
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: TRUST_PROXY
+        value: "true"
+      - key: LOG_REQUESTS
+        value: "true"
+      # Comma-separated browser origins allowed to call the API directly.
+      # Set this to your Vercel URL once the client is deployed.
+      - key: CORS_ORIGIN
+        sync: false
+      - key: MONGODB_URI
+        sync: false
+      - key: MONGODB_DB
+        value: elyse_dev
+      # Optional — raise the GitHub rate limit for the activity page.
+      - key: GITHUB_TOKEN
+        sync: false
+      - key: GITHUB_USERNAME
+        value: elyseprodev
+      # Optional — e-mail notifications for contact messages.
+      - key: RESEND_API_KEY
+        sync: false
+      - key: CONTACT_NOTIFY_TO
+        sync: false
+      - key: CONTACT_NOTIFY_FROM
+        value: onboarding@resend.dev
+      - key: CONTACT_FINGERPRINT_SALT
+        generateValue: true
+      # Some containers miss the system CA bundle; this points Node at it so the
+      # GitHub proxy works. Safe to leave set.
+      - key: NODE_EXTRA_CA_CERTS
+        value: /etc/ssl/certs/ca-certificates.crt

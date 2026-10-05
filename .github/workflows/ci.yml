@@ -1,0 +1,47 @@
+# ELYSE DEV — continuous integration.
+#
+# Runs on every push and pull request. Green here means: lint clean, types
+# correct in all three workspaces, 48 tests passing, and the site still builds.
+
+name: CI
+
+on:
+  push:
+    branches: [main, "arena/**"]
+  pull_request:
+
+concurrency:
+  group: ci-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  verify:
+    name: Lint · types · tests · build
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci --include=dev
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Type check
+        run: npm run typecheck
+
+      - name: Tests
+        run: npm test
+
+      - name: Build the client
+        run: npm run build
+
+      - name: Contrast budget (WCAG AA)
+        run: npm run check:contrast
